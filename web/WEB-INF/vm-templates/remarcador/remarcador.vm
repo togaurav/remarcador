@@ -79,9 +79,9 @@
 								#end	
 							</select>
                         </td>
-						<td>
+						<td colspan="2">
 							<label>Cuenta:</label>
-                        </td>
+                  
 							<select id="cmb-cuenta" style="width:180px;margin-right:5px">
 								<option value="-1">Seleccione</option>
 								#foreach($cuenta in $cuentas)
