@@ -11,7 +11,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.ServletRequestUtils;
 
 import cl.wamtech.remarcador.dao.RemarcadorDao;
+import cl.wamtech.remarcador.model.Remarcador;
 import cl.wamtech.remarcador.model.Usuario;
+import cl.wamtech.remarcador.util.Util;
 
 public class RemarcadorDaoTest
 {
@@ -111,10 +113,16 @@ public class RemarcadorDaoTest
 //        System.out.println(remarcadorDao.getObjects(RemarcadorDao.DETALLE_REMARCADOR, criterios, Integer.MIN_VALUE, Integer.MAX_VALUE, true));
         
 
-        criterios.put("usuario", "jguajardo");
-        criterios.put("password", "111111");        
-        Usuario usuario = (Usuario) remarcadorDao.getObject(RemarcadorDao.USUARIO_LOGIN, criterios, false);
-        System.out.println(usuario);
+//        criterios.put("usuario", "jguajardo");
+//        criterios.put("password", "111111");        
+//        Usuario usuario = (Usuario) remarcadorDao.getObject(RemarcadorDao.USUARIO_LOGIN, criterios, false);
+//        System.out.println(usuario);
+        
+        String jsonString = "{'id':9,'nombre':'FLORERIA TOULOUSE','local':'2052','tablero':'SALA 1','numeroMedidor':'0216','centroCosto':'1','cuenta':'2','nodo':'871','observacion':''}";
+        
+        Remarcador remarcador = (Remarcador)Util.jsonToBean(jsonString, Remarcador.class);
+        System.out.println(remarcador.getCentroCosto().getId());
+        remarcadorDao.creaActualiza(remarcador);
 	}
     
     /**

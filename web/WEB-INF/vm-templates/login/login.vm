@@ -10,11 +10,11 @@
 		<form action="main.htm?perform=validarLogin" method="post">
             <div>
 				<label for="Usuario">Usuario:</label>
-				<input type="text" name="usuario" id="txt-usuario">
+				<input type="text" name="usuario" id="txt-usuario" value="">
             </div>
 			<div>
 				<label for="password">Password:</label>
-				<input type="password" name="password" id="txt-password">
+				<input type="password" name="password" id="txt-password" value="">
             </div>
             <div>
 				<input type="submit" value="Ingresar">

@@ -255,9 +255,10 @@
 						$('#cmb-editar-cuenta option:contains("Seleccione")').remove()
 						$('#cmb-editar-centro-costo option:contains("'+elemento.centroCosto+'")').attr('selected', true);
 						$('#cmb-editar-cuenta option:contains("'+elemento.cuenta+'")').attr('selected', true);						
-						if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_1')
+						if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_1') {
 							$(".disabled#cmb-editar-centro-costo").attr('disabled', true);
-						else if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_2')
+							$('#txt-nodo').attr('disabled', true);
+						} else if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_2')
 							$(".disabled").attr('disabled', true);
 					}
 				});

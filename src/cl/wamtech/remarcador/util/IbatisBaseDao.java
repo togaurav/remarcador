@@ -118,7 +118,7 @@ public class IbatisBaseDao {
 	 * @return
 	 */
 	public boolean isPersistente(IPersistente ip) {
-		return (ip.getId() > 0);
+		return (ip.getId() > -1);
 	}
 	
 	/**
@@ -183,7 +183,7 @@ public class IbatisBaseDao {
 			log.debug("Actualizando el objeto: " + ipersistente);
 		}
 		String name = this.getShortClassName(ipersistente.getClass());
-		return this.getSqlMapClientTemplate().update("update." + name, ipersistente) > 0;
+		return this.getSqlMapClientTemplate().update("update." + name, ipersistente) > -1;
 	}
 	
 	/**

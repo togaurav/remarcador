@@ -268,8 +268,21 @@ public class RemarcadorController extends MultiActionController {
 	 */
     public ModelAndView editarRemarcador(HttpServletRequest request, HttpServletResponse response) throws Exception {
         log.info("Editar remarcador...");
+        int idCentroCosto = ServletRequestUtils.getRequiredIntParameter(request, "idCentroCosto");
+        int idCuenta = ServletRequestUtils.getRequiredIntParameter(request, "idCuenta");
+        
+        CentroCosto centroCosto = new CentroCosto();
+        centroCosto.setId(idCentroCosto);
+        Cuenta cuenta = new Cuenta();
+        cuenta.setId(idCuenta);
+        
+        CustomerContextHolder.clearCustomerType();
         Remarcador remarcador = (Remarcador)Util.jsonToBean(ServletRequestUtils.getRequiredStringParameter(request, "remarcador"), Remarcador.class);
+        remarcador.setCentroCosto(centroCosto);
+        remarcador.setCuenta(cuenta);
+        
         this.getRemarcadorDao().creaActualiza(remarcador);
+        
         return this.renderJson(new JSONObject().put("ok", "ok"));
     }
 }

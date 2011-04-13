@@ -199,53 +199,53 @@
 		<dynamic prepend="SET">
 		
 			<isNotEmpty property="nombre" prepend=",">
-				"public"."REMARCADORES"."NOMBRE" = #nombre#
+				"NOMBRE" = #nombre#
 			</isNotEmpty>
 		
 			<isNotEmpty property="local" prepend=",">
-				"public"."REMARCADORES"."LOCAL" = #local#
+				"LOCAL" = #local#
 			</isNotEmpty>
 		
 			<isNotEmpty property="marcaRemarcador" prepend=",">
-				"public"."REMARCADORES"."MARCA_REMARCADOR" = #marcaRemarcador#
+				"MARCA_REMARCADOR" = #marcaRemarcador#
 			</isNotEmpty>
 		
 			<isNotEmpty property="modeloRemarcador" prepend=",">
-				"public"."REMARCADORES"."MODELO_REMARCADOR" = #modeloRemarcador#
+				"MODELO_REMARCADOR" = #modeloRemarcador#
 			</isNotEmpty>
 		
 			<isNotEqual property="multiplicador" compareValue="-1" prepend=",">
-				"public"."REMARCADORES"."MULTIPLICADOR" = #multiplicador#
+				"MULTIPLICADOR" = #multiplicador#
 			</isNotEqual>
 		
 			<isNotEmpty property="tablero" prepend=",">
-				"public"."REMARCADORES"."TABLERO" = #tablero#
+				"TABLERO" = #tablero#
 			</isNotEmpty>
 		
 			<isNotEmpty property="numeroMedidor" prepend=",">
-				"public"."REMARCADORES"."NUMERO_MEDIDOR" = #numeroMedidor#
+				"NUMERO_MEDIDOR" = #numeroMedidor#
 			</isNotEmpty>
 		
 			<isNotEmpty property="nodo" prepend=",">
-				"public"."REMARCADORES"."NODO" = #nodo#
+				"NODO" = #nodo#
 			</isNotEmpty>
 		
 			<isNotEmpty property="observacion" prepend=",">
-				"public"."REMARCADORES"."OBSERVACION" = #observacion#
+				"OBSERVACION" = #observacion#
 			</isNotEmpty>
 		
 			<isNotEmpty property="centroCosto.id" prepend=",">
-				"public"."REMARCADORES"."ID_CENTRO_COSTO" = #centroCosto.id#
+				"ID_CENTRO_COSTO" = #centroCosto.id#
 			</isNotEmpty>
 		
 			<isNotEmpty property="cuenta.id" prepend=",">
-				"public"."REMARCADORES"."ID_CUENTA" = #cuenta.id#
+				"ID_CUENTA" = #cuenta.id#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE "public"."REMARCADORES"."ID" = #id#
+		WHERE "ID" = #id#
 	</update>
    
 	<delete id="delete.Remarcador" parameterClass="Remarcador">
