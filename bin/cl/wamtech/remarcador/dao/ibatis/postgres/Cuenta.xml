@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="Cuenta">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Cuenta" id="resultMap.Cuenta">
+		<result column="ID_CUENTA" property="id" nullValue="-1" />
+		<result column="NOMBRE_CUENTA" property="nombre" />
+	</resultMap>
+	
+
+
+
+	<typeAlias alias="Cuenta" type="cl.wamtech.remarcador.model.Cuenta" />
+
+	<select id="get.Cuenta" parameterClass="int" resultMap="resultMap.Cuenta">
+		SELECT * FROM "public"."CUENTAS"
+		WHERE ID_CUENTA = #id#
+	</select>
+
+	<select id="get.equals.Cuenta" parameterClass="java.util.Map" resultMap="resultMap.Cuenta"> 
+		SELECT * FROM "public"."CUENTAS"
+		WHERE 
+	</select>
+
+	<select id="get.list.Cuenta" resultMap="resultMap.Cuenta" >
+		SELECT * FROM "public"."CUENTAS"
+	</select> 
+  	
+  	<select id="get.count.list.Cuenta" resultClass="int">
+		SELECT count(ID_CUENTA) FROM "public"."CUENTAS"
+	</select>
+  	
+	<select id="get.criterio.Cuenta" parameterClass="java.util.Map" resultMap="resultMap.Cuenta">
+		SELECT * FROM "public"."CUENTAS"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."CUENTAS".ID_CUENTA = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."CUENTAS".NOMBRE_CUENTA = #nombre#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.Cuenta" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(ID_CUENTA) FROM "public"."CUENTAS"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."CUENTAS".ID_CUENTA = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."CUENTAS".NOMBRE_CUENTA = #nombre#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.Cuenta" parameterClass="Cuenta" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.Cuenta" parameterClass="Cuenta">
+		
+		<selectKey resultClass="int" keyProperty="id" type="post">
+			SELECT LAST_INSERT_ID() AS id
+		</selectKey>
+		
+		INSERT INTO "public"."CUENTAS" (NOMBRE_CUENTA )
+		VALUES(#nombre# )
+
+	</insert>
+   
+	<update id="update.Cuenta" parameterClass="Cuenta">
+
+		UPDATE "public"."CUENTAS"
+		
+		<dynamic prepend="SET">
+		
+			<isNotEmpty property="nombre" prepend=",">
+				NOMBRE_CUENTA = #nombre#
+			</isNotEmpty>
+		
+		
+		</dynamic>
+		
+		WHERE ID_CUENTA = #id#
+	</update>
+   
+	<delete id="delete.Cuenta" parameterClass="Cuenta">
+		DELETE FROM "public"."CUENTAS"
+		WHERE ID_CUENTA = #id#
+	</delete>
+    
+</sqlMap>

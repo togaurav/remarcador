@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Sistema - remarcadores</title>
+		<!-- css -->
+		<link type="text/css" href="css/smoothness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />	
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+		<!-- js -->
+		<script type="text/javascript" src="js/jquery/core/jquery-1.5.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery/core/jquery-ui-1.8.11.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery/core/ui.datepicker-es.min.js"></script>		
+		<script type="text/javascript" src="js/jquery/grid/grid.locale-es.js" ></script>
+		<script type="text/javascript" src="js/jquery/grid/jquery.jqGrid.min.js"></script>
+		<script type="text/javascript" src="js/cplugins/jquery/jquery.cutils.js"></script>
+		<script type="text/javascript" src="js/utils/utils-date.js"></script>
+	</head>
+	<body>
+		<input type="hidden" id="hdn-fecha-inicial">
+		<input type="hidden" id="hdn-fecha-final">
+		<input type="hidden" id="hdn-perfil-usuario" value="$usuario.perfil.codigo">
+        <div id="modal-editar-remarcador" title="Editar remarcador"></div>	
+        <ul id="modal-lista-errores" title="Lista de errores"></ul>	
+		<div id="div-contenedor-principal">	
+			<div id="div-contenedor-fitro">
+				<table>
+					<tr>
+						<td>
+							Fecha lectura inicial:
+                        </td>
+						<td>
+							<input type="text" id="txt-fecha-inicial" readonly>
+							<select id="cmb-horas-lectura-inicial">
+								<option value="-1">hrs</option>
+								#foreach($hora in $horas)
+									<option value="$hora">$hora</option>
+								#end	
+							</select>
+							<select id="cmb-minutos-lectura-inicial">
+								<option value="-1">min</option>
+								#foreach($minuto in $minutos)
+									<option value="$minuto">$minuto</option>
+								#end	
+							</select>
+                        </td>
+					</tr>
+					<tr>
+						<td>
+							Fecha lectura final:
+                        </td>
+						<td>
+							<input type="text" id="txt-fecha-final" readonly>
+							<select id="cmb-horas-lectura-final">
+								<option value="-1">hrs</option>
+								#foreach($hora in $horas)
+									<option value="$hora">$hora</option>
+								#end	
+							</select>
+							<select id="cmb-minutos-lectura-final">
+								<option value="-1">min</option>
+								#foreach($minuto in $minutos)
+									<option value="$minuto">$minuto</option>
+								#end	
+							</select>
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+							Centro de costo:
+                        </td>
+						<td>
+							<select id="cmb-centro-costo">
+								<option value="-1">Seleccione</option>
+								#foreach($centroCosto in $centrosCostos)
+									<option value="$centroCosto.id">$centroCosto.nombre</option>
+								#end	
+							</select>
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+							Cuenta:
+                        </td>
+						<td>
+							<select id="cmb-cuenta">
+								<option value="-1">Seleccione</option>
+								#foreach($cuenta in $cuentas)
+									<option value="$cuenta.id">$cuenta.nombre</option>
+								#end	
+							</select>	
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+                        </td>
+						<td>
+							<button id="btn-buscar-remarcador">Buscar</button>
+                        </td>
+                    </tr>
+				</table>
+			</div>
+            <div>
+            	<table id="tbl-remarcador"></table>
+            	<div id="div-opciones-pagina"></div>
+            </div>
+		</div>
+    </body>
+</html>
+<script type="text/javascript" src="js/remarcador/remarcador.js"></script>

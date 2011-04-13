@@ -1,0 +1,860 @@
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:30:18 CLT 2011]; root of context hierarchy
+83   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+306  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+398  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+425  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+480  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+496  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:30:18 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1256 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1256 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1447 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1501 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1527 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "variables" does not exist
+  Position: 18
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:32:00 CLT 2011]; root of context hierarchy
+75   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+286  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+353  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+367  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+421  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+448  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:32:00 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1060 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1068 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1276 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1327 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1361 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred in cl/wamtech/remarcador/dao/ibatis/postgres/Variable.xml.  
+--- The error occurred while applying a result map.  
+--- Check the resultMap.nodep1.Variable.  
+--- Check the result mapping for the 'id' property.  
+--- Cause: org.postgresql.util.PSQLException: The column name ID was not found in this ResultSet.
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:39:35 CLT 2011]; root of context hierarchy
+78   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+281  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@589e56
+351  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+362  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@589e56: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+414  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+427  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:39:35 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1240 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1245 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1410 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1474 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1496 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "variables" does not exist
+  Position: 18
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:40:05 CLT 2011]; root of context hierarchy
+75   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+305  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+374  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+385  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+438  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+451  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:40:05 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1125 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1126 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:40:34 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+312  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+393  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+404  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+466  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+498  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:40:34 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1200 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1203 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1552 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:42:45 CLT 2011]; root of context hierarchy
+87   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+311  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@589e56
+384  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+397  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@589e56: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+448  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+476  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:42:45 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1140 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1141 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1356 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1392 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1416 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; uncategorized SQLException for SQL []; SQL state [null]; error code [0];   
+--- The error occurred in cl/wamtech/remarcador/dao/ibatis/postgres/Remarcador.xml.  
+--- The error occurred while applying a result map.  
+--- Check the resultMap.Remarcador.  
+--- Check the result mapping for the 'nombre' property.  
+--- Cause: com.ibatis.sqlmap.client.SqlMapException: Error getting nested result map values for 'remarcador'.  Cause: org.postgresql.util.PSQLException: The column name NOMBRE was not found in this ResultSet.; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred in cl/wamtech/remarcador/dao/ibatis/postgres/Remarcador.xml.  
+--- The error occurred while applying a result map.  
+--- Check the resultMap.Remarcador.  
+--- Check the result mapping for the 'nombre' property.  
+--- Cause: com.ibatis.sqlmap.client.SqlMapException: Error getting nested result map values for 'remarcador'.  Cause: org.postgresql.util.PSQLException: The column name NOMBRE was not found in this ResultSet.
+1472 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:44:20 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+295  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+366  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+383  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+433  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+446  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:44:20 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1146 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1151 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1394 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1464 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1529 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: syntax error at or near "ON"
+  Position: 52
+1585 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:44:41 CLT 2011]; root of context hierarchy
+80   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+243  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5
+316  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+328  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+374  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+387  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:44:41 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1037 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1038 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1220 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1372 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1422 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "remarcadores" does not exist
+  Position: 52
+1500 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:45:16 CLT 2011]; root of context hierarchy
+76   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+351  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+420  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+431  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+489  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+522  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:45:16 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1258 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1259 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1440 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1557 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1601 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "remarcadores"
+  Position: 79
+1720 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+1    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:47:30 CLT 2011]; root of context hierarchy
+83   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+291  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5
+363  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+373  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+420  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+434  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:47:30 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1217 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1225 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1409 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1556 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1622 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "remarcadores"
+  Position: 79
+1704 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:47:41 CLT 2011]; root of context hierarchy
+91   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+336  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+403  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+414  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+462  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+476  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:47:41 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1136 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1137 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1350 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1452 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1521 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "remarcadores"
+  Position: 79
+1575 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:49:11 CLT 2011]; root of context hierarchy
+83   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+289  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+362  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+378  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+429  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+467  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:49:11 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1103 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1103 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1291 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1344 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1401 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "remarcadores"
+  Position: 78
+1453 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:49:59 CLT 2011]; root of context hierarchy
+79   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+327  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+395  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+407  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+455  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+468  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:49:59 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1167 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1167 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1395 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1433 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1469 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "remarcadores" does not exist
+  Position: 51
+1531 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:50:23 CLT 2011]; root of context hierarchy
+78   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+313  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+382  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+394  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+442  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+464  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:50:23 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1149 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1149 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1333 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1451 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1475 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column REMARCADORES.id does not exist
+  Position: 78
+1515 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:50:57 CLT 2011]; root of context hierarchy
+82   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+318  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+409  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+419  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+467  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+481  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:50:57 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1107 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1113 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1310 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1407 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1451 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column REMARCADORES.id does not exist
+  Position: 78
+1544 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:51:32 CLT 2011]; root of context hierarchy
+89   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+374  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+449  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+461  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+524  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+557  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:51:32 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1241 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1241 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1463 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1529 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1594 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column REMARCADORES.nombre does not exist
+  Position: 78
+1645 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:51:56 CLT 2011]; root of context hierarchy
+83   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+324  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+406  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+416  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+464  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+479  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:51:56 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1263 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1264 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1533 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1595 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1618 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "remarcadores"
+  Position: 78
+1680 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:53:11 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+263  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+334  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+345  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+391  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+405  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 10:53:11 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1061 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1061 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1327 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1415 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1436 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "public.variables" does not exist
+  Position: 18
+1481 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:54:11 CLT 2011]; root of context hierarchy
+79   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+242  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+314  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+327  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+373  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+387  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:54:11 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1000 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1000 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1180 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1249 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1271 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "public.remarcadores" does not exist
+  Position: 51
+1317 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:54:14 CLT 2011]; root of context hierarchy
+85   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+277  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+353  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+365  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+415  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+430  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:54:14 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1027 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1027 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1215 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1247 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1268 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "public.remarcadores" does not exist
+  Position: 51
+1384 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:54:59 CLT 2011]; root of context hierarchy
+80   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+360  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+431  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+442  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+499  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+533  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:54:59 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1327 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1327 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1557 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1636 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1696 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: operator does not exist: character varying = integer
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 111
+1779 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:55:53 CLT 2011]; root of context hierarchy
+93   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+268  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+353  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+363  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+410  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+424  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:55:53 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1088 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1088 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1355 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1432 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1501 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column REMARCADORES.nombre does not exist
+  Position: 78
+1544 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+1    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:56:37 CLT 2011]; root of context hierarchy
+87   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+301  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+371  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+382  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+430  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+444  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:56:37 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1111 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1112 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1403 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1462 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1495 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column VARIABLES.id_remarcador does not exist
+  Position: 107
+1534 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:57:01 CLT 2011]; root of context hierarchy
+79   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+257  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5
+330  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+340  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+387  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+401  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:57:01 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1070 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1070 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1421 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:57:19 CLT 2011]; root of context hierarchy
+85   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+356  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+429  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+441  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+491  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+506  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 10:57:19 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1118 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1119 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1330 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1419 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1440 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column REMARCADORES.ID does not exist
+  Position: 78
+1488 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:57:34 CLT 2011]; root of context hierarchy
+82   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+318  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+412  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+430  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+479  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+513  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 10:57:34 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1384 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1385 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1756 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:02:17 CLT 2011]; root of context hierarchy
+77   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+243  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+314  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+325  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+373  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+386  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:02:17 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1014 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1014 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1219 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1292 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1312 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "public.VARIABLES" does not exist
+  Position: 18
+1360 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:09:10 CLT 2011]; root of context hierarchy
+76   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+290  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+358  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+368  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+432  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+458  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:09:10 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1190 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1235 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:09:37 CLT 2011]; root of context hierarchy
+75   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+236  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+307  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+318  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+366  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+380  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:09:37 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1287 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1352 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:10:33 CLT 2011]; root of context hierarchy
+74   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+292  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+364  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+374  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+432  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+477  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:10:33 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1310 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1383 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:10:54 CLT 2011]; root of context hierarchy
+78   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+355  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+423  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+441  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+490  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+520  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:10:54 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1310 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1359 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:11:51 CLT 2011]; root of context hierarchy
+89   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+381  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+446  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+457  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+503  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+530  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:11:51 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1415 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1474 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11d0a4f: display name [org.springframework.context.support.ClassPathXmlApplicationContext@11d0a4f]; startup date [Thu Apr 07 16:12:51 CLT 2011]; root of context hierarchy
+79   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+238  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@11d0a4f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+309  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+319  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+366  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+380  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@11d0a4f: display name [org.springframework.context.support.ClassPathXmlApplicationContext@11d0a4f]; startup date [Thu Apr 07 16:12:51 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:13:09 CLT 2011]; root of context hierarchy
+79   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+303  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+372  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+382  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+431  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+446  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:13:09 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:13:17 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+260  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+331  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+342  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+387  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+404  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:13:17 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:14:28 CLT 2011]; root of context hierarchy
+74   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+320  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+387  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+397  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+444  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+473  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:14:28 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:18:26 CLT 2011]; root of context hierarchy
+82   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+278  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+355  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+367  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+453  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+506  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:18:26 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:26:55 CLT 2011]; root of context hierarchy
+77   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+274  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+347  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+378  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+431  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+446  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:26:55 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:27:06 CLT 2011]; root of context hierarchy
+77   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+335  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+402  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+412  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+458  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+479  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:27:06 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:28:00 CLT 2011]; root of context hierarchy
+115  [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+344  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+410  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+420  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+468  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+481  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:28:00 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:29:09 CLT 2011]; root of context hierarchy
+82   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+289  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+358  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+371  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+417  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+443  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:29:09 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:29:44 CLT 2011]; root of context hierarchy
+84   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+266  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+380  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+390  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+436  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+449  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:29:44 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:30:00 CLT 2011]; root of context hierarchy
+74   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+286  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+354  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+370  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+420  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+433  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:30:00 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:32:25 CLT 2011]; root of context hierarchy
+82   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+255  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5
+335  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+353  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@161dfb5: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+402  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+427  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:32:25 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:35:55 CLT 2011]; root of context hierarchy
+78   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+359  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+428  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+439  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+496  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+541  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:35:55 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:36:07 CLT 2011]; root of context hierarchy
+87   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+292  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+363  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+374  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+431  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+452  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 16:36:07 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+3724 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+3724 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+3781 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+3847 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+3872 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: relation "public.VARIABLES" does not exist
+  Position: 18
+3961 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:37:39 CLT 2011]; root of context hierarchy
+83   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+319  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+388  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+405  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+458  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+474  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:37:39 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1019 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1019 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1436 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:39:29 CLT 2011]; root of context hierarchy
+77   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+277  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+344  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+356  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+409  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+423  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:39:29 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1044 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: null
+1044 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: null
+1427 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:39:38 CLT 2011]; root of context hierarchy
+93   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+311  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+378  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+389  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+442  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+457  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:39:38 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1002 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[Ljava.lang.String;@1c391c3, codigosModem=[Ljava.lang.String;@969c29}
+1003 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[Ljava.lang.String;@1c391c3, codigosModem=[Ljava.lang.String;@969c29}
+1380 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:39:52 CLT 2011]; root of context hierarchy
+76   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+374  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+447  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+458  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+513  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+526  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:39:52 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1107 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[Ljava.lang.String;@1a61172, codigosModem=[Ljava.lang.String;@1c391c3}
+1107 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[Ljava.lang.String;@1a61172, codigosModem=[Ljava.lang.String;@1c391c3}
+1478 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:40:32 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+247  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+322  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+333  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+381  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+397  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:40:32 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+938  [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[Ljava.lang.String;@1a61172, codigosModem=[Ljava.lang.String;@1c391c3}
+938  [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[Ljava.lang.String;@1a61172, codigosModem=[Ljava.lang.String;@1c391c3}
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:42:09 CLT 2011]; root of context hierarchy
+83   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+288  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+353  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+363  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+412  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+426  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:42:09 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1015 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[Ljava.lang.String;@1758500, codigosModem=[Ljava.lang.String;@6ed322}
+1016 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[Ljava.lang.String;@1758500, codigosModem=[Ljava.lang.String;@6ed322}
+1263 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1334 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1389 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column VARIABLES.codigo_modem does not exist
+  Position: 171
+1435 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:44:11 CLT 2011]; root of context hierarchy
+79   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+296  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+365  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+376  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+425  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+450  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 16:44:11 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1108 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[Ljava.lang.String;@1758500, codigosModem=[Ljava.lang.String;@6ed322}
+1108 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[Ljava.lang.String;@1758500, codigosModem=[Ljava.lang.String;@6ed322}
+1314 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1371 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1439 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: operator does not exist: integer = character varying
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 207
+1536 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:44:43 CLT 2011]; root of context hierarchy
+131  [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+367  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+432  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+450  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+498  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+543  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:44:43 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1217 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[I@1c391c3, codigosModem=[I@969c29}
+1217 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[I@1c391c3, codigosModem=[I@969c29}
+1526 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:47:53 CLT 2011]; root of context hierarchy
+76   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+300  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+366  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+376  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+422  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+439  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 16:47:53 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1139 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {idsCanal=[107], codigosModem=[640]}
+1139 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {idsCanal=[107], codigosModem=[640]}
+1462 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:01:44 CLT 2011]; root of context hierarchy
+104  [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+308  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+434  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+445  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+491  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+504  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:01:44 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1257 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1257 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1421 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1482 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1502 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: operator does not exist: smallint = character varying
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 217
+1584 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:02:17 CLT 2011]; root of context hierarchy
+75   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+345  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+413  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+424  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+483  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+496  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:02:17 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1267 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1267 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1567 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:02:44 CLT 2011]; root of context hierarchy
+75   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+330  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+398  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+408  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+454  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+468  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:02:44 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1053 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1053 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1228 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1311 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1333 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: operator does not exist: smallint = character varying
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 204
+1404 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:03:24 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+261  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+339  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+350  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+396  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+410  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:03:24 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+960  [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+960  [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1250 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1329 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1367 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: operator does not exist: smallint = character varying
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 205
+1403 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:04:18 CLT 2011]; root of context hierarchy
+75   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+287  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c
+354  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+366  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@136a43c: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+420  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+442  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:04:18 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+964  [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+964  [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1126 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1172 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1194 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: operator does not exist: smallint = character varying
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 217
+1240 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:12:13 CLT 2011]; root of context hierarchy
+86   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+254  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9
+333  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+344  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1aed5f9: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+391  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+404  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:12:13 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1135 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1135 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1563 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:14:44 CLT 2011]; root of context hierarchy
+80   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+306  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@589e56
+378  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+389  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@589e56: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+446  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+459  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@bfc8e0]; startup date [Thu Apr 07 22:14:44 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1145 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1145 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1310 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+1363 [main] INFO  org.springframework.jdbc.support.SQLErrorCodesFactory  - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+1412 [main] WARN  cl.wamtech.remarcador.util.IbatisBaseDao  - No se logro encontrar el mapeo, causa: SqlMapClient operation; bad SQL grammar []; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred while applying a parameter map.  
+--- Check the get.criterio.Variable-InlineParameterMap.  
+--- Check the statement (query failed).  
+--- Cause: org.postgresql.util.PSQLException: ERROR: column CENTROS_COSTOS.ID does not exist
+  Position: 186
+1478 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:15:09 CLT 2011]; root of context hierarchy
+81   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+360  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+431  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+441  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+497  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+527  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1d7ad1c]; startup date [Thu Apr 07 22:15:09 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1245 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1245 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1644 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 22:17:50 CLT 2011]; root of context hierarchy
+76   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+268  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd
+344  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+363  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@16921fd: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+415  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+444  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 22:17:50 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1068 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1068 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1407 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------
+0    [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 22:19:29 CLT 2011]; root of context hierarchy
+78   [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [remarcador-servlet.xml]
+243  [main] INFO  org.springframework.context.support.ClassPathXmlApplicationContext  - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]: org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8
+315  [main] INFO  cl.wamtech.remarcador.util.PropertiesConfigUtils  - Loading properties file from class path resource [config.properties]
+325  [main] INFO  org.springframework.beans.factory.support.DefaultListableBeanFactory  - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@a613f8: defining beans [propertyConfigurer,dataSource,velocityConfig,viewVelocityResolver,multipartResolver,paramResolver,sqlMapClient,sqlMapClientTemplate,remarcadorDao,/main.htm]; root of factory hierarchy
+371  [main] INFO  org.springframework.web.servlet.view.velocity.VelocityConfigurer  - ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+385  [main] INFO  org.springframework.ui.velocity.SpringResourceLoader  - SpringResourceLoader for Velocity: using resource loader [org.springframework.context.support.ClassPathXmlApplicationContext@a61164: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a61164]; startup date [Thu Apr 07 22:19:29 CLT 2011]; root of context hierarchy] and resource loader paths [/WEB-INF/vm-templates/]
+1033 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - Buscando el listado de objetos: Variable con criterios: {}
+1034 [main] INFO  cl.wamtech.remarcador.util.IbatisBaseDao  - criterios filtrados: {}
+1415 [main] INFO  cl.wamtech.remarcador.util.Util  - ----------------------- Init UTIL --------------------

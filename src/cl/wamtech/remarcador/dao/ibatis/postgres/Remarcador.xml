@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="Remarcador">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Remarcador" id="resultMap.Remarcador">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="NOMBRE" property="nombre" />
+		<result column="LOCAL" property="local" />
+		<result column="MARCA_REMARCADOR" property="marcaRemarcador" />
+		<result column="MODELO_REMARCADOR" property="modeloRemarcador" />
+		<result column="MULTIPLICADOR" property="multiplicador" nullValue="-1" />
+		<result column="TABLERO" property="tablero" />
+		<result column="NUMERO_MEDIDOR" property="numeroMedidor" />
+		<result column="NODO" property="nodo" />
+		<result column="OBSERVACION" property="observacion" />
+		<result column="ID_CENTRO_COSTO" property="centroCosto" resultMap="resultMap.CentroCosto"/>
+		<result column="ID_CUENTA" property="cuenta" resultMap="resultMap.Cuenta"/>
+	</resultMap>
+	
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Remarcador" id="resultMap.nodep1.Remarcador">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="NOMBRE" property="nombre" />
+		<result column="LOCAL" property="local" />
+		<result column="MARCA_REMARCADOR" property="marcaRemarcador" />
+		<result column="MODELO_REMARCADOR" property="modeloRemarcador" />
+		<result column="MULTIPLICADOR" property="multiplicador" nullValue="-1" />
+		<result column="TABLERO" property="tablero" />
+		<result column="NUMERO_MEDIDOR" property="numeroMedidor" />
+		<result column="NODO" property="nodo" />
+		<result column="OBSERVACION" property="observacion" />
+		<result column="ID_CENTRO_COSTO" property="centroCosto.id" />
+		<result column="ID_CUENTA" property="cuenta.id" />
+	</resultMap>
+	
+
+	<typeAlias alias="Remarcador" type="cl.wamtech.remarcador.model.Remarcador" />
+
+	<select id="get.Remarcador" parameterClass="int" resultMap="resultMap.Remarcador">
+		SELECT * FROM REMARCADORES
+		WHERE ID = #id#
+	</select>
+
+	<select id="get.equals.Remarcador" parameterClass="java.util.Map" resultMap="resultMap.Remarcador"> 
+		SELECT * FROM REMARCADORES
+		WHERE 
+	</select>
+
+	<select id="get.list.Remarcador" resultMap="resultMap.Remarcador" >
+		SELECT * FROM REMARCADORES
+	</select> 
+  	
+  	<select id="get.count.list.Remarcador" resultClass="int">
+		SELECT count(ID) FROM REMARCADORES
+	</select>
+  	
+	<select id="get.criterio.Remarcador" parameterClass="java.util.Map" resultMap="resultMap.nodep1.Remarcador">
+		SELECT * FROM "public"."REMARCADORES"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."REMARCADORES".ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."REMARCADORES".NOMBRE = #nombre#
+		</isNotEmpty>
+		
+		<isNotEmpty property="local" prepend="AND">
+			"public"."REMARCADORES".LOCAL = #local#
+		</isNotEmpty>
+		
+		<isNotEmpty property="marcaRemarcador" prepend="AND">
+			"public"."REMARCADORES".MARCA_REMARCADOR = #marcaRemarcador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="modeloRemarcador" prepend="AND">
+			"public"."REMARCADORES".MODELO_REMARCADOR = #modeloRemarcador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="multiplicador" prepend="AND">
+			"public"."REMARCADORES".MULTIPLICADOR = #multiplicador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="tablero" prepend="AND">
+			"public"."REMARCADORES".TABLERO = #tablero#
+		</isNotEmpty>
+		
+		<isNotEmpty property="numeroMedidor" prepend="AND">
+			"public"."REMARCADORES".NUMERO_MEDIDOR = #numeroMedidor#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nodo" prepend="AND">
+			"public"."REMARCADORES".NODO = #nodo#
+		</isNotEmpty>
+		
+		<isNotEmpty property="observacion" prepend="AND">
+			"public"."REMARCADORES".OBSERVACION = #observacion#
+		</isNotEmpty>
+		
+		<isNotEqual property="centroCostoId" prepend="AND" compareValue="-1">
+			"public"."REMARCADORES".ID_CENTRO_COSTO = #centroCostoId#
+		</isNotEqual>
+		
+		<isNotEqual property="cuentaId" prepend="AND" compareValue="-1">
+			"public"."REMARCADORES".ID_CUENTA = #cuentaId#
+		</isNotEqual>
+
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.Remarcador" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(ID) FROM "public"."REMARCADORES"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."REMARCADORES".ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."REMARCADORES".NOMBRE = #nombre#
+		</isNotEmpty>
+		
+		<isNotEmpty property="local" prepend="AND">
+			"public"."REMARCADORES".LOCAL = #local#
+		</isNotEmpty>
+		
+		<isNotEmpty property="marcaRemarcador" prepend="AND">
+			"public"."REMARCADORES".MARCA_REMARCADOR = #marcaRemarcador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="modeloRemarcador" prepend="AND">
+			"public"."REMARCADORES".MODELO_REMARCADOR = #modeloRemarcador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="multiplicador" prepend="AND">
+			"public"."REMARCADORES".MULTIPLICADOR = #multiplicador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="tablero" prepend="AND">
+			"public"."REMARCADORES".TABLERO = #tablero#
+		</isNotEmpty>
+		
+		<isNotEmpty property="numeroMedidor" prepend="AND">
+			"public"."REMARCADORES".NUMERO_MEDIDOR = #numeroMedidor#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nodo" prepend="AND">
+			"public"."REMARCADORES".NODO = #nodo#
+		</isNotEmpty>
+		
+		<isNotEmpty property="observacion" prepend="AND">
+			"public"."REMARCADORES".OBSERVACION = #observacion#
+		</isNotEmpty>
+		
+		<isNotEmpty property="centroCostoId" prepend="AND">
+			"public"."REMARCADORES".ID_CENTRO_COSTO = #centroCostoId#
+		</isNotEmpty>
+		
+		<isNotEmpty property="cuentaId" prepend="AND">
+			"public"."REMARCADORES".ID_CUENTA = #cuentaId#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.Remarcador" parameterClass="Remarcador" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.Remarcador" parameterClass="Remarcador">
+		
+		<selectKey resultClass="int" keyProperty="id" type="post">
+			SELECT LAST_INSERT_ID() AS id
+		</selectKey>
+		
+		INSERT INTO "public"."REMARCADORES" (NOMBRE ,LOCAL ,MARCA_REMARCADOR ,MODELO_REMARCADOR ,MULTIPLICADOR ,TABLERO ,NUMERO_MEDIDOR ,NODO ,OBSERVACION ,ID_CENTRO_COSTO ,ID_CUENTA )
+		VALUES(#nombre# ,#local# ,#marcaRemarcador# ,#modeloRemarcador# ,#multiplicador# ,#tablero# ,#numeroMedidor# ,#nodo# ,#observacion# ,#centroCosto.id# ,#cuenta.id# )
+
+	</insert>
+   
+	<update id="update.Remarcador" parameterClass="Remarcador">
+
+		UPDATE "public"."REMARCADORES"
+		
+		<dynamic prepend="SET">
+		
+			<isNotEmpty property="nombre" prepend=",">
+				"public"."REMARCADORES"."NOMBRE" = #nombre#
+			</isNotEmpty>
+		
+			<isNotEmpty property="local" prepend=",">
+				"public"."REMARCADORES"."LOCAL" = #local#
+			</isNotEmpty>
+		
+			<isNotEmpty property="marcaRemarcador" prepend=",">
+				"public"."REMARCADORES"."MARCA_REMARCADOR" = #marcaRemarcador#
+			</isNotEmpty>
+		
+			<isNotEmpty property="modeloRemarcador" prepend=",">
+				"public"."REMARCADORES"."MODELO_REMARCADOR" = #modeloRemarcador#
+			</isNotEmpty>
+		
+			<isNotEqual property="multiplicador" compareValue="-1" prepend=",">
+				"public"."REMARCADORES"."MULTIPLICADOR" = #multiplicador#
+			</isNotEqual>
+		
+			<isNotEmpty property="tablero" prepend=",">
+				"public"."REMARCADORES"."TABLERO" = #tablero#
+			</isNotEmpty>
+		
+			<isNotEmpty property="numeroMedidor" prepend=",">
+				"public"."REMARCADORES"."NUMERO_MEDIDOR" = #numeroMedidor#
+			</isNotEmpty>
+		
+			<isNotEmpty property="nodo" prepend=",">
+				"public"."REMARCADORES"."NODO" = #nodo#
+			</isNotEmpty>
+		
+			<isNotEmpty property="observacion" prepend=",">
+				"public"."REMARCADORES"."OBSERVACION" = #observacion#
+			</isNotEmpty>
+		
+			<isNotEmpty property="centroCosto.id" prepend=",">
+				"public"."REMARCADORES"."ID_CENTRO_COSTO" = #centroCosto.id#
+			</isNotEmpty>
+		
+			<isNotEmpty property="cuenta.id" prepend=",">
+				"public"."REMARCADORES"."ID_CUENTA" = #cuenta.id#
+			</isNotEmpty>
+		
+		
+		</dynamic>
+		
+		WHERE "public"."REMARCADORES"."ID" = #id#
+	</update>
+   
+	<delete id="delete.Remarcador" parameterClass="Remarcador">
+		DELETE FROM "public"."REMARCADORES"
+		WHERE ID = #id#
+	</delete>
+    
+</sqlMap>

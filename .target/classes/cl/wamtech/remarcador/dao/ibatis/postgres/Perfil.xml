@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="Perfil">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Perfil" id="resultMap.Perfil">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="NOMBRE" property="nombre" />
+		<result column="DESCRIPCION" property="descripcion" />
+		<result column="CODIGO" property="codigo" />
+	</resultMap>
+	
+
+
+
+	<typeAlias alias="Perfil" type="cl.wamtech.remarcador.model.Perfil" />
+
+	<select id="get.Perfil" parameterClass="int" resultMap="resultMap.Perfil">
+		SELECT * FROM "public"."PERFILES"
+		WHERE ID = #id#
+	</select>
+
+	<select id="get.equals.Perfil" parameterClass="java.util.Map" resultMap="resultMap.Perfil"> 
+		SELECT * FROM "public"."PERFILES"
+		WHERE 
+	</select>
+
+	<select id="get.list.Perfil" resultMap="resultMap.Perfil" >
+		SELECT * FROM "public"."PERFILES"
+	</select> 
+  	
+  	<select id="get.count.list.Perfil" resultClass="int">
+		SELECT count(ID) FROM "public"."PERFILES"
+	</select>
+  	
+	<select id="get.criterio.Perfil" parameterClass="java.util.Map" resultMap="resultMap.Perfil">
+		SELECT * FROM "public"."PERFILES"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."PERFILES".ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."PERFILES".NOMBRE = #nombre#
+		</isNotEmpty>
+		
+		<isNotEmpty property="descripcion" prepend="AND">
+			"public"."PERFILES".DESCRIPCION = #descripcion#
+		</isNotEmpty>
+		
+		<isNotEmpty property="codigo" prepend="AND">
+			"public"."PERFILES".CODIGO = #codigo#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.Perfil" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(ID) FROM "public"."PERFILES"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."PERFILES".ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."PERFILES".NOMBRE = #nombre#
+		</isNotEmpty>
+		
+		<isNotEmpty property="descripcion" prepend="AND">
+			"public"."PERFILES".DESCRIPCION = #descripcion#
+		</isNotEmpty>
+		
+		<isNotEmpty property="codigo" prepend="AND">
+			"public"."PERFILES".CODIGO = #codigo#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.Perfil" parameterClass="Perfil" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.Perfil" parameterClass="Perfil">
+		
+		<selectKey resultClass="int" keyProperty="id" type="post">
+			SELECT LAST_INSERT_ID() AS id
+		</selectKey>
+		
+		INSERT INTO "public"."PERFILES" (NOMBRE ,DESCRIPCION ,CODIGO )
+		VALUES(#nombre# ,#descripcion# ,#codigo# )
+
+	</insert>
+   
+	<update id="update.Perfil" parameterClass="Perfil">
+
+		UPDATE "public"."PERFILES"
+		
+		<dynamic prepend="SET">
+		
+			<isNotEmpty property="nombre" prepend=",">
+				NOMBRE = #nombre#
+			</isNotEmpty>
+		
+			<isNotEmpty property="descripcion" prepend=",">
+				DESCRIPCION = #descripcion#
+			</isNotEmpty>
+		
+			<isNotEmpty property="codigo" prepend=",">
+				CODIGO = #codigo#
+			</isNotEmpty>
+		
+		
+		</dynamic>
+		
+		WHERE ID = #id#
+	</update>
+   
+	<delete id="delete.Perfil" parameterClass="Perfil">
+		DELETE FROM "public"."PERFILES"
+		WHERE ID = #id#
+	</delete>
+    
+</sqlMap>

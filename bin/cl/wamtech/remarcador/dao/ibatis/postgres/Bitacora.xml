@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="Bitacora">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Bitacora" id="resultMap.Bitacora">
+	</resultMap>
+	
+
+
+
+	<typeAlias alias="Bitacora" type="cl.wamtech.remarcador.model.Bitacora" />
+
+	<select id="get.Bitacora" parameterClass="int" resultMap="resultMap.Bitacora">
+		SELECT * FROM BITACORAS
+		WHERE 
+	</select>
+
+	<select id="get.equals.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.Bitacora"> 
+		SELECT * FROM BITACORAS
+		WHERE 
+	</select>
+
+	<select id="get.list.Bitacora" resultMap="resultMap.Bitacora" >
+		SELECT * FROM BITACORAS
+	</select> 
+  	
+  	<select id="get.count.list.Bitacora" resultClass="int">
+		SELECT count(null) FROM BITACORAS
+	</select>
+  	
+	<select id="get.criterio.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.Bitacora">
+		SELECT * FROM BITACORAS
+		
+		<dynamic prepend="WHERE">
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.Bitacora" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(null) FROM BITACORAS
+		
+		<dynamic prepend="WHERE">
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.Bitacora" parameterClass="Bitacora" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.Bitacora" parameterClass="Bitacora">
+		
+
+		
+		INSERT INTO BITACORAS )
+		VALUES)
+
+	</insert>
+   
+	<update id="update.Bitacora" parameterClass="Bitacora">
+
+		UPDATE BITACORAS
+		
+		<dynamic prepend="SET">
+		
+		
+		</dynamic>
+		
+		WHERE 
+	</update>
+   
+	<delete id="delete.Bitacora" parameterClass="Bitacora">
+		DELETE FROM BITACORAS
+		WHERE 
+	</delete>
+    
+</sqlMap>

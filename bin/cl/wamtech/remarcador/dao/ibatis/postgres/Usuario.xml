@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="Usuario">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Usuario" id="resultMap.Usuario">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="USUARIO" property="usuario" />
+		<result column="PASSWORD" property="password" />
+		<result column="NOMBRE" property="nombre" />
+		<result column="APELLIDO_PATERNO" property="apellidoPaterno" />
+		<result column="APELLIDO_MATERNO" property="apellidoMaterno" />
+		<result column="EMAIL" property="email" />
+		<result column="ID_PERFIL" property="perfil" resultMap="resultMap.Perfil"/>
+	</resultMap>
+	
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Usuario" id="resultMap.nodep1.Usuario">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="USUARIO" property="usuario" />
+		<result column="PASSWORD" property="password" />
+		<result column="NOMBRE" property="nombre" />
+		<result column="APELLIDO_PATERNO" property="apellidoPaterno" />
+		<result column="APELLIDO_MATERNO" property="apellidoMaterno" />
+		<result column="EMAIL" property="email" />
+		<result column="ID_PERFIL" property="perfil.id" />
+	</resultMap>
+	
+
+	<typeAlias alias="Usuario" type="cl.wamtech.remarcador.model.Usuario" />
+
+	<select id="get.Usuario" parameterClass="int" resultMap="resultMap.Usuario">
+		SELECT * FROM USUARIOS
+		WHERE ID = #id#
+	</select>
+
+	<select id="get.equals.Usuario" parameterClass="java.util.Map" resultMap="resultMap.Usuario"> 
+		SELECT * FROM USUARIOS
+		WHERE 
+	</select>
+
+	<select id="get.list.Usuario" resultMap="resultMap.Usuario" >
+		SELECT * FROM USUARIOS
+	</select> 
+  	
+  	<select id="get.count.list.Usuario" resultClass="int">
+		SELECT count(ID) FROM USUARIOS
+	</select>
+  	
+	<select id="get.criterio.Usuario" parameterClass="java.util.Map" resultMap="resultMap.nodep1.Usuario">
+		SELECT * FROM USUARIOS
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			USUARIOS.ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="usuario" prepend="AND">
+			USUARIOS.USUARIO = #usuario#
+		</isNotEmpty>
+		
+		<isNotEmpty property="password" prepend="AND">
+			USUARIOS.PASSWORD = #password#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			USUARIOS.NOMBRE = #nombre#
+		</isNotEmpty>
+		
+		<isNotEmpty property="apellidoPaterno" prepend="AND">
+			USUARIOS.APELLIDO_PATERNO = #apellidoPaterno#
+		</isNotEmpty>
+		
+		<isNotEmpty property="apellidoMaterno" prepend="AND">
+			USUARIOS.APELLIDO_MATERNO = #apellidoMaterno#
+		</isNotEmpty>
+		
+		<isNotEmpty property="email" prepend="AND">
+			USUARIOS.EMAIL = #email#
+		</isNotEmpty>
+		
+		<isNotEmpty property="perfilId" prepend="AND">
+			USUARIOS.ID_PERFIL = #perfilId#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.Usuario" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(ID) FROM USUARIOS
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			USUARIOS.ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="usuario" prepend="AND">
+			USUARIOS.USUARIO = #usuario#
+		</isNotEmpty>
+		
+		<isNotEmpty property="password" prepend="AND">
+			USUARIOS.PASSWORD = #password#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			USUARIOS.NOMBRE = #nombre#
+		</isNotEmpty>
+		
+		<isNotEmpty property="apellidoPaterno" prepend="AND">
+			USUARIOS.APELLIDO_PATERNO = #apellidoPaterno#
+		</isNotEmpty>
+		
+		<isNotEmpty property="apellidoMaterno" prepend="AND">
+			USUARIOS.APELLIDO_MATERNO = #apellidoMaterno#
+		</isNotEmpty>
+		
+		<isNotEmpty property="email" prepend="AND">
+			USUARIOS.EMAIL = #email#
+		</isNotEmpty>
+		
+		<isNotEmpty property="perfilId" prepend="AND">
+			USUARIOS.ID_PERFIL = #perfilId#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.Usuario" parameterClass="Usuario" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.Usuario" parameterClass="Usuario">
+		
+		<selectKey resultClass="int" keyProperty="id" type="post">
+			SELECT LAST_INSERT_ID() AS id
+		</selectKey>
+		
+		INSERT INTO USUARIOS (USUARIO ,PASSWORD ,NOMBRE ,APELLIDO_PATERNO ,APELLIDO_MATERNO ,EMAIL ,ID_PERFIL )
+		VALUES(#usuario# ,#password# ,#nombre# ,#apellidoPaterno# ,#apellidoMaterno# ,#email# ,#perfil.id# )
+
+	</insert>
+   
+	<update id="update.Usuario" parameterClass="Usuario">
+
+		UPDATE USUARIOS
+		
+		<dynamic prepend="SET">
+		
+			<isNotEmpty property="usuario" prepend=",">
+				USUARIO = #usuario#
+			</isNotEmpty>
+		
+			<isNotEmpty property="password" prepend=",">
+				PASSWORD = #password#
+			</isNotEmpty>
+		
+			<isNotEmpty property="nombre" prepend=",">
+				NOMBRE = #nombre#
+			</isNotEmpty>
+		
+			<isNotEmpty property="apellidoPaterno" prepend=",">
+				APELLIDO_PATERNO = #apellidoPaterno#
+			</isNotEmpty>
+		
+			<isNotEmpty property="apellidoMaterno" prepend=",">
+				APELLIDO_MATERNO = #apellidoMaterno#
+			</isNotEmpty>
+		
+			<isNotEmpty property="email" prepend=",">
+				EMAIL = #email#
+			</isNotEmpty>
+		
+			<isNotEmpty property="perfil.id" prepend=",">
+				ID_PERFIL = #perfil.id#
+			</isNotEmpty>
+		
+		
+		</dynamic>
+		
+		WHERE ID = #id#
+	</update>
+   
+	<delete id="delete.Usuario" parameterClass="Usuario">
+		DELETE FROM USUARIOS
+		WHERE ID = #id#
+	</delete>
+	
+	<select id="get.usuario.login" parameterClass="java.util.Map" resultMap="resultMap.Usuario">
+		SELECT * FROM "public"."USUARIOS"
+		INNER JOIN "public"."PERFILES" ON ("public"."PERFILES"."ID" = "public"."USUARIOS"."ID_PERFIL")
+		WHERE "public"."USUARIOS"."USUARIO" = #usuario# AND "public"."USUARIOS"."PASSWORD" = #password#
+	</select>
+    
+</sqlMap>

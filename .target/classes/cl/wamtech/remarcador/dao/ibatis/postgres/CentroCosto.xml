@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="CentroCosto">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.CentroCosto" id="resultMap.CentroCosto">
+		<result column="ID_CENTRO_COSTO" property="id" nullValue="-1" />
+		<result column="NOMBRE_CENTRO_COSTO" property="nombre" />
+	</resultMap>
+	
+
+
+
+	<typeAlias alias="CentroCosto" type="cl.wamtech.remarcador.model.CentroCosto" />
+
+	<select id="get.CentroCosto" parameterClass="int" resultMap="resultMap.CentroCosto">
+		SELECT * FROM "public"."CENTROS_COSTOS"
+		WHERE ID_CENTRO_COSTO = #id#
+	</select>
+
+	<select id="get.equals.CentroCosto" parameterClass="java.util.Map" resultMap="resultMap.CentroCosto"> 
+		SELECT * FROM "public"."CENTROS_COSTOS"
+		WHERE 
+	</select>
+
+	<select id="get.list.CentroCosto" resultMap="resultMap.CentroCosto" >
+		SELECT * FROM "public"."CENTROS_COSTOS"
+	</select> 
+  	
+  	<select id="get.count.list.CentroCosto" resultClass="int">
+		SELECT count(ID_CENTRO_COSTO) FROM "public"."CENTROS_COSTOS"
+	</select>
+  	
+	<select id="get.criterio.CentroCosto" parameterClass="java.util.Map" resultMap="resultMap.CentroCosto">
+		SELECT * FROM "public"."CENTROS_COSTOS"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."CENTROS_COSTOS".ID_CENTRO_COSTO = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."CENTROS_COSTOS".NOMBRE_CENTRO_COSTO = #nombre#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.CentroCosto" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(ID_CENTRO_COSTO) FROM "public"."CENTROS_COSTOS"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."CENTROS_COSTOS".ID_CENTRO_COSTO = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="nombre" prepend="AND">
+			"public"."CENTROS_COSTOS".NOMBRE_CENTRO_COSTO = #nombre#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.CentroCosto" parameterClass="CentroCosto" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.CentroCosto" parameterClass="CentroCosto">
+		
+		<selectKey resultClass="int" keyProperty="id" type="post">
+			SELECT LAST_INSERT_ID() AS id
+		</selectKey>
+		
+		INSERT INTO "public"."CENTROS_COSTOS" (NOMBRE_CENTRO_COSTO )
+		VALUES(#nombre# )
+
+	</insert>
+   
+	<update id="update.CentroCosto" parameterClass="CentroCosto">
+
+		UPDATE "public"."CENTROS_COSTOS"
+		
+		<dynamic prepend="SET">
+		
+			<isNotEmpty property="nombre" prepend=",">
+				NOMBRE_CENTRO_COSTO = #nombre#
+			</isNotEmpty>
+		
+		
+		</dynamic>
+		
+		WHERE ID_CENTRO_COSTO = #id#
+	</update>
+   
+	<delete id="delete.CentroCosto" parameterClass="CentroCosto">
+		DELETE FROM "public"."CENTROS_COSTOS"
+		WHERE ID_CENTRO_COSTO = #id#
+	</delete>
+    
+</sqlMap>

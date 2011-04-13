@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<properties resource="config.properties" />
+
+	<settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="32" maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+ 
+  	<!-- Configure a built-in transaction manager.  If you're using an app server, you probably want to use its transaction manager and a managed datasource -->
+
+  	<transactionManager type="JDBC" commitRequired="false">
+		 <dataSource type="JNDI">
+		 	<property name="DataSource1" value="${datasource_jndi_WamManagerDS}" />
+			<property name="DataSource2" value="${datasource_jndi_CencosudPulsosDS}" />
+		 </dataSource>
+	</transactionManager>
+	
+	<!--
+	<transactionManager type="JDBC" commitRequired="false">
+		 <dataSource type="SIMPLE">
+		   <property name="JDBC.Driver" value="${driver}"/>
+		   <property name="JDBC.ConnectionURL" value="${url_CencosudPulsos}"/>
+		   <property name="JDBC.Username" value="${username}"/>
+		   <property name="JDBC.Password" value="${password}"/>
+		 </dataSource>
+	</transactionManager>
+	-->
+	
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/BigInt.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Perfil.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Remarcador.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Usuario.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Variable.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/CentroCosto.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Cuenta.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/OtrosQuerys.xml"/>
+</sqlMapConfig>

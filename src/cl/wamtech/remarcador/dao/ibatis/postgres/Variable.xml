@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="Variable">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Variable" id="resultMap.Variable">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="CODIGO_MODEM" property="codigoModem" nullValue="-1" />
+		<result column="ID_CANAL" property="idCanal" nullValue="-1" />
+		<result column="ID_REMARCADOR" property="remarcador" resultMap="resultMap.Remarcador"/>
+	</resultMap>
+	
+
+
+	<resultMap class="cl.wamtech.remarcador.model.Variable" id="resultMap.nodep1.Variable">
+		<result column="ID" property="id" nullValue="-1" />
+		<result column="CODIGO_MODEM" property="codigoModem" nullValue="-1" />
+		<result column="ID_CANAL" property="idCanal" nullValue="-1" />
+		<result column="ID_REMARCADOR" property="remarcador.id" />
+	</resultMap>
+	
+
+	<typeAlias alias="Variable" type="cl.wamtech.remarcador.model.Variable" />
+
+	<select id="get.Variable" parameterClass="int" resultMap="resultMap.Variable">
+		SELECT * FROM "public"."VARIABLES"
+		WHERE ID = #id#
+	</select>
+
+	<select id="get.equals.Variable" parameterClass="java.util.Map" resultMap="resultMap.Variable"> 
+		SELECT * FROM "public"."VARIABLES"
+		WHERE 
+	</select>
+
+	<select id="get.list.Variable" resultMap="resultMap.Variable" >
+		SELECT * FROM "public"."VARIABLES"
+	</select> 
+  	
+  	<select id="get.count.list.Variable" resultClass="int">
+		SELECT count(ID) FROM "public"."VARIABLES"
+	</select>
+  	
+	<select id="get.criterio.Variable" parameterClass="java.util.Map" resultMap="resultMap.Variable">
+		SELECT * FROM "public"."VARIABLES"
+		LEFT JOIN "public"."REMARCADORES" ON("public"."REMARCADORES"."ID" = public."VARIABLES"."ID_REMARCADOR")
+		LEFT JOIN "public"."CENTROS_COSTOS" ON("public"."CENTROS_COSTOS"."ID_CENTRO_COSTO" = public."REMARCADORES"."ID_CENTRO_COSTO")
+		LEFT JOIN "public"."CUENTAS" ON("public"."CUENTAS"."ID_CUENTA" = public."REMARCADORES"."ID_CUENTA")
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."VARIABLES"."ID" = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="codigosModem" prepend="AND">
+			"public"."VARIABLES"."CODIGO_MODEM" IN <iterate property="codigosModem" open="(" close=")" conjunction=",">#codigosModem[]#</iterate>
+		</isNotEmpty>
+		
+		<isNotEmpty property="idsCanal" prepend="AND">
+			"public"."VARIABLES"."ID_CANAL" IN <iterate property="idsCanal" open="(" close=")" conjunction=",">#idsCanal[]#</iterate>
+		</isNotEmpty>
+		
+		<isNotEmpty property="remarcadorId" prepend="AND">
+			"public"."VARIABLES"."ID_REMARCADOR" = #remarcadorId#
+		</isNotEmpty>
+		
+		<isNotEqual property="centroCostoId" prepend="AND" compareValue="-1">
+			"public"."REMARCADORES"."ID_CENTRO_COSTO" = #centroCostoId#
+		</isNotEqual>
+		
+		<isNotEqual property="cuentaId" prepend="AND" compareValue="-1">
+			"public"."REMARCADORES"."ID_CUENTA" = #cuentaId#
+		</isNotEqual>
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.Variable" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(ID) FROM "public"."VARIABLES"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			"public"."VARIABLES".ID = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="codigoModem" prepend="AND">
+			"public"."VARIABLES".CODIGO_MODEM = #codigoModem#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idCanal" prepend="AND">
+			"public"."VARIABLES".ID_CANAL = #idCanal#
+		</isNotEmpty>
+		
+		<isNotEmpty property="remarcadorId" prepend="AND">
+			"public"."VARIABLES".ID_REMARCADOR = #remarcadorId#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.Variable" parameterClass="Variable" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.Variable" parameterClass="Variable">
+		
+		<selectKey resultClass="int" keyProperty="id" type="post">
+			SELECT LAST_INSERT_ID() AS id
+		</selectKey>
+		
+		INSERT INTO "public"."VARIABLES" (CODIGO_MODEM ,ID_CANAL ,ID_REMARCADOR )
+		VALUES(#codigoModem# ,#idCanal# ,#remarcador.id# )
+
+	</insert>
+   
+	<update id="update.Variable" parameterClass="Variable">
+
+		UPDATE "public"."VARIABLES"
+		
+		<dynamic prepend="SET">
+		
+			<isNotEqual property="codigoModem" compareValue="-1" prepend=",">
+				CODIGO_MODEM = #codigoModem#
+			</isNotEqual>
+		
+			<isNotEqual property="idCanal" compareValue="-1" prepend=",">
+				ID_CANAL = #idCanal#
+			</isNotEqual>
+		
+			<isNotEmpty property="remarcador.id" prepend=",">
+				ID_REMARCADOR = #remarcador.id#
+			</isNotEmpty>
+		
+		
+		</dynamic>
+		
+		WHERE ID = #id#
+	</update>
+   
+	<delete id="delete.Variable" parameterClass="Variable">
+		DELETE FROM "public"."VARIABLES"
+		WHERE ID = #id#
+	</delete>
+    
+</sqlMap>

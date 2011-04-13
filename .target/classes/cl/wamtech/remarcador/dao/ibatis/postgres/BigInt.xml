@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="BigInt">
+
+	<resultMap class="cl.wamtech.remarcador.model.BigInt" id="resultMap.BigInt">
+		<result column="codigo_modem" property="codigoModem" nullValue="-1" />
+		<result column="id_canal" property="idCanal" nullValue="-1" />
+		<result column="fecha_ts" property="fechaRegistro" nullValue="-1" />
+		<result column="dato_bigint" property="dato" nullValue="-1" />
+		<result column="fecha_ts_serv" property="fechaRegistroServer" nullValue="-1" />
+	</resultMap>
+
+	<typeAlias alias="BigInt" type="cl.wamtech.remarcador.model.BigInt" />
+
+	<select id="get.BigInt" parameterClass="int" resultMap="resultMap.BigInt">
+		SELECT * FROM "public"."t_bigint"
+	</select>
+
+	<select id="get.equals.BigInt" parameterClass="java.util.Map" resultMap="resultMap.BigInt"> 
+		SELECT * FROM "public"."t_bigint" WHERE 
+	</select>
+
+	<select id="get.list.BigInt" resultMap="resultMap.BigInt" >
+		SELECT * FROM "public"."t_bigint"
+	</select> 
+  	
+  	<select id="get.count.list.BigInt" resultClass="int">
+		SELECT count(null) FROM "public"."t_bigint"
+	</select>
+  	
+	<select id="get.criterio.BigInt" parameterClass="java.util.Map" resultMap="resultMap.BigInt">
+		SELECT * FROM "public"."t_bigint"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="codigoModem" prepend="AND">
+			"public"."t_bigint".codigo_modem = #codigoModem#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idCanal" prepend="AND">
+			"public"."t_bigint".id_canal = #idCanal#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaRegistro" prepend="AND">
+			"public"."t_bigint".fecha_ts = #fechaRegistro#
+		</isNotEmpty>
+		
+		<isNotEmpty property="dato" prepend="AND">
+			"public"."t_bigint".dato_bigint = #dato#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaRegistroServer" prepend="AND">
+			"public"."t_bigint".fecha_ts_serv = #fechaRegistroServer#
+		</isNotEmpty>
+		
+		</dynamic>
+	</select>
+	
+	<select id="get.count.criterio.BigInt" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(null) FROM "public"."t_bigint"
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="codigoModem" prepend="AND">
+			"public"."t_bigint".codigo_modem = #codigoModem#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idCanal" prepend="AND">
+			"public"."t_bigint".id_canal = #idCanal#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaRegistro" prepend="AND">
+			"public"."t_bigint".fecha_ts = #fechaRegistro#
+		</isNotEmpty>
+		
+		<isNotEmpty property="dato" prepend="AND">
+			"public"."t_bigint".dato_bigint = #dato#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaRegistroServer" prepend="AND">
+			"public"."t_bigint".fecha_ts_serv = #fechaRegistroServer#
+		</isNotEmpty>
+		
+		</dynamic>
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.BigInt" parameterClass="BigInt" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.BigInt" parameterClass="BigInt">
+		INSERT INTO "public"."t_bigint" (codigo_modem ,id_canal ,fecha_ts ,dato_bigint ,fecha_ts_serv )
+		VALUES(#codigoModem# ,#idCanal# ,#fechaRegistro# ,#dato# ,#fechaRegistroServer# )
+	</insert>
+   
+	<update id="update.BigInt" parameterClass="BigInt">
+		UPDATE "public"."t_bigint"
+		
+		<dynamic prepend="SET">
+		
+			<isNotEqual property="codigoModem" compareValue="-1" prepend=",">
+				codigo_modem = #codigoModem#
+			</isNotEqual>
+		
+			<isNotEqual property="idCanal" compareValue="-1" prepend=",">
+				id_canal = #idCanal#
+			</isNotEqual>
+		
+			<isNotEqual property="fechaRegistro" compareValue="-1" prepend=",">
+				fecha_ts = #fechaRegistro#
+			</isNotEqual>
+		
+			<isNotEqual property="dato" compareValue="-1" prepend=",">
+				dato_bigint = #dato#
+			</isNotEqual>
+		
+			<isNotEqual property="fechaRegistroServer" compareValue="-1" prepend=",">
+				fecha_ts_serv = #fechaRegistroServer#
+			</isNotEqual>
+
+		</dynamic>
+		
+		WHERE 
+	</update>
+   
+	<delete id="delete.BigInt" parameterClass="BigInt">
+		DELETE FROM "public"."t_bigint" WHERE
+	</delete>
+	
+
+	
+</sqlMap>

@@ -1,0 +1,10 @@
+body {
+	font-size: 65.5%;
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+}
+
+#div-contenedor-principal {
+	width: 978px;
+	margin-left: auto;
+	margin-right: auto;
+}
