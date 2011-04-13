@@ -17,7 +17,8 @@
 		<script type="text/javascript" src="js/utils/utils-date.js"></script>
 	</head>
 	<body>
-		<input type="hidden" id="hdn-fecha-inicial">
+	<div class="wrapper-bottom">
+	<input type="hidden" id="hdn-fecha-inicial">
 		<input type="hidden" id="hdn-fecha-final">
 		<input type="hidden" id="hdn-perfil-usuario" value="$usuario.perfil.codigo">
         <div id="modal-editar-remarcador" title="Editar remarcador"></div>	
@@ -26,16 +27,16 @@
 			<div id="div-contenedor-fitro">
 				<h2>Buscar</h2>
 				<table cellpadding="0" cellspacing="0" border="0" width="100%">
-					<col width="105">
-					<col width="200">
-					<col width="105">
-					<col width="200">
+					<col width="76">
+					<col width="240">
+					<col width="76">
+					<col width="240">
 					<tr>
 						<td>
 							Fecha lectura inicial:
                         </td>
 						<td>
-							<input type="text" id="txt-fecha-inicial" readonly>
+							<input type="text" id="txt-fecha-inicial" readonly style="width:60px;margin-right:4px;">
 							<select id="cmb-horas-lectura-inicial">
 								<option value="-1">hrs</option>
 								#foreach($hora in $horas)
@@ -53,7 +54,7 @@
 							Fecha lectura final:
                         </td>
 						<td>
-							<input type="text" id="txt-fecha-final" readonly>
+							<input type="text" id="txt-fecha-final" readonly style="width:60px;margin-right:4px;">
 							<select id="cmb-horas-lectura-final">
 								<option value="-1">hrs</option>
 								#foreach($hora in $horas)
@@ -69,11 +70,9 @@
                         </td>
                     </tr>
 					<tr>
-						<td>
-							Centro de costo:
-                        </td>
-						<td>
-							<select id="cmb-centro-costo">
+						<td colspan="2">
+							<label>Centro de costo:</label>
+							<select id="cmb-centro-costo" style="width:180px;margin-right:5px">
 								<option value="-1">Seleccione</option>
 								#foreach($centroCosto in $centrosCostos)
 									<option value="$centroCosto.id">$centroCosto.nombre</option>
@@ -81,10 +80,9 @@
 							</select>
                         </td>
 						<td>
-							Cuenta:
+							<label>Cuenta:</label>
                         </td>
-						<td>
-							<select id="cmb-cuenta">
+							<select id="cmb-cuenta" style="width:180px;margin-right:5px">
 								<option value="-1">Seleccione</option>
 								#foreach($cuenta in $cuentas)
 									<option value="$cuenta.id">$cuenta.nombre</option>
@@ -104,6 +102,8 @@
             	<div id="div-opciones-pagina"></div>
             </div>
 		</div>
+	</div>
+		
     </body>
 </html>
 <script type="text/javascript" src="js/remarcador/remarcador.js"></script>

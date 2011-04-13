@@ -5,11 +5,18 @@ body {
 	background:url(../images/bg-wamtech.jpg) repeat-x 0 0 #92c4eb;
 }
 
+
+.wrapper-bottom{
+	padding-bottom:250px;
+	background:url(../images/wamtech-bottom.png) no-repeat 0 bottom;
+}
+
 #div-contenedor-principal {
 	width: 970px;
 	margin-left: auto;
 	margin-right: auto;
 	padding:20px;
+	padding-top:136px;
 	background:url(../images/top-wamtech.jpg) no-repeat 0 0;
 }
 
@@ -30,30 +37,32 @@ body {
 	border-bottom:1px solid #ddd
 }
 
-#div-contenedor-fitro table td.actions{
+#div-contenedor-fitro input{
+	border:1px solid #666;
+}
+
+#div-contenedor-fitro table tr.actions td{
 	padding:14px 4px;
 	border-bottom:none;
 }
 
-#div-contenedor-fitro table td.actions input{
+#div-contenedor-fitro table tr.actions td button{
 	background:url(../images/bg-buttons.png) repeat-x 0 top;
 	border:none;
 	cursor:pointer;
-	padding:7px 32px;
+	padding:5px 8px;
 	color:#fff;
-	font-size:14px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	border-radius: 4px;
- *font-size:14px;
- *font-weight:bold;
- width:160px;
- *text-align:center;
+		border-radius: 4px;
+	 font-size:13px;
+	 font-weight:bold;
+	 width:90px;
+ text-align:center;
 	text-shadow:1px 1px 0px #4d2000;
-	border:1px solid #ce9870;
 }
 
-#div-contenedor-fitro table td.actions input:hover {
+#div-contenedor-fitro table tr.actions td button:hover {
 	background-position:0 bottom;
 }
 
