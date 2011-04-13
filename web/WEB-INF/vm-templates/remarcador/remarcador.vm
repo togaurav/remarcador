@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -24,7 +24,12 @@
         <ul id="modal-lista-errores" title="Lista de errores"></ul>	
 		<div id="div-contenedor-principal">	
 			<div id="div-contenedor-fitro">
-				<table>
+				<h2>Buscar</h2>
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+					<col width="105">
+					<col width="200">
+					<col width="105">
+					<col width="200">
 					<tr>
 						<td>
 							Fecha lectura inicial:
@@ -44,8 +49,6 @@
 								#end	
 							</select>
                         </td>
-					</tr>
-					<tr>
 						<td>
 							Fecha lectura final:
                         </td>
@@ -77,8 +80,6 @@
 								#end	
 							</select>
                         </td>
-                    </tr>
-					<tr>
 						<td>
 							Cuenta:
                         </td>
@@ -91,16 +92,14 @@
 							</select>	
                         </td>
                     </tr>
-					<tr>
-						<td>
-                        </td>
-						<td>
+					<tr class="actions">
+						<td colspan="4">
 							<button id="btn-buscar-remarcador">Buscar</button>
                         </td>
                     </tr>
 				</table>
 			</div>
-            <div>
+            <div id="div-contenedor-grid">
             	<table id="tbl-remarcador"></table>
             	<div id="div-opciones-pagina"></div>
             </div>
