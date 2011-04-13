@@ -9,7 +9,10 @@
  */
 (function ($) {
 	$(document).ready(function () {
-		function timestampToDate(cellvalue, options, rowObject) {
+		/**
+		 * 
+		 */
+		function timestampToStringDate(cellvalue, options, rowObject) {
 			var date = new Date((parseInt(cellvalue) * 1000) + (14400000));
 		    var _mes = date.getMonth()+1;
 		    var _dia = date.getDate();
@@ -19,6 +22,9 @@
 		    return _dia+"/"+_mes+"/"+_anio + " - " + _horas + ":" + _minutos;
 		} 
 
+		/**
+		 * 
+		 */
 		function editarFila(cellvalue, options, rowObject) {
 			return '<div align="center"><img src="images/editar.jpeg" id="editar-'+rowObject.id+'"></div>';
 		}
@@ -56,9 +62,9 @@
 		tabla.jqGrid({
 			datatype: "local",
 		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'Nº medidor', 
-		   	           'C&aacute;lculo medici&oacute;n', 'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n'],
+		   	           'C&aacute;lculo medici&oacute;n (kWh)', 'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n'],
 		   	colModel: [
-		   		{name: 'id', index: 'id', hidden: noEsEditable, formatter: editarFila, width: 50},
+		   		{name: 'id', index: 'id', hidden: noEsEditable, formatter: editarFila, width: 50, sortable: false},
 		   		{name: 'nombre', index: 'nombre', width: 100},
 		   		{name: 'local', index: 'local', width: 100},
 		   		{name: 'tablero', index: 'tablero', width: 100},
@@ -74,6 +80,7 @@
 		    height: '100%',
 		    subGrid: true,
 		    viewrecords: true,
+		    afterInsertRow: function(rowid, rowdata, rowelem) {editarRemarcador(rowid);},
 		    subGridRowExpanded: function(subgrid_id, row_id) {
 				var subgrid_table_id, pager_id;
 				subgrid_table_id = subgrid_id + "_t";
@@ -91,11 +98,11 @@
 						datatype: "local",
 						colNames: ['Fecha de medici&oacute;n', 'Dato'],
 						colModel: [
-							{name: "fecha_ts", index: "fecha_ts", formatter: timestampToDate},
+							{name: "fecha_ts", index: "fecha_ts", formatter: timestampToStringDate},
 							{name: "dato_bigint", index: "dato_bigint"}
 						],
 						height: 'auto',
-						rowNum: 5,
+						rowNum: 20,
 					   	pager: pager_id,
 					    caption: "Detalle",
 					    viewrecords: true,
@@ -105,6 +112,9 @@
 			}
 		});
 
+		/**
+		 * 
+		 */
 		$('#btn-buscar-remarcador').click(function(event) {
 //			objeto.fechaLecturaInicial = params.fechaInicial + ' - ' + params.horaFechaInicial + ':' + params.minutosFechaInicial;
 //			objeto.fechaLecturaFinal = params.fechaFinal + ' - ' + params.horaFechaFinal + ':' + params.minutosFechaFinal;
@@ -141,7 +151,6 @@
 					buttons: {
 						Cerrar: function() {
 							$(this).dialog("close");
-							modalListaErrores.empty();//TODO
 						}
 					}
 				});
@@ -164,6 +173,7 @@
 					$(json.resultado).each(function(indice, elemento) {
 						var multiplicador = elemento.remarcador.multiplicador;
 						var calculoMedicion = (elemento.remarcadorFinal.dato_bigint * multiplicador) - (elemento.remarcadorIncial.dato_bigint * multiplicador);
+						calculoMedicion = calculoMedicion.toString().indexOf('.') > -1 ? new Number(calculoMedicion).toFixed(2) : calculoMedicion;
 						var objeto = {};
 						objeto.id = elemento.remarcador.id;
 						objeto.nombre = elemento.remarcador.nombre;
@@ -174,66 +184,84 @@
 						objeto.centroCosto = elemento.remarcador.centroCosto.nombre;
 						objeto.cuenta = elemento.remarcador.cuenta.nombre;
 						objeto.nodo = elemento.remarcador.nodo;
+						objeto.observacion = elemento.remarcador.observacion;
 						tabla.addRowData(objeto.id, objeto);
-						$('#editar-'+objeto.id).click(function() {
-							var elemento = tabla.jqGrid('getRowData', objeto.id);
-							var modalEditar = $('#modal-editar-remarcador');
-							modalEditar.dialog({
-								modal: true,
-								width: 450,
-								buttons: {
-									Editar: function() {
-										var nombre = $('#txt-nombre');
-										var local = $('#txt-local');
-										var tablero = $('#txt-tablero');
-										var numeroMedidor = $('#txt-numero-medidor');
-										var centroCosto = $('#cmb-editar-centro-costo');
-										var cuenta = $('#cmb-editar-cuenta');
-										var nodo = $('#txt-nodo');
-										var observacion = $('#txt-observacion');
-										var params = {
-												id: objeto.id,
-												nombre: nombre.val(),
-												local: local.val(),
-												tablero: tablero.val(),
-												numeroMedidor: numeroMedidor.val(),
-												centroCosto: centroCosto.val(),
-												cuenta: cuenta.val(),
-												nodo: nodo.val(),
-												observacion: observacion.val()
-										};
-										$.ajaxMsgPostJSON('Editando remarcador...', 'main.htm?perform=editarRemarcador', {remarcador: JSON.stringify(params)}, function(json) {});
-									},
-									Cerrar: function() {
-										$(this).dialog("close");
-										modalEditar.empty();//TODO
-									}
-								},
-								open: function(event, ui) {
-									modalEditar.html(
-										'<table>' +
-										'<tr><td>Nombre:</td><td><input class="disabled" type="text" id="txt-nombre" value="'+elemento.nombre+'"></td></tr>'+
-										'<tr><td>Local:</td><td><input class="disabled" type="text" id="txt-local" value="'+elemento.local+'"></td></tr>'+
-										'<tr><td>Tablero:</td><td><input class="disabled" type="text" id="txt-tablero" value="'+elemento.tablero+'"></td></tr>'+
-										'<tr><td>Nº medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
-										'<tr><td>Centro costo:</td><td><select class="disabled" id="cmb-editar-centro-costo">'+$('#cmb-centro-costo').html()+'</select></td></tr>'+
-										'<tr><td>Cuenta:</td><td><select class="disabled" id="cmb-editar-cuenta">'+$('#cmb-cuenta').html()+'</select></td></tr>'+
-										'<tr><td>Nodo:</td><td><input type="text" id="txt-nodo" value="'+elemento.nodo+'"></td></tr>'+
-										'<tr><td>Observaci&oacute;n:</td><td><input class="disabled" type="text" id="txt-observacion" value="'+elemento.observacion+'"></td></tr>'+
-										'</table>'
-									);
-									$('#cmb-editar-centro-costo option:contains("'+elemento.centroCosto+'")').attr('selected', true);
-									$('#cmb-editar-cuenta option:contains("'+elemento.cuenta+'")').attr('selected', true);
-									if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_1')
-										$(".disabled#cmb-editar-centro-costo").attr('disabled', true);
-									else if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_2')
-										$(".disabled").attr('disabled', true);
-								}
-							});
-						});
 					});
 				});
 			}
 		});
+		
+		/**
+		 * 
+		 */
+		var editarRemarcador = function(id) {
+			$('#editar-'+id).click(function() {
+				var elemento = tabla.jqGrid('getRowData', id);
+				var modalEditar = $('#modal-editar-remarcador');
+				modalEditar.dialog({
+					modal: true,
+					width: 450,
+					buttons: {
+						Editar: function() {
+							var nombre = $('#txt-nombre');
+							var local = $('#txt-local');
+							var tablero = $('#txt-tablero');
+							var numeroMedidor = $('#txt-numero-medidor');
+							var centroCosto = $('#cmb-editar-centro-costo');
+							var cuenta = $('#cmb-editar-cuenta');
+							var nodo = $('#txt-nodo');
+							var observacion = $('#txt-observacion');
+							var params = {
+									id: id,
+									nombre: nombre.val(),
+									local: local.val(),
+									tablero: tablero.val(),
+									numeroMedidor: numeroMedidor.val(),
+									nodo: nodo.val(),
+									observacion: observacion.val()
+							};
+							$.ajaxMsgPostJSON('Editando remarcador...', 'main.htm?perform=editarRemarcador', 
+									{remarcador: JSON.stringify(params), idCentroCosto: centroCosto.val(), idCuenta: cuenta.val()}, 
+									function(json) {
+										tabla
+										.setCell (params.id, 2, params.nombre)
+										.setCell (params.id, 3, params.local)
+										.setCell (params.id, 4, params.tablero)
+										.setCell (params.id, 5, params.numeroMedidor)
+										.setCell (params.id, 7, $("#cmb-editar-centro-costo option:selected").text())
+										.setCell (params.id, 8, $("#cmb-editar-cuenta option:selected").text())
+										.setCell (params.id, 9, params.nodo)
+										.setCell (params.id, 10, params.observacion);
+									});
+						},
+						Cerrar: function() {
+							$(this).dialog("close");
+						}
+					},
+					open: function(event, ui) {
+						modalEditar.html(
+							'<table>' +
+							'<tr><td>Nombre:</td><td><input class="disabled" type="text" id="txt-nombre" value="'+elemento.nombre+'"></td></tr>'+
+							'<tr><td>Local:</td><td><input class="disabled" type="text" id="txt-local" value="'+elemento.local+'"></td></tr>'+
+							'<tr><td>Tablero:</td><td><input class="disabled" type="text" id="txt-tablero" value="'+elemento.tablero+'"></td></tr>'+
+							'<tr><td>Nº medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
+							'<tr><td>Centro costo:</td><td><select class="disabled" id="cmb-editar-centro-costo">'+$('#cmb-centro-costo').html()+'</select></td></tr>'+
+							'<tr><td>Cuenta:</td><td><select class="disabled" id="cmb-editar-cuenta">'+$('#cmb-cuenta').html()+'</select></td></tr>'+
+							'<tr><td>Nodo:</td><td><input type="text" id="txt-nodo" value="'+elemento.nodo+'"></td></tr>'+
+							'<tr><td>Observaci&oacute;n:</td><td><input class="disabled" type="text" id="txt-observacion" value="'+elemento.observacion+'"></td></tr>'+
+							'</table>'
+						);
+						$('#cmb-editar-centro-costo option:contains("Seleccione")').remove();
+						$('#cmb-editar-cuenta option:contains("Seleccione")').remove()
+						$('#cmb-editar-centro-costo option:contains("'+elemento.centroCosto+'")').attr('selected', true);
+						$('#cmb-editar-cuenta option:contains("'+elemento.cuenta+'")').attr('selected', true);						
+						if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_1')
+							$(".disabled#cmb-editar-centro-costo").attr('disabled', true);
+						else if(perfil.val() == 'ADMINISTRADOR_CENCOSUD_2')
+							$(".disabled").attr('disabled', true);
+					}
+				});
+			});
+		}
 	});
 })(jQuery);
