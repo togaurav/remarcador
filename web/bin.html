@@ -1,0 +1,33 @@
+<html>
+<body>
+<form id="formXls" method="post">	
+</form>
+<script type='text/javascript'>
+	
+	if (window.opener && window.opener.getParametrosRequestBin) {
+		
+		var parametros = window.opener.getParametrosRequestBin();
+		var action = parametros.action;
+		var params = parametros.params;
+
+		var form = document.getElementById("formXls");
+
+		form.action = action;
+		
+		if (params) {
+
+			var html = "";
+			
+			for(var name in params){
+				var value = params[name];
+				html += "<input type='hidden' name='" + name + "' value='" + value + "'/>";
+			}
+			form.innerHTML = html;
+		}
+
+		form.submit();
+	}
+	
+</script>
+</body>
+</html>		

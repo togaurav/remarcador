@@ -2,21 +2,12 @@ body {
 	font-size: 12px;
 	font-family: Arial, sans-serif;
 	margin:0;
-	background:url(../images/bg-wamtech.jpg) repeat-x 0 0 #92c4eb;
-}
-
-
-.wrapper-bottom{
-	padding-bottom:250px;
-	background:url(../images/wamtech-bottom.png) no-repeat 0 bottom;
 }
 
 #div-contenedor-principal {
 	width: 970px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top:136px;
-	background:url(../images/top-wamtech.jpg) no-repeat 0 0;
 }
 
 #div-contenedor-fitro {
@@ -67,4 +58,8 @@ body {
 
 #div-contenedor-grid{
 	padding:10px 0;
+}
+
+#tbl-login {
+	background-image: url("../images/bg_login.png") ;
 }

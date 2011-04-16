@@ -12,10 +12,37 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
+	<!-- 
+	<filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>
+            org.springframework.web.filter.DelegatingFilterProxy
+        </filter-class>
+    </filter>
+    
+    
+    <filter>
+        <filter-name>secure-user</filter-name>
+        <filter-class>
+            cl.wamtech.remarcador.web.filter.AccessFilter
+        </filter-class>
+    </filter>
+
+	<filter-mapping>
+		<filter-name>secure-user</filter-name>
+		<url-pattern>/main.htm</url-pattern>
+	</filter-mapping>
+	-->
   		
 	<servlet-mapping>
 		<servlet-name>remarcador</servlet-name>
 	    <url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>remarcador</servlet-name>
+	    <url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

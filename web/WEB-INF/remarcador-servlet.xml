@@ -78,8 +78,10 @@
 			<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate"/>
 		</bean>
 
-  		<bean name="/main.htm" class="cl.wamtech.remarcador.web.controller.RemarcadorController">
+  		<bean id ="remarcadorController" name="/main.htm" class="cl.wamtech.remarcador.web.controller.RemarcadorController">
   			<property name="methodNameResolver" ref="paramResolver"/>
   			<property name="remarcadorDao" ref="remarcadorDao"/>
   		</bean>
+  		
+  		<bean name="/main.do" parent="remarcadorController" />
 </beans>
