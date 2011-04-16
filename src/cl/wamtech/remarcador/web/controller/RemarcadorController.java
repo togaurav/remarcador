@@ -1,5 +1,6 @@
 package cl.wamtech.remarcador.web.controller;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
@@ -101,10 +102,13 @@ public class RemarcadorController extends MultiActionController {
      * @param response
      * @throws Exception
      */
-    public void validarLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView validarLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
         log.info("Validar login...");
         String user = ServletRequestUtils.getRequiredStringParameter(request, "usuario");
         String pass = ServletRequestUtils.getRequiredStringParameter(request, "password");
+        
+        JSONObject resultado = new JSONObject();
+        resultado.put("ok", false);
         
         Map<String, Object> criterios = new HashMap<String, Object>();
         criterios.put("usuario", user);
@@ -116,10 +120,10 @@ public class RemarcadorController extends MultiActionController {
         if(usuario != null) {
         	HttpSession session = request.getSession(true);
     		session.getServletContext().setAttribute("usuario", usuario);
-    		response.sendRedirect("main.htm?perform=remarcador");
-        } else {
-        	response.sendRedirect("no-tiene-acceso.html");
+    		resultado.put("ok", true);
         }
+        
+        return this.renderJson(resultado);
     }
     
     /**
@@ -284,5 +288,41 @@ public class RemarcadorController extends MultiActionController {
         this.getRemarcadorDao().creaActualiza(remarcador);
         
         return this.renderJson(new JSONObject().put("ok", "ok"));
+    }
+    
+    /**
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+    public ModelAndView remarcadoresCSV(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    	response.setContentType("application/csv");
+    	response.setHeader("content-disposition","attachment; fileName=remarcadores.csv");
+    	String data = Util.decodeString(ServletRequestUtils.getStringParameter(request, "data"), "UTF-8");
+    	PrintWriter out = response.getWriter();
+    	out.println(data);
+    	out.flush();
+    	out.close();
+		return this.renderJson(new JSONObject());
+    }
+    
+    /**
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+    public ModelAndView detalleRemarcadorCSV(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    	response.setContentType("application/csv");
+    	response.setHeader("content-disposition","attachment; fileName=detalle-remarcador.csv");
+    	String data = Util.decodeString(ServletRequestUtils.getStringParameter(request, "data"), "UTF-8");
+    	PrintWriter out = response.getWriter();
+    	out.println(data);
+    	out.flush();
+    	out.close();
+		return this.renderJson(new JSONObject());
     }
 }

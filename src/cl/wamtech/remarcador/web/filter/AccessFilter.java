@@ -18,11 +18,13 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
+
+import cl.wamtech.remarcador.model.Usuario;
 
 
 
@@ -32,15 +34,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
  */
 public class AccessFilter implements Filter {
 
-	// class log
 	protected static final Log LOG = LogFactory.getLog(AccessFilter.class);
-	
-	// servicios del scai
-	//private SCAIWrapper scai = new SCAIWrapper(new ServiciosAccesoWebCacheImpl());
-	
-	// servicios del scai
-//	private SCAIWrapper scai;
-
 
 	/**
 	 * 
@@ -55,42 +49,26 @@ public class AccessFilter implements Filter {
 	public void destroy() {
 		// blanco a proposito
 	}
-	
-	
 
 	/* (non-Javadoc)
 	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
-	public void doFilter(ServletRequest req, ServletResponse resp,
-			FilterChain fc) throws IOException, ServletException {
-		LOG.info("seteando las variables de seguridad en la session");
-		
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain fc) throws IOException, ServletException {		
 		HttpServletRequest httpReq = (HttpServletRequest) req;
+		HttpSession session = httpReq.getSession(true);
+		Usuario usuario = (Usuario) session.getServletContext().getAttribute("usuario");
 		
-//		boolean poseePerfiles = scai.isAdministrador(httpReq);/
-//		
-//		LOG.info("tiene perfiles: " + poseePerfiles);
-//		if (!poseePerfiles) {
-//			LOG.info("se esta intentando acceder a la aplicacion sin permisos previos...");
-//			LOG.info("redireccionando hacia pagina de no-acceso...");
-//			// redireccionar para pagina de mensaje
-//			((HttpServletResponse) resp).sendRedirect("no-tiene-acceso.html");
-//		} else {
-//			LOG.info("Esta tratando de ejecutar la URI: " + httpReq.getRequestURI());
-//			// tomamos la session
-//			HttpSession session = httpReq.getSession(true);
-//			//session.setAttribute(Constantes.PERFIL_USUARIO, new Boolean(scai.isUsuario(httpReq)));
-//			// seguimso la cadena
-//			fc.doFilter(req, resp);
-//		}
+		if(usuario == null) {
+			((HttpServletResponse) resp).sendRedirect("no-tiene-acceso.html");
+		} else {
+			fc.doFilter(req, resp);
+		}
 	}
 
 	/* (non-Javadoc)
 	 * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
 	 */
 	public void init(FilterConfig fc) throws ServletException {
-		ApplicationContext wacc = WebApplicationContextUtils.getRequiredWebApplicationContext(fc.getServletContext());
-//		scai = (SCAIWrapper) wacc.getBean("scaiWrapper");
 	}
 
 }
