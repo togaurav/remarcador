@@ -19,23 +19,7 @@
 	    <bean id="dataSourceCencosudPulsos" class="org.springframework.jndi.JndiObjectFactoryBean">
 	    	<property name="jndiName"><value>${datasource_jndi_CencosudPulsosDS}</value></property>
 	    </bean>
-	     
-	     <!-- 
-	     <bean id="dataSourceWamManager" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
-	    	<property name="driverClassName"><value>${driver}</value></property>
-			<property name="url"><value>${url_WamManager}</value></property>
-			<property name="username"><value>${username}</value></property>
-			<property name="password"><value>${password}</value></property>
-	    </bean>
 	    
-	    <bean id="dataSourceCencosudPulsos" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
-	    	<property name="driverClassName"><value>${driver}</value></property>
-			<property name="url"><value>${url_CencosudPulsos}</value></property>
-			<property name="username"><value>${username}</value></property>
-			<property name="password"><value>${password}</value></property>
-	    </bean>
-	    -->
-	     
 	    <bean id="dataSource" class="cl.wamtech.remarcador.util.CustomerRoutingDataSource">
 		   <property name="targetDataSources">
 		      <map key-type="cl.wamtech.remarcador.util.CustomerType">
@@ -82,6 +66,4 @@
   			<property name="methodNameResolver" ref="paramResolver"/>
   			<property name="remarcadorDao" ref="remarcadorDao"/>
   		</bean>
-  		
-  		<bean name="/main.do" parent="remarcadorController" />
 </beans>

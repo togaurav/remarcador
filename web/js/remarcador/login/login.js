@@ -1,5 +1,5 @@
 /*
- * remarcador.js
+ * login.js
  *
  * Script for index page
  * http://continuum.cl/

@@ -12,19 +12,6 @@
 		/**
 		 * 
 		 */
-		function timestampToStringDate(cellvalue, options, rowObject) {
-			var date = new Date((parseInt(cellvalue) * 1000) + (14400000));
-		    var _mes = date.getMonth()+1;
-		    var _dia = date.getDate();
-		    var _anio = date.getFullYear();
-		    var _horas = date.getHours().toString() == "0" ? "00" : date.getHours().toString();;
-		    var _minutos = date.getMinutes().toString() == "0" ? "00" : date.getMinutes().toString();
-		    return _dia+"/"+_mes+"/"+_anio + " - " + _horas + ":" + _minutos;
-		} 
-
-		/**
-		 * 
-		 */
 		function editarFila(cellvalue, options, rowObject) {
 			return '<div align="center"><img src="images/editar.jpeg" id="editar-'+rowObject.id+'"></div>';
 		}
@@ -39,6 +26,9 @@
 		var divErroresResultadoBusqueda = $('#div-errores-resultado-buesqueda');
 		var remarcadores = [];
 
+		/**
+		 * 
+		 */
 		$("#txt-fecha-inicial").datepicker({
 			changeYear: true,
 			changeMonth: true,
@@ -55,6 +45,9 @@
 			}
 		});
 		
+		/**
+		 * 
+		 */
 		$("#txt-fecha-final").datepicker({
 			changeYear: true,
 			changeMonth: true,
@@ -63,9 +56,12 @@
 			buttonImageOnly: true
 		});
 
+		/**
+		 * 
+		 */
 		tabla.jqGrid({
 			datatype: "local",
-		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'Nº medidor', 
+		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'NÂº medidor', 
 		   	           'C&aacute;lculo medici&oacute;n (kWh)', 'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n'],
 		   	colModel: [
 		   		{name: 'id', index: 'id', hidden: noEsEditable, formatter: editarFila, width: 50, sortable: false},
@@ -116,7 +112,7 @@
 					.navButtonAdd('#'+pager_id, {
 						caption: 'Exportar CSV',
 						onClickButton: function() {
-							var titulos = 'Nº, Fecha medición, Dato\r\n';
+							var titulos = 'NÂº, Fecha mediciÃ³n, Dato\r\n';
 							var detalleRemarcador = [];
 							$(json.resultado).each(function(indice, elemento) {
 								var objeto = {};
@@ -129,7 +125,7 @@
 							var conf = {action: 'main.htm', params: {perform: 'detalleRemarcadorCSV', data: data}};
 							requestBinDoc(conf);
 						}
-					})
+					});
 				});
 			}
 		});
@@ -187,10 +183,8 @@
 						idCentroCosto: centroCosto.val(),
 						idCuenta: cuenta.val()
 				};
-				
 				infoFechaLecturaInicial = params.fechaInicial + ' - ' + params.horaFechaInicial + ':' + params.minutosFechaInicial;
 				infoFechaLecturaFinal = params.fechaFinal + ' - ' + params.horaFechaFinal + ':' + params.minutosFechaFinal;
-				
 				divInfoResultadoBusqueda.html('<div>Fecha lectura inicial: <b>'+infoFechaLecturaInicial+'</b></div><div>Fecha lectura Final: <b>'+infoFechaLecturaFinal+'</b></div>');
 				$.ajaxMsgPostJSON('Cargando...', 'main.htm', params, function(json) {
 					hdnFechaInicial.val(json.timeInMillisFechaInicial);
@@ -277,7 +271,7 @@
 							'<tr><td>Nombre:</td><td><input class="disabled" type="text" id="txt-nombre" value="'+elemento.nombre+'"></td></tr>'+
 							'<tr><td>Local:</td><td><input class="disabled" type="text" id="txt-local" value="'+elemento.local+'"></td></tr>'+
 							'<tr><td>Tablero:</td><td><input class="disabled" type="text" id="txt-tablero" value="'+elemento.tablero+'"></td></tr>'+
-							'<tr><td>Nº medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
+							'<tr><td>NÂº medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
 							'<tr><td>Centro costo:</td><td><select class="disabled" id="cmb-editar-centro-costo">'+$('#cmb-centro-costo').html()+'</select></td></tr>'+
 							'<tr><td>Cuenta:</td><td><select class="disabled" id="cmb-editar-cuenta">'+$('#cmb-cuenta').html()+'</select></td></tr>'+
 							'<tr><td>Nodo:</td><td><input type="text" id="txt-nodo" value="'+elemento.nodo+'"></td></tr>'+
@@ -314,49 +308,10 @@
 				}).html('No existen registros a exportar. Debe realizar una b&uacute;squeda de remarcadores.');
 				return false;
 			}
-			var titulos = 'Nº, Nombre, Local, Tablero, Nº medidor, Cálculo medición (kWh), Centro de costo, Cuenta, Nodo, Observación\r\n';
+			var titulos = 'NÂº, Nombre, Local, Tablero, NÂº medidor, CÃ¡lculo mediciÃ³n (kWh), Centro de costo, Cuenta, Nodo, ObservaciÃ³n\r\n';
 			var data = Base64.encode(DownloadJSON2CSV(remarcadores, titulos));
 			var conf = {action: 'main.htm', params: {perform: 'remarcadoresCSV', data: data}};
 			requestBinDoc(conf);
 		});
-		
-		/**
-		 * 
-		 */
-		function DownloadJSON2XLS(objArray) {
-			var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-			var str = "<table>";
-			for(var i = 0; i < array.length; i++) {
-				var line = '<tr>';
-				for(var index in array[i]) {
-					line += '<td>' + array[i][index] + '</td>';
-				}
-				line.slice(0,line.Length-1);
-				str += line + '</tr>';
-			}
-			str += "</table>";
-			return str;
-		}
-		
-		/**
-		 * 
-		 */
-		function DownloadJSON2CSV(objArray, titulos) {
-		    var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-		    var str = titulos;
-		    for(var i = 0; i < array.length; i++) {
-		        var line = "";
-		    	for(var index in array[i]) {
-		    		var dato = array[i][index];
-		    		if(dato != undefined && dato != "")
-		    			line += array[i][index] + ", ";
-		    		else
-		    			line += "Sin dato, ";
-		        }
-		        line.slice(0, line.Length-1); 
-		        str += line + "\r\n";
-			}
-		    return str;
-		}
 	});
 })(jQuery);
