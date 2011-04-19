@@ -23,8 +23,10 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import cl.wamtech.remarcador.dao.RemarcadorDao;
+import cl.wamtech.remarcador.model.Bitacora;
 import cl.wamtech.remarcador.model.CentroCosto;
 import cl.wamtech.remarcador.model.Cuenta;
+import cl.wamtech.remarcador.model.LogAcceso;
 import cl.wamtech.remarcador.model.Remarcador;
 import cl.wamtech.remarcador.model.Usuario;
 import cl.wamtech.remarcador.model.Variable;
@@ -138,8 +140,10 @@ public class RemarcadorController extends MultiActionController {
         log.info("Remarcador...");
         HttpSession session = request.getSession(true);
 		Usuario usuario = (Usuario)session.getServletContext().getAttribute("usuario");
-		
         CustomerContextHolder.clearCustomerType();
+        LogAcceso logAcceso = new LogAcceso();
+        logAcceso.setUsuario(usuario);
+        this.remarcadorDao.creaActualiza(logAcceso);
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("centrosCostos", this.getRemarcadorDao().getCriterioObject(CentroCosto.class, null));
         model.put("cuentas", this.getRemarcadorDao().getCriterioObject(Cuenta.class, null));
@@ -254,8 +258,8 @@ public class RemarcadorController extends MultiActionController {
         Map<String, Object> variable = (Map<String, Object>) this.getRemarcadorDao().getObject(RemarcadorDao.VARIABLE_POR_REMARCADOR, criterios, false);
         
         criterios = new HashMap<String, Object>();
-        criterios.put("codigoModem", variable.get("CODIGO_MODEM"));
-        criterios.put("idCanal", variable.get("ID_CANAL"));
+        criterios.put("codigoModem", variable.get("codigo_modem"));
+        criterios.put("idCanal", variable.get("id_canal"));
         criterios.put("fechaInicial", ServletRequestUtils.getRequiredIntParameter(request, "fechaInicial"));
         criterios.put("fechaFinal", ServletRequestUtils.getRequiredIntParameter(request, "fechaFinal"));
        

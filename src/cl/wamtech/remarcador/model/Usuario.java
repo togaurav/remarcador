@@ -7,32 +7,32 @@ import cl.wamtech.remarcador.util.IPersistente;
 
 /**
  * @author jorge
- * @sqlmap_table USUARIOS
+ * @sqlmap_table usuarios
  */
 public class Usuario implements IPersistente {
 	
-	/*@sqlmap_column_primary_key ID*/
+	/*@sqlmap_column_primary_key id*/
 	private int id = -1;
 	
-	/*@sqlmap_column USUARIO*/
+	/*@sqlmap_column usuario*/
 	private String usuario;
 	
-	/*@sqlmap_column PASSWORD*/
-	private String password;
+	/*@sqlmap_column clave*/
+	private String clave;
 	
-	/*@sqlmap_column NOMBRE*/
+	/*@sqlmap_column nombre*/
 	private String nombre;
 	
-	/*@sqlmap_column APELLIDO_PATERNO*/
+	/*@sqlmap_column apellido_paterno*/
 	private String apellidoPaterno;
 	
-	/*@sqlmap_column APELLIDO_MATERNO*/
+	/*@sqlmap_column apellido_materno*/
 	private String apellidoMaterno;
 	
-	/*@sqlmap_column EMAIL*/
+	/*@sqlmap_column email*/
 	private String email;
 	
-	/*@sqlmap_column ID_PERFIL*/
+	/*@sqlmap_column id_perfil*/
 	private Perfil perfil;
 
 	/**
@@ -54,13 +54,6 @@ public class Usuario implements IPersistente {
 	 */
 	public String getUsuario() {
 		return usuario;
-	}
-
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
 	}
 
 	/**
@@ -113,13 +106,6 @@ public class Usuario implements IPersistente {
 	}
 
 	/**
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	/**
 	 * @param nombre the nombre to set
 	 */
 	public void setNombre(String nombre) {
@@ -152,5 +138,19 @@ public class Usuario implements IPersistente {
 	 */
 	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
+	}
+
+	/**
+	 * @return the clave
+	 */
+	public String getClave() {
+		return clave;
+	}
+
+	/**
+	 * @param clave the clave to set
+	 */
+	public void setClave(String clave) {
+		this.clave = clave;
 	}
 }

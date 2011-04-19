@@ -9,85 +9,85 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Usuario" id="resultMap.Usuario">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="USUARIO" property="usuario" />
-		<result column="PASSWORD" property="password" />
-		<result column="NOMBRE" property="nombre" />
-		<result column="APELLIDO_PATERNO" property="apellidoPaterno" />
-		<result column="APELLIDO_MATERNO" property="apellidoMaterno" />
-		<result column="EMAIL" property="email" />
-		<result column="ID_PERFIL" property="perfil" resultMap="resultMap.Perfil"/>
+		<result column="id" property="id" nullValue="-1" />
+		<result column="usuario" property="usuario" />
+		<result column="clave" property="clave" />
+		<result column="nombre" property="nombre" />
+		<result column="apellido_paterno" property="apellidoPaterno" />
+		<result column="apellido_materno" property="apellidoMaterno" />
+		<result column="email" property="email" />
+		<result column="id_perfil" property="perfil" resultMap="resultMap.Perfil"/>
 	</resultMap>
 	
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Usuario" id="resultMap.nodep1.Usuario">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="USUARIO" property="usuario" />
-		<result column="PASSWORD" property="password" />
-		<result column="NOMBRE" property="nombre" />
-		<result column="APELLIDO_PATERNO" property="apellidoPaterno" />
-		<result column="APELLIDO_MATERNO" property="apellidoMaterno" />
-		<result column="EMAIL" property="email" />
-		<result column="ID_PERFIL" property="perfil.id" />
+		<result column="id" property="id" nullValue="-1" />
+		<result column="usuario" property="usuario" />
+		<result column="clave" property="clave" />
+		<result column="nombre" property="nombre" />
+		<result column="apellido_paterno" property="apellidoPaterno" />
+		<result column="apellido_materno" property="apellidoMaterno" />
+		<result column="email" property="email" />
+		<result column="id_perfil" property="perfil.id" />
 	</resultMap>
 	
 
 	<typeAlias alias="Usuario" type="cl.wamtech.remarcador.model.Usuario" />
 
 	<select id="get.Usuario" parameterClass="int" resultMap="resultMap.Usuario">
-		SELECT * FROM USUARIOS
-		WHERE ID = #id#
+		SELECT * FROM usuarios
+		WHERE id = #id#
 	</select>
 
 	<select id="get.equals.Usuario" parameterClass="java.util.Map" resultMap="resultMap.Usuario"> 
-		SELECT * FROM USUARIOS
+		SELECT * FROM usuarios
 		WHERE 
 	</select>
 
 	<select id="get.list.Usuario" resultMap="resultMap.Usuario" >
-		SELECT * FROM USUARIOS
+		SELECT * FROM usuarios
 	</select> 
   	
   	<select id="get.count.list.Usuario" resultClass="int">
-		SELECT count(ID) FROM USUARIOS
+		SELECT count(id) FROM usuarios
 	</select>
   	
 	<select id="get.criterio.Usuario" parameterClass="java.util.Map" resultMap="resultMap.nodep1.Usuario">
-		SELECT * FROM USUARIOS
+		SELECT * FROM usuarios
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			USUARIOS.ID = #id#
+			usuarios.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="usuario" prepend="AND">
-			USUARIOS.USUARIO = #usuario#
+			usuarios.usuario = #usuario#
 		</isNotEmpty>
 		
-		<isNotEmpty property="password" prepend="AND">
-			USUARIOS.PASSWORD = #password#
+		<isNotEmpty property="clave" prepend="AND">
+			usuarios.clave = #clave#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			USUARIOS.NOMBRE = #nombre#
+			usuarios.nombre = #nombre#
 		</isNotEmpty>
 		
 		<isNotEmpty property="apellidoPaterno" prepend="AND">
-			USUARIOS.APELLIDO_PATERNO = #apellidoPaterno#
+			usuarios.apellido_paterno = #apellidoPaterno#
 		</isNotEmpty>
 		
 		<isNotEmpty property="apellidoMaterno" prepend="AND">
-			USUARIOS.APELLIDO_MATERNO = #apellidoMaterno#
+			usuarios.apellido_materno = #apellidoMaterno#
 		</isNotEmpty>
 		
 		<isNotEmpty property="email" prepend="AND">
-			USUARIOS.EMAIL = #email#
+			usuarios.email = #email#
 		</isNotEmpty>
 		
 		<isNotEmpty property="perfilId" prepend="AND">
-			USUARIOS.ID_PERFIL = #perfilId#
+			usuarios.id_perfil = #perfilId#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -95,40 +95,40 @@
 	</select>
 	
 	<select id="get.count.criterio.Usuario" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(ID) FROM USUARIOS
+		SELECT count(id) FROM usuarios
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			USUARIOS.ID = #id#
+			usuarios.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="usuario" prepend="AND">
-			USUARIOS.USUARIO = #usuario#
+			usuarios.usuario = #usuario#
 		</isNotEmpty>
 		
-		<isNotEmpty property="password" prepend="AND">
-			USUARIOS.PASSWORD = #password#
+		<isNotEmpty property="clave" prepend="AND">
+			usuarios.clave = #clave#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			USUARIOS.NOMBRE = #nombre#
+			usuarios.nombre = #nombre#
 		</isNotEmpty>
 		
 		<isNotEmpty property="apellidoPaterno" prepend="AND">
-			USUARIOS.APELLIDO_PATERNO = #apellidoPaterno#
+			usuarios.apellido_paterno = #apellidoPaterno#
 		</isNotEmpty>
 		
 		<isNotEmpty property="apellidoMaterno" prepend="AND">
-			USUARIOS.APELLIDO_MATERNO = #apellidoMaterno#
+			usuarios.apellido_materno = #apellidoMaterno#
 		</isNotEmpty>
 		
 		<isNotEmpty property="email" prepend="AND">
-			USUARIOS.EMAIL = #email#
+			usuarios.email = #email#
 		</isNotEmpty>
 		
 		<isNotEmpty property="perfilId" prepend="AND">
-			USUARIOS.ID_PERFIL = #perfilId#
+			usuarios.id_perfil = #perfilId#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -147,60 +147,54 @@
 			SELECT LAST_INSERT_ID() AS id
 		</selectKey>
 		
-		INSERT INTO USUARIOS (USUARIO ,PASSWORD ,NOMBRE ,APELLIDO_PATERNO ,APELLIDO_MATERNO ,EMAIL ,ID_PERFIL )
-		VALUES(#usuario# ,#password# ,#nombre# ,#apellidoPaterno# ,#apellidoMaterno# ,#email# ,#perfil.id# )
+		INSERT INTO usuarios (usuario ,clave ,nombre ,apellido_paterno ,apellido_materno ,email ,id_perfil )
+		VALUES(#usuario# ,#clave# ,#nombre# ,#apellidoPaterno# ,#apellidoMaterno# ,#email# ,#perfil.id# )
 
 	</insert>
    
 	<update id="update.Usuario" parameterClass="Usuario">
 
-		UPDATE USUARIOS
+		UPDATE usuarios
 		
 		<dynamic prepend="SET">
 		
 			<isNotEmpty property="usuario" prepend=",">
-				USUARIO = #usuario#
+				usuario = #usuario#
 			</isNotEmpty>
 		
-			<isNotEmpty property="password" prepend=",">
-				PASSWORD = #password#
+			<isNotEmpty property="clave" prepend=",">
+				clave = #clave#
 			</isNotEmpty>
 		
 			<isNotEmpty property="nombre" prepend=",">
-				NOMBRE = #nombre#
+				nombre = #nombre#
 			</isNotEmpty>
 		
 			<isNotEmpty property="apellidoPaterno" prepend=",">
-				APELLIDO_PATERNO = #apellidoPaterno#
+				apellido_paterno = #apellidoPaterno#
 			</isNotEmpty>
 		
 			<isNotEmpty property="apellidoMaterno" prepend=",">
-				APELLIDO_MATERNO = #apellidoMaterno#
+				apellido_materno = #apellidoMaterno#
 			</isNotEmpty>
 		
 			<isNotEmpty property="email" prepend=",">
-				EMAIL = #email#
+				email = #email#
 			</isNotEmpty>
 		
 			<isNotEmpty property="perfil.id" prepend=",">
-				ID_PERFIL = #perfil.id#
+				id_perfil = #perfil.id#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE ID = #id#
+		WHERE id = #id#
 	</update>
    
 	<delete id="delete.Usuario" parameterClass="Usuario">
-		DELETE FROM USUARIOS
-		WHERE ID = #id#
+		DELETE FROM usuarios
+		WHERE id = #id#
 	</delete>
-	
-	<select id="get.usuario.login" parameterClass="java.util.Map" resultMap="resultMap.Usuario">
-		SELECT * FROM "public"."USUARIOS"
-		INNER JOIN "public"."PERFILES" ON ("public"."PERFILES"."ID" = "public"."USUARIOS"."ID_PERFIL")
-		WHERE "public"."USUARIOS"."USUARIO" = #usuario# AND "public"."USUARIOS"."PASSWORD" = #password#
-	</select>
     
 </sqlMap>

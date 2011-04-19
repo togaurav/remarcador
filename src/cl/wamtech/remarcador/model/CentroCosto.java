@@ -7,14 +7,14 @@ import cl.wamtech.remarcador.util.IPersistente;
 
 /**
  * @author jorge
- * @sqlmap_table CENTROS_COSTOS
+ * @sqlmap_table centros_costos
  */
 public class CentroCosto implements IPersistente{
 
-	/*@sqlmap_column_primary_key ID_CENTRO_COSTO*/
+	/*@sqlmap_column_primary_key id_centro_costo*/
 	private int id = -1;
 	
-	/*@sqlmap_column NOMBRE_CENTRO_COSTO*/
+	/*@sqlmap_column nombre_centro_costo*/
 	private String nombre;
 	
 	/**

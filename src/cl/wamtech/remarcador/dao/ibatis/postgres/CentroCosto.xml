@@ -9,8 +9,8 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.CentroCosto" id="resultMap.CentroCosto">
-		<result column="ID_CENTRO_COSTO" property="id" nullValue="-1" />
-		<result column="NOMBRE_CENTRO_COSTO" property="nombre" />
+		<result column="id_centro_costo" property="id" nullValue="-1" />
+		<result column="nombre_centro_costo" property="nombre" />
 	</resultMap>
 	
 
@@ -19,34 +19,34 @@
 	<typeAlias alias="CentroCosto" type="cl.wamtech.remarcador.model.CentroCosto" />
 
 	<select id="get.CentroCosto" parameterClass="int" resultMap="resultMap.CentroCosto">
-		SELECT * FROM "public"."CENTROS_COSTOS"
-		WHERE ID_CENTRO_COSTO = #id#
+		SELECT * FROM centros_costos
+		WHERE id_centro_costo = #id#
 	</select>
 
 	<select id="get.equals.CentroCosto" parameterClass="java.util.Map" resultMap="resultMap.CentroCosto"> 
-		SELECT * FROM "public"."CENTROS_COSTOS"
+		SELECT * FROM centros_costos
 		WHERE 
 	</select>
 
 	<select id="get.list.CentroCosto" resultMap="resultMap.CentroCosto" >
-		SELECT * FROM "public"."CENTROS_COSTOS"
+		SELECT * FROM centros_costos
 	</select> 
   	
   	<select id="get.count.list.CentroCosto" resultClass="int">
-		SELECT count(ID_CENTRO_COSTO) FROM "public"."CENTROS_COSTOS"
+		SELECT count(id_centro_costo) FROM centros_costos
 	</select>
   	
 	<select id="get.criterio.CentroCosto" parameterClass="java.util.Map" resultMap="resultMap.CentroCosto">
-		SELECT * FROM "public"."CENTROS_COSTOS"
+		SELECT * FROM centros_costos
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."CENTROS_COSTOS".ID_CENTRO_COSTO = #id#
+			centros_costos.id_centro_costo = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."CENTROS_COSTOS".NOMBRE_CENTRO_COSTO = #nombre#
+			centros_costos.nombre_centro_costo = #nombre#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -54,16 +54,16 @@
 	</select>
 	
 	<select id="get.count.criterio.CentroCosto" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(ID_CENTRO_COSTO) FROM "public"."CENTROS_COSTOS"
+		SELECT count(id_centro_costo) FROM centros_costos
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."CENTROS_COSTOS".ID_CENTRO_COSTO = #id#
+			centros_costos.id_centro_costo = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."CENTROS_COSTOS".NOMBRE_CENTRO_COSTO = #nombre#
+			centros_costos.nombre_centro_costo = #nombre#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -82,30 +82,30 @@
 			SELECT LAST_INSERT_ID() AS id
 		</selectKey>
 		
-		INSERT INTO "public"."CENTROS_COSTOS" (NOMBRE_CENTRO_COSTO )
+		INSERT INTO centros_costos (nombre_centro_costo )
 		VALUES(#nombre# )
 
 	</insert>
    
 	<update id="update.CentroCosto" parameterClass="CentroCosto">
 
-		UPDATE "public"."CENTROS_COSTOS"
+		UPDATE centros_costos
 		
 		<dynamic prepend="SET">
 		
 			<isNotEmpty property="nombre" prepend=",">
-				NOMBRE_CENTRO_COSTO = #nombre#
+				nombre_centro_costo = #nombre#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE ID_CENTRO_COSTO = #id#
+		WHERE id_centro_costo = #id#
 	</update>
    
 	<delete id="delete.CentroCosto" parameterClass="CentroCosto">
-		DELETE FROM "public"."CENTROS_COSTOS"
-		WHERE ID_CENTRO_COSTO = #id#
+		DELETE FROM centros_costos
+		WHERE id_centro_costo = #id#
 	</delete>
     
 </sqlMap>

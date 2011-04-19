@@ -7,19 +7,25 @@
 <sqlMap namespace="OtrosQuerys">
 
 	<select id="get.remarcador.calculado" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
-		SELECT * FROM "public"."t_bigint" where codigo_modem = #codigoModem# and id_canal = #idCanal# and fecha_ts >= #fecha# order by fecha_ts asc limit 1
+		SELECT * FROM t_bigint where codigo_modem = #codigoModem# and id_canal = #idCanal# and fecha_ts >= #fecha# order by fecha_ts asc limit 1
 	</select>
 	
 	<select id="get.remarcadores.medidos.por.periodo" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
-		SELECT codigo_modem, id_canal FROM "public"."t_bigint" where fecha_ts <![CDATA[>=]]> #fechaInicial# and fecha_ts <![CDATA[<=]]> #fechaFinal# group by codigo_modem, id_canal
+		SELECT codigo_modem, id_canal FROM t_bigint where fecha_ts <![CDATA[>=]]> #fechaInicial# and fecha_ts <![CDATA[<=]]> #fechaFinal# group by codigo_modem, id_canal
 	</select>
 	
 	<select id="get.detalle.remarcador" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
-		SELECT fecha_ts, dato_bigint FROM "public"."t_bigint" WHERE fecha_ts <![CDATA[>=]]> #fechaInicial# AND fecha_ts <![CDATA[<=]]> #fechaFinal# AND codigo_modem = #codigoModem# AND id_canal = #idCanal# order by fecha_ts asc
+		SELECT fecha_ts, dato_bigint FROM t_bigint WHERE fecha_ts <![CDATA[>=]]> #fechaInicial# AND fecha_ts <![CDATA[<=]]> #fechaFinal# AND codigo_modem = #codigoModem# AND id_canal = #idCanal# order by fecha_ts asc
 	</select>
 	
 	<select id="get.variable.por.remarcador" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
-		SELECT "public"."VARIABLES"."CODIGO_MODEM", "public"."VARIABLES"."ID_CANAL" FROM "public"."VARIABLES" WHERE "public"."VARIABLES"."ID_REMARCADOR" = #idRemarcador#
+		SELECT codigo_modem, id_canal FROM variables WHERE id_remarcador = #idRemarcador#
+	</select>
+	
+	<select id="get.usuario.login" parameterClass="java.util.Map" resultMap="resultMap.Usuario">
+		SELECT * FROM usuarios
+		INNER JOIN perfiles ON (perfiles.id = usuarios.id_perfil)
+		WHERE usuarios.usuario = #usuario# AND usuarios.clave = #password#
 	</select>
 	
 </sqlMap>

@@ -7,44 +7,44 @@ import cl.wamtech.remarcador.util.IPersistente;
 
 /**
  * @author jorge
- * @sqlmap_table REMARCADORES
+ * @sqlmap_table remarcadores
  */
 public class Remarcador implements IPersistente {
 
-	/*@sqlmap_column_primary_key ID*/
+	/*@sqlmap_column_primary_key id*/
 	private int id = -1;
 	
-	/*@sqlmap_column NOMBRE*/
+	/*@sqlmap_column nombre*/
 	private String nombre;
 	
-	/*@sqlmap_column LOCAL*/
-	private String local;
+	/*@sqlmap_column local_remarcador*/
+	private String localRemarcador;
 	
-	/*@sqlmap_column MARCA_REMARCADOR*/
+	/*@sqlmap_column marca_remarcador*/
 	private String marcaRemarcador;
 	
-	/*@sqlmap_column MODELO_REMARCADOR*/
+	/*@sqlmap_column modelo_remarcador*/
 	private String modeloRemarcador;
 	
-	/*@sqlmap_column MULTIPLICADOR*/
+	/*@sqlmap_column multiplicador*/
 	private double multiplicador = -1;
 	
-	/*@sqlmap_column TABLERO*/
+	/*@sqlmap_column tablero*/
 	private String tablero;
 	
-	/*@sqlmap_column NUMERO_MEDIDOR*/
+	/*@sqlmap_column numero_medidor*/
 	private String numeroMedidor;
 	
-	/*@sqlmap_column NODO*/
+	/*@sqlmap_column nodo*/
 	private String nodo;
 	
-	/*@sqlmap_column OBSERVACION*/
+	/*@sqlmap_column observacion*/
 	private String observacion;
 	
-	/*@sqlmap_column ID_CENTRO_COSTO*/
+	/*@sqlmap_column id_centro_costo*/
 	private CentroCosto centroCosto;
 	
-	/*@sqlmap_column ID_CUENTA*/
+	/*@sqlmap_column id_cuenta*/
 	private Cuenta cuenta;
 	
 	/**
@@ -66,13 +66,6 @@ public class Remarcador implements IPersistente {
 	 */
 	public String getNombre() {
 		return nombre;
-	}
-
-	/**
-	 * @return the local
-	 */
-	public String getLocal() {
-		return local;
 	}
 
 	/**
@@ -136,13 +129,6 @@ public class Remarcador implements IPersistente {
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	/**
-	 * @param local the local to set
-	 */
-	public void setLocal(String local) {
-		this.local = local;
 	}
 
 	/**
@@ -222,4 +208,17 @@ public class Remarcador implements IPersistente {
 		this.cuenta = cuenta;
 	}
 
+	/**
+	 * @return the localRemarcador
+	 */
+	public String getLocalRemarcador() {
+		return localRemarcador;
+	}
+
+	/**
+	 * @param localRemarcador the localRemarcador to set
+	 */
+	public void setLocalRemarcador(String localRemarcador) {
+		this.localRemarcador = localRemarcador;
+	}
 }

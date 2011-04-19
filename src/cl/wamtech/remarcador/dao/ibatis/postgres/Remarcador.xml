@@ -9,166 +9,166 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Remarcador" id="resultMap.Remarcador">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="NOMBRE" property="nombre" />
-		<result column="LOCAL" property="local" />
-		<result column="MARCA_REMARCADOR" property="marcaRemarcador" />
-		<result column="MODELO_REMARCADOR" property="modeloRemarcador" />
-		<result column="MULTIPLICADOR" property="multiplicador" nullValue="-1" />
-		<result column="TABLERO" property="tablero" />
-		<result column="NUMERO_MEDIDOR" property="numeroMedidor" />
-		<result column="NODO" property="nodo" />
-		<result column="OBSERVACION" property="observacion" />
-		<result column="ID_CENTRO_COSTO" property="centroCosto" resultMap="resultMap.CentroCosto"/>
-		<result column="ID_CUENTA" property="cuenta" resultMap="resultMap.Cuenta"/>
+		<result column="id" property="id" nullValue="-1" />
+		<result column="nombre" property="nombre" />
+		<result column="local_remarcador" property="localRemarcador" />
+		<result column="marca_remarcador" property="marcaRemarcador" />
+		<result column="modelo_remarcador" property="modeloRemarcador" />
+		<result column="multiplicador" property="multiplicador" nullValue="-1" />
+		<result column="tablero" property="tablero" />
+		<result column="numero_medidor" property="numeroMedidor" />
+		<result column="nodo" property="nodo" />
+		<result column="observacion" property="observacion" />
+		<result column="id_centro_costo" property="centroCosto" resultMap="resultMap.CentroCosto"/>
+		<result column="id_cuenta" property="cuenta" resultMap="resultMap.Cuenta"/>
 	</resultMap>
 	
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Remarcador" id="resultMap.nodep1.Remarcador">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="NOMBRE" property="nombre" />
-		<result column="LOCAL" property="local" />
-		<result column="MARCA_REMARCADOR" property="marcaRemarcador" />
-		<result column="MODELO_REMARCADOR" property="modeloRemarcador" />
-		<result column="MULTIPLICADOR" property="multiplicador" nullValue="-1" />
-		<result column="TABLERO" property="tablero" />
-		<result column="NUMERO_MEDIDOR" property="numeroMedidor" />
-		<result column="NODO" property="nodo" />
-		<result column="OBSERVACION" property="observacion" />
-		<result column="ID_CENTRO_COSTO" property="centroCosto.id" />
-		<result column="ID_CUENTA" property="cuenta.id" />
+		<result column="id" property="id" nullValue="-1" />
+		<result column="nombre" property="nombre" />
+		<result column="local_remarcador" property="localRemarcador" />
+		<result column="marca_remarcador" property="marcaRemarcador" />
+		<result column="modelo_remarcador" property="modeloRemarcador" />
+		<result column="multiplicador" property="multiplicador" nullValue="-1" />
+		<result column="tablero" property="tablero" />
+		<result column="numero_medidor" property="numeroMedidor" />
+		<result column="nodo" property="nodo" />
+		<result column="observacion" property="observacion" />
+		<result column="id_centro_costo" property="centroCosto.id" />
+		<result column="id_cuenta" property="cuenta.id" />
 	</resultMap>
 	
 
 	<typeAlias alias="Remarcador" type="cl.wamtech.remarcador.model.Remarcador" />
 
 	<select id="get.Remarcador" parameterClass="int" resultMap="resultMap.Remarcador">
-		SELECT * FROM REMARCADORES
-		WHERE ID = #id#
+		SELECT * FROM remarcadores
+		WHERE id = #id#
 	</select>
 
 	<select id="get.equals.Remarcador" parameterClass="java.util.Map" resultMap="resultMap.Remarcador"> 
-		SELECT * FROM REMARCADORES
+		SELECT * FROM remarcadores
 		WHERE 
 	</select>
 
 	<select id="get.list.Remarcador" resultMap="resultMap.Remarcador" >
-		SELECT * FROM REMARCADORES
+		SELECT * FROM remarcadores
 	</select> 
   	
   	<select id="get.count.list.Remarcador" resultClass="int">
-		SELECT count(ID) FROM REMARCADORES
+		SELECT count(id) FROM remarcadores
 	</select>
   	
 	<select id="get.criterio.Remarcador" parameterClass="java.util.Map" resultMap="resultMap.nodep1.Remarcador">
-		SELECT * FROM "public"."REMARCADORES"
+		SELECT * FROM remarcadores
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."REMARCADORES".ID = #id#
+			remarcadores.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."REMARCADORES".NOMBRE = #nombre#
+			remarcadores.nombre = #nombre#
 		</isNotEmpty>
 		
-		<isNotEmpty property="local" prepend="AND">
-			"public"."REMARCADORES".LOCAL = #local#
+		<isNotEmpty property="localRemarcador" prepend="AND">
+			remarcadores.local_remarcador = #localRemarcador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="marcaRemarcador" prepend="AND">
-			"public"."REMARCADORES".MARCA_REMARCADOR = #marcaRemarcador#
+			remarcadores.marca_remarcador = #marcaRemarcador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="modeloRemarcador" prepend="AND">
-			"public"."REMARCADORES".MODELO_REMARCADOR = #modeloRemarcador#
+			remarcadores.modelo_remarcador = #modeloRemarcador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="multiplicador" prepend="AND">
-			"public"."REMARCADORES".MULTIPLICADOR = #multiplicador#
+			remarcadores.multiplicador = #multiplicador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="tablero" prepend="AND">
-			"public"."REMARCADORES".TABLERO = #tablero#
+			remarcadores.tablero = #tablero#
 		</isNotEmpty>
 		
 		<isNotEmpty property="numeroMedidor" prepend="AND">
-			"public"."REMARCADORES".NUMERO_MEDIDOR = #numeroMedidor#
+			remarcadores.numero_medidor = #numeroMedidor#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nodo" prepend="AND">
-			"public"."REMARCADORES".NODO = #nodo#
+			remarcadores.nodo = #nodo#
 		</isNotEmpty>
 		
 		<isNotEmpty property="observacion" prepend="AND">
-			"public"."REMARCADORES".OBSERVACION = #observacion#
+			remarcadores.observacion = #observacion#
 		</isNotEmpty>
 		
-		<isNotEqual property="centroCostoId" prepend="AND" compareValue="-1">
-			"public"."REMARCADORES".ID_CENTRO_COSTO = #centroCostoId#
-		</isNotEqual>
+		<isNotEmpty property="centroCostoId" prepend="AND">
+			remarcadores.id_centro_costo = #centroCostoId#
+		</isNotEmpty>
 		
-		<isNotEqual property="cuentaId" prepend="AND" compareValue="-1">
-			"public"."REMARCADORES".ID_CUENTA = #cuentaId#
-		</isNotEqual>
-
+		<isNotEmpty property="cuentaId" prepend="AND">
+			remarcadores.id_cuenta = #cuentaId#
+		</isNotEmpty>
+		
 		</dynamic>
 		
 	</select>
 	
 	<select id="get.count.criterio.Remarcador" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(ID) FROM "public"."REMARCADORES"
+		SELECT count(id) FROM remarcadores
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."REMARCADORES".ID = #id#
+			remarcadores.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."REMARCADORES".NOMBRE = #nombre#
+			remarcadores.nombre = #nombre#
 		</isNotEmpty>
 		
-		<isNotEmpty property="local" prepend="AND">
-			"public"."REMARCADORES".LOCAL = #local#
+		<isNotEmpty property="localRemarcador" prepend="AND">
+			remarcadores.local_remarcador = #localRemarcador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="marcaRemarcador" prepend="AND">
-			"public"."REMARCADORES".MARCA_REMARCADOR = #marcaRemarcador#
+			remarcadores.marca_remarcador = #marcaRemarcador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="modeloRemarcador" prepend="AND">
-			"public"."REMARCADORES".MODELO_REMARCADOR = #modeloRemarcador#
+			remarcadores.modelo_remarcador = #modeloRemarcador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="multiplicador" prepend="AND">
-			"public"."REMARCADORES".MULTIPLICADOR = #multiplicador#
+			remarcadores.multiplicador = #multiplicador#
 		</isNotEmpty>
 		
 		<isNotEmpty property="tablero" prepend="AND">
-			"public"."REMARCADORES".TABLERO = #tablero#
+			remarcadores.tablero = #tablero#
 		</isNotEmpty>
 		
 		<isNotEmpty property="numeroMedidor" prepend="AND">
-			"public"."REMARCADORES".NUMERO_MEDIDOR = #numeroMedidor#
+			remarcadores.numero_medidor = #numeroMedidor#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nodo" prepend="AND">
-			"public"."REMARCADORES".NODO = #nodo#
+			remarcadores.nodo = #nodo#
 		</isNotEmpty>
 		
 		<isNotEmpty property="observacion" prepend="AND">
-			"public"."REMARCADORES".OBSERVACION = #observacion#
+			remarcadores.observacion = #observacion#
 		</isNotEmpty>
 		
 		<isNotEmpty property="centroCostoId" prepend="AND">
-			"public"."REMARCADORES".ID_CENTRO_COSTO = #centroCostoId#
+			remarcadores.id_centro_costo = #centroCostoId#
 		</isNotEmpty>
 		
 		<isNotEmpty property="cuentaId" prepend="AND">
-			"public"."REMARCADORES".ID_CUENTA = #cuentaId#
+			remarcadores.id_cuenta = #cuentaId#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -187,70 +187,70 @@
 			SELECT LAST_INSERT_ID() AS id
 		</selectKey>
 		
-		INSERT INTO "public"."REMARCADORES" (NOMBRE ,LOCAL ,MARCA_REMARCADOR ,MODELO_REMARCADOR ,MULTIPLICADOR ,TABLERO ,NUMERO_MEDIDOR ,NODO ,OBSERVACION ,ID_CENTRO_COSTO ,ID_CUENTA )
-		VALUES(#nombre# ,#local# ,#marcaRemarcador# ,#modeloRemarcador# ,#multiplicador# ,#tablero# ,#numeroMedidor# ,#nodo# ,#observacion# ,#centroCosto.id# ,#cuenta.id# )
+		INSERT INTO remarcadores (nombre ,local_remarcador ,marca_remarcador ,modelo_remarcador ,multiplicador ,tablero ,numero_medidor ,nodo ,observacion ,id_centro_costo ,id_cuenta )
+		VALUES(#nombre# ,#localRemarcador# ,#marcaRemarcador# ,#modeloRemarcador# ,#multiplicador# ,#tablero# ,#numeroMedidor# ,#nodo# ,#observacion# ,#centroCosto.id# ,#cuenta.id# )
 
 	</insert>
    
 	<update id="update.Remarcador" parameterClass="Remarcador">
 
-		UPDATE "public"."REMARCADORES"
+		UPDATE remarcadores
 		
 		<dynamic prepend="SET">
 		
 			<isNotEmpty property="nombre" prepend=",">
-				"NOMBRE" = #nombre#
+				nombre = #nombre#
 			</isNotEmpty>
 		
-			<isNotEmpty property="local" prepend=",">
-				"LOCAL" = #local#
+			<isNotEmpty property="localRemarcador" prepend=",">
+				local_remarcador = #localRemarcador#
 			</isNotEmpty>
 		
 			<isNotEmpty property="marcaRemarcador" prepend=",">
-				"MARCA_REMARCADOR" = #marcaRemarcador#
+				marca_remarcador = #marcaRemarcador#
 			</isNotEmpty>
 		
 			<isNotEmpty property="modeloRemarcador" prepend=",">
-				"MODELO_REMARCADOR" = #modeloRemarcador#
+				modelo_remarcador = #modeloRemarcador#
 			</isNotEmpty>
 		
-			<isNotEqual property="multiplicador" compareValue="-1" prepend=",">
-				"MULTIPLICADOR" = #multiplicador#
+			<isNotEqual property="multiplicador" compareValue="0" prepend=",">
+				multiplicador = #multiplicador#
 			</isNotEqual>
 		
 			<isNotEmpty property="tablero" prepend=",">
-				"TABLERO" = #tablero#
+				tablero = #tablero#
 			</isNotEmpty>
 		
 			<isNotEmpty property="numeroMedidor" prepend=",">
-				"NUMERO_MEDIDOR" = #numeroMedidor#
+				numero_medidor = #numeroMedidor#
 			</isNotEmpty>
 		
 			<isNotEmpty property="nodo" prepend=",">
-				"NODO" = #nodo#
+				nodo = #nodo#
 			</isNotEmpty>
 		
 			<isNotEmpty property="observacion" prepend=",">
-				"OBSERVACION" = #observacion#
+				observacion = #observacion#
 			</isNotEmpty>
 		
 			<isNotEmpty property="centroCosto.id" prepend=",">
-				"ID_CENTRO_COSTO" = #centroCosto.id#
+				id_centro_costo = #centroCosto.id#
 			</isNotEmpty>
 		
 			<isNotEmpty property="cuenta.id" prepend=",">
-				"ID_CUENTA" = #cuenta.id#
+				id_cuenta = #cuenta.id#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE "ID" = #id#
+		WHERE id = #id#
 	</update>
    
 	<delete id="delete.Remarcador" parameterClass="Remarcador">
-		DELETE FROM "public"."REMARCADORES"
-		WHERE ID = #id#
+		DELETE FROM remarcadores
+		WHERE id = #id#
 	</delete>
     
 </sqlMap>

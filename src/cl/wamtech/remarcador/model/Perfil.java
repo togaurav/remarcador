@@ -7,20 +7,20 @@ import cl.wamtech.remarcador.util.IPersistente;
 
 /**
  * @author jorge
- * @sqlmap_table PERFILES
+ * @sqlmap_table perfiles
  */
 public class Perfil implements IPersistente {
 
-	/*@sqlmap_column_primary_key ID*/
+	/*@sqlmap_column_primary_key id*/
 	private int id = -1;
 	
-	/*@sqlmap_column NOMBRE*/
+	/*@sqlmap_column nombre*/
 	private String nombre;
 	
-	/*@sqlmap_column DESCRIPCION*/
+	/*@sqlmap_column descripcion*/
 	private String descripcion;
 	
-	/*@sqlmap_column CODIGO*/
+	/*@sqlmap_column codigo*/
 	private String codigo;
 	
 	/**

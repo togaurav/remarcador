@@ -14,9 +14,9 @@
 
 		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 			<property name="driverClassName"><value>org.postgresql.Driver</value></property>
-			<property name="url"><value>jdbc:postgresql://localhost:5432/CencosudPulsos</value></property>
+			<property name="url"><value>jdbc:postgresql://localhost:5432/WamManager</value></property>
 			<property name="username"><value>postgres</value></property>
-			<property name="password"><value>administrador</value></property>
+			<property name="password"><value>admin</value></property>
 		</bean>
   
 		<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">

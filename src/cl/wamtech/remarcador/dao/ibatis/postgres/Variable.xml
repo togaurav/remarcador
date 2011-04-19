@@ -9,72 +9,73 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Variable" id="resultMap.Variable">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="CODIGO_MODEM" property="codigoModem" nullValue="-1" />
-		<result column="ID_CANAL" property="idCanal" nullValue="-1" />
-		<result column="ID_REMARCADOR" property="remarcador" resultMap="resultMap.Remarcador"/>
+		<result column="id" property="id" nullValue="-1" />
+		<result column="codigo_modem" property="codigoModem" nullValue="-1" />
+		<result column="id_canal" property="idCanal" nullValue="-1" />
+		<result column="id_remarcador" property="remarcador" resultMap="resultMap.Remarcador"/>
 	</resultMap>
 	
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Variable" id="resultMap.nodep1.Variable">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="CODIGO_MODEM" property="codigoModem" nullValue="-1" />
-		<result column="ID_CANAL" property="idCanal" nullValue="-1" />
-		<result column="ID_REMARCADOR" property="remarcador.id" />
+		<result column="id" property="id" nullValue="-1" />
+		<result column="codigo_modem" property="codigoModem" nullValue="-1" />
+		<result column="id_canal" property="idCanal" nullValue="-1" />
+		<result column="id_remarcador" property="remarcador.id" />
 	</resultMap>
 	
 
 	<typeAlias alias="Variable" type="cl.wamtech.remarcador.model.Variable" />
 
 	<select id="get.Variable" parameterClass="int" resultMap="resultMap.Variable">
-		SELECT * FROM "public"."VARIABLES"
-		WHERE ID = #id#
+		SELECT * FROM variables
+		WHERE id = #id#
 	</select>
 
 	<select id="get.equals.Variable" parameterClass="java.util.Map" resultMap="resultMap.Variable"> 
-		SELECT * FROM "public"."VARIABLES"
+		SELECT * FROM variables
 		WHERE 
 	</select>
 
 	<select id="get.list.Variable" resultMap="resultMap.Variable" >
-		SELECT * FROM "public"."VARIABLES"
+		SELECT * FROM variables
 	</select> 
   	
   	<select id="get.count.list.Variable" resultClass="int">
-		SELECT count(ID) FROM "public"."VARIABLES"
+		SELECT count(id) FROM variables
 	</select>
   	
 	<select id="get.criterio.Variable" parameterClass="java.util.Map" resultMap="resultMap.Variable">
-		SELECT * FROM "public"."VARIABLES"
-		LEFT JOIN "public"."REMARCADORES" ON("public"."REMARCADORES"."ID" = public."VARIABLES"."ID_REMARCADOR")
-		LEFT JOIN "public"."CENTROS_COSTOS" ON("public"."CENTROS_COSTOS"."ID_CENTRO_COSTO" = public."REMARCADORES"."ID_CENTRO_COSTO")
-		LEFT JOIN "public"."CUENTAS" ON("public"."CUENTAS"."ID_CUENTA" = public."REMARCADORES"."ID_CUENTA")
+		SELECT * FROM variables
+		LEFT JOIN remarcadores ON(remarcadores.id = variables.id_remarcador)
+		LEFT JOIN centros_costos ON(centros_costos.id_centro_costo = remarcadores.id_centro_costo)
+		LEFT JOIN cuentas ON(cuentas.id_cuenta = remarcadores.id_cuenta)
+		
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."VARIABLES"."ID" = #id#
+			variables.id = #id#
 		</isNotEmpty>
 		
-		<isNotEmpty property="codigosModem" prepend="AND">
-			"public"."VARIABLES"."CODIGO_MODEM" IN <iterate property="codigosModem" open="(" close=")" conjunction=",">#codigosModem[]#</iterate>
+		<isNotEmpty property="codigoModem" prepend="AND">
+			variables.codigo_modem IN <iterate property="codigosModem" open="(" close=")" conjunction=",">#codigosModem[]#</iterate>
 		</isNotEmpty>
 		
-		<isNotEmpty property="idsCanal" prepend="AND">
-			"public"."VARIABLES"."ID_CANAL" IN <iterate property="idsCanal" open="(" close=")" conjunction=",">#idsCanal[]#</iterate>
+		<isNotEmpty property="idCanal" prepend="AND">
+			variables.id_canal IN <iterate property="idsCanal" open="(" close=")" conjunction=",">#idsCanal[]#</iterate>
 		</isNotEmpty>
 		
 		<isNotEmpty property="remarcadorId" prepend="AND">
-			"public"."VARIABLES"."ID_REMARCADOR" = #remarcadorId#
+			variables.id_remarcador = #remarcadorId#
 		</isNotEmpty>
 		
 		<isNotEqual property="centroCostoId" prepend="AND" compareValue="-1">
-			"public"."REMARCADORES"."ID_CENTRO_COSTO" = #centroCostoId#
+			remarcadores.id_centro_costo = #centroCostoId#
 		</isNotEqual>
-		
+
 		<isNotEqual property="cuentaId" prepend="AND" compareValue="-1">
-			"public"."REMARCADORES"."ID_CUENTA" = #cuentaId#
+			remarcadores.id_cuenta = #cuentaId#
 		</isNotEqual>
 		
 		</dynamic>
@@ -82,24 +83,24 @@
 	</select>
 	
 	<select id="get.count.criterio.Variable" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(ID) FROM "public"."VARIABLES"
+		SELECT count(id) FROM variables
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."VARIABLES".ID = #id#
+			variables.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="codigoModem" prepend="AND">
-			"public"."VARIABLES".CODIGO_MODEM = #codigoModem#
+			variables.codigo_modem = #codigoModem#
 		</isNotEmpty>
 		
 		<isNotEmpty property="idCanal" prepend="AND">
-			"public"."VARIABLES".ID_CANAL = #idCanal#
+			variables.id_canal = #idCanal#
 		</isNotEmpty>
 		
 		<isNotEmpty property="remarcadorId" prepend="AND">
-			"public"."VARIABLES".ID_REMARCADOR = #remarcadorId#
+			variables.id_remarcador = #remarcadorId#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -118,38 +119,38 @@
 			SELECT LAST_INSERT_ID() AS id
 		</selectKey>
 		
-		INSERT INTO "public"."VARIABLES" (CODIGO_MODEM ,ID_CANAL ,ID_REMARCADOR )
+		INSERT INTO variables (codigo_modem ,id_canal ,id_remarcador )
 		VALUES(#codigoModem# ,#idCanal# ,#remarcador.id# )
 
 	</insert>
    
 	<update id="update.Variable" parameterClass="Variable">
 
-		UPDATE "public"."VARIABLES"
+		UPDATE variables
 		
 		<dynamic prepend="SET">
 		
-			<isNotEqual property="codigoModem" compareValue="-1" prepend=",">
-				CODIGO_MODEM = #codigoModem#
+			<isNotEqual property="codigoModem" compareValue="0" prepend=",">
+				codigo_modem = #codigoModem#
 			</isNotEqual>
 		
-			<isNotEqual property="idCanal" compareValue="-1" prepend=",">
-				ID_CANAL = #idCanal#
+			<isNotEqual property="idCanal" compareValue="0" prepend=",">
+				id_canal = #idCanal#
 			</isNotEqual>
 		
 			<isNotEmpty property="remarcador.id" prepend=",">
-				ID_REMARCADOR = #remarcador.id#
+				id_remarcador = #remarcador.id#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE ID = #id#
+		WHERE id = #id#
 	</update>
    
 	<delete id="delete.Variable" parameterClass="Variable">
-		DELETE FROM "public"."VARIABLES"
-		WHERE ID = #id#
+		DELETE FROM variables
+		WHERE id = #id#
 	</delete>
     
 </sqlMap>

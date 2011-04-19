@@ -9,10 +9,10 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Perfil" id="resultMap.Perfil">
-		<result column="ID" property="id" nullValue="-1" />
-		<result column="NOMBRE" property="nombre" />
-		<result column="DESCRIPCION" property="descripcion" />
-		<result column="CODIGO" property="codigo" />
+		<result column="id" property="id" nullValue="-1" />
+		<result column="nombre" property="nombre" />
+		<result column="descripcion" property="descripcion" />
+		<result column="codigo" property="codigo" />
 	</resultMap>
 	
 
@@ -21,42 +21,42 @@
 	<typeAlias alias="Perfil" type="cl.wamtech.remarcador.model.Perfil" />
 
 	<select id="get.Perfil" parameterClass="int" resultMap="resultMap.Perfil">
-		SELECT * FROM "public"."PERFILES"
-		WHERE ID = #id#
+		SELECT * FROM perfiles
+		WHERE id = #id#
 	</select>
 
 	<select id="get.equals.Perfil" parameterClass="java.util.Map" resultMap="resultMap.Perfil"> 
-		SELECT * FROM "public"."PERFILES"
+		SELECT * FROM perfiles
 		WHERE 
 	</select>
 
 	<select id="get.list.Perfil" resultMap="resultMap.Perfil" >
-		SELECT * FROM "public"."PERFILES"
+		SELECT * FROM perfiles
 	</select> 
   	
   	<select id="get.count.list.Perfil" resultClass="int">
-		SELECT count(ID) FROM "public"."PERFILES"
+		SELECT count(id) FROM perfiles
 	</select>
   	
 	<select id="get.criterio.Perfil" parameterClass="java.util.Map" resultMap="resultMap.Perfil">
-		SELECT * FROM "public"."PERFILES"
+		SELECT * FROM perfiles
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."PERFILES".ID = #id#
+			perfiles.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."PERFILES".NOMBRE = #nombre#
+			perfiles.nombre = #nombre#
 		</isNotEmpty>
 		
 		<isNotEmpty property="descripcion" prepend="AND">
-			"public"."PERFILES".DESCRIPCION = #descripcion#
+			perfiles.descripcion = #descripcion#
 		</isNotEmpty>
 		
 		<isNotEmpty property="codigo" prepend="AND">
-			"public"."PERFILES".CODIGO = #codigo#
+			perfiles.codigo = #codigo#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -64,24 +64,24 @@
 	</select>
 	
 	<select id="get.count.criterio.Perfil" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(ID) FROM "public"."PERFILES"
+		SELECT count(id) FROM perfiles
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."PERFILES".ID = #id#
+			perfiles.id = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."PERFILES".NOMBRE = #nombre#
+			perfiles.nombre = #nombre#
 		</isNotEmpty>
 		
 		<isNotEmpty property="descripcion" prepend="AND">
-			"public"."PERFILES".DESCRIPCION = #descripcion#
+			perfiles.descripcion = #descripcion#
 		</isNotEmpty>
 		
 		<isNotEmpty property="codigo" prepend="AND">
-			"public"."PERFILES".CODIGO = #codigo#
+			perfiles.codigo = #codigo#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -100,38 +100,38 @@
 			SELECT LAST_INSERT_ID() AS id
 		</selectKey>
 		
-		INSERT INTO "public"."PERFILES" (NOMBRE ,DESCRIPCION ,CODIGO )
+		INSERT INTO perfiles (nombre ,descripcion ,codigo )
 		VALUES(#nombre# ,#descripcion# ,#codigo# )
 
 	</insert>
    
 	<update id="update.Perfil" parameterClass="Perfil">
 
-		UPDATE "public"."PERFILES"
+		UPDATE perfiles
 		
 		<dynamic prepend="SET">
 		
 			<isNotEmpty property="nombre" prepend=",">
-				NOMBRE = #nombre#
+				nombre = #nombre#
 			</isNotEmpty>
 		
 			<isNotEmpty property="descripcion" prepend=",">
-				DESCRIPCION = #descripcion#
+				descripcion = #descripcion#
 			</isNotEmpty>
 		
 			<isNotEmpty property="codigo" prepend=",">
-				CODIGO = #codigo#
+				codigo = #codigo#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE ID = #id#
+		WHERE id = #id#
 	</update>
    
 	<delete id="delete.Perfil" parameterClass="Perfil">
-		DELETE FROM "public"."PERFILES"
-		WHERE ID = #id#
+		DELETE FROM perfiles
+		WHERE id = #id#
 	</delete>
     
 </sqlMap>

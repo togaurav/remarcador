@@ -9,44 +9,97 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Bitacora" id="resultMap.Bitacora">
+		<result column="id" property="id" nullValue="-1" />
+		<result column="id_remarcador" property="idRemarcador" nullValue="-1" />
+		<result column="id_usuario" property="idUsuario" nullValue="-1" />
+		<result column="fecha_inicial" property="fechaInicial" nullValue="-1" />
+		<result column="fecha_int" property="fechaFinal" nullValue="-1" resultMap="resultMap.fecha_int"/>
 	</resultMap>
 	
 
 
+	<resultMap class="cl.wamtech.remarcador.model.Bitacora" id="resultMap.nodep1.Bitacora">
+		<result column="id" property="id" nullValue="-1" />
+		<result column="id_remarcador" property="idRemarcador" nullValue="-1" />
+		<result column="id_usuario" property="idUsuario" nullValue="-1" />
+		<result column="fecha_inicial" property="fechaInicial" nullValue="-1" />
+		<result column="fecha_int" property="fechaFinal.id" nullValue="-1" />
+	</resultMap>
+	
 
 	<typeAlias alias="Bitacora" type="cl.wamtech.remarcador.model.Bitacora" />
 
 	<select id="get.Bitacora" parameterClass="int" resultMap="resultMap.Bitacora">
-		SELECT * FROM BITACORAS
-		WHERE 
+		SELECT * FROM bitacoras
+		WHERE id = #id#
 	</select>
 
 	<select id="get.equals.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.Bitacora"> 
-		SELECT * FROM BITACORAS
+		SELECT * FROM bitacoras
 		WHERE 
 	</select>
 
 	<select id="get.list.Bitacora" resultMap="resultMap.Bitacora" >
-		SELECT * FROM BITACORAS
+		SELECT * FROM bitacoras
 	</select> 
   	
   	<select id="get.count.list.Bitacora" resultClass="int">
-		SELECT count(null) FROM BITACORAS
+		SELECT count(id) FROM bitacoras
 	</select>
   	
-	<select id="get.criterio.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.Bitacora">
-		SELECT * FROM BITACORAS
+	<select id="get.criterio.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.nodep1.Bitacora">
+		SELECT * FROM bitacoras
 		
 		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			bitacoras.id = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idRemarcador" prepend="AND">
+			bitacoras.id_remarcador = #idRemarcador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idUsuario" prepend="AND">
+			bitacoras.id_usuario = #idUsuario#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaInicial" prepend="AND">
+			bitacoras.fecha_inicial = #fechaInicial#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaFinalId" prepend="AND">
+			bitacoras.fecha_int = #fechaFinalId#
+		</isNotEmpty>
 		
 		</dynamic>
 		
 	</select>
 	
 	<select id="get.count.criterio.Bitacora" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(null) FROM BITACORAS
+		SELECT count(id) FROM bitacoras
 		
 		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			bitacoras.id = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idRemarcador" prepend="AND">
+			bitacoras.id_remarcador = #idRemarcador#
+		</isNotEmpty>
+		
+		<isNotEmpty property="idUsuario" prepend="AND">
+			bitacoras.id_usuario = #idUsuario#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaInicial" prepend="AND">
+			bitacoras.fecha_inicial = #fechaInicial#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaFinalId" prepend="AND">
+			bitacoras.fecha_int = #fechaFinalId#
+		</isNotEmpty>
 		
 		</dynamic>
 		
@@ -59,29 +112,41 @@
 	 -->	
 	
 	<insert id="insert.Bitacora" parameterClass="Bitacora">
-		
-
-		
-		INSERT INTO BITACORAS )
-		VALUES)
-
+		INSERT INTO bitacoras (id_remarcador ,id_usuario ,fecha_inicial ,fecha_int )
+		VALUES(#idRemarcador# ,#idUsuario# ,#fechaInicial# ,#fechaFinal.id# )
 	</insert>
    
 	<update id="update.Bitacora" parameterClass="Bitacora">
 
-		UPDATE BITACORAS
+		UPDATE bitacoras
 		
 		<dynamic prepend="SET">
+		
+			<isNotEqual property="idRemarcador" compareValue="0" prepend=",">
+				id_remarcador = #idRemarcador#
+			</isNotEqual>
+		
+			<isNotEqual property="idUsuario" compareValue="0" prepend=",">
+				id_usuario = #idUsuario#
+			</isNotEqual>
+		
+			<isNotEqual property="fechaInicial" compareValue="0" prepend=",">
+				fecha_inicial = #fechaInicial#
+			</isNotEqual>
+		
+			<isNotEmpty property="fechaFinal.id" prepend=",">
+				fecha_int = #fechaFinal.id#
+			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE 
+		WHERE id = #id#
 	</update>
    
 	<delete id="delete.Bitacora" parameterClass="Bitacora">
-		DELETE FROM BITACORAS
-		WHERE 
+		DELETE FROM bitacoras
+		WHERE id = #id#
 	</delete>
     
 </sqlMap>

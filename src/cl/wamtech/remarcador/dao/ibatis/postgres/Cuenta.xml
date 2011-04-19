@@ -9,8 +9,8 @@
 
 
 	<resultMap class="cl.wamtech.remarcador.model.Cuenta" id="resultMap.Cuenta">
-		<result column="ID_CUENTA" property="id" nullValue="-1" />
-		<result column="NOMBRE_CUENTA" property="nombre" />
+		<result column="id_cuenta" property="id" nullValue="-1" />
+		<result column="nombre_cuenta" property="nombre" />
 	</resultMap>
 	
 
@@ -19,34 +19,34 @@
 	<typeAlias alias="Cuenta" type="cl.wamtech.remarcador.model.Cuenta" />
 
 	<select id="get.Cuenta" parameterClass="int" resultMap="resultMap.Cuenta">
-		SELECT * FROM "public"."CUENTAS"
-		WHERE ID_CUENTA = #id#
+		SELECT * FROM cuentas
+		WHERE id_cuenta = #id#
 	</select>
 
 	<select id="get.equals.Cuenta" parameterClass="java.util.Map" resultMap="resultMap.Cuenta"> 
-		SELECT * FROM "public"."CUENTAS"
+		SELECT * FROM cuentas
 		WHERE 
 	</select>
 
 	<select id="get.list.Cuenta" resultMap="resultMap.Cuenta" >
-		SELECT * FROM "public"."CUENTAS"
+		SELECT * FROM cuentas
 	</select> 
   	
   	<select id="get.count.list.Cuenta" resultClass="int">
-		SELECT count(ID_CUENTA) FROM "public"."CUENTAS"
+		SELECT count(id_cuenta) FROM cuentas
 	</select>
   	
 	<select id="get.criterio.Cuenta" parameterClass="java.util.Map" resultMap="resultMap.Cuenta">
-		SELECT * FROM "public"."CUENTAS"
+		SELECT * FROM cuentas
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."CUENTAS".ID_CUENTA = #id#
+			cuentas.id_cuenta = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."CUENTAS".NOMBRE_CUENTA = #nombre#
+			cuentas.nombre_cuenta = #nombre#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -54,16 +54,16 @@
 	</select>
 	
 	<select id="get.count.criterio.Cuenta" parameterClass="java.util.Map" resultClass="int">
-		SELECT count(ID_CUENTA) FROM "public"."CUENTAS"
+		SELECT count(id_cuenta) FROM cuentas
 		
 		<dynamic prepend="WHERE">
 		
 		<isNotEmpty property="id" prepend="AND">
-			"public"."CUENTAS".ID_CUENTA = #id#
+			cuentas.id_cuenta = #id#
 		</isNotEmpty>
 		
 		<isNotEmpty property="nombre" prepend="AND">
-			"public"."CUENTAS".NOMBRE_CUENTA = #nombre#
+			cuentas.nombre_cuenta = #nombre#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -82,30 +82,30 @@
 			SELECT LAST_INSERT_ID() AS id
 		</selectKey>
 		
-		INSERT INTO "public"."CUENTAS" (NOMBRE_CUENTA )
+		INSERT INTO cuentas (nombre_cuenta )
 		VALUES(#nombre# )
 
 	</insert>
    
 	<update id="update.Cuenta" parameterClass="Cuenta">
 
-		UPDATE "public"."CUENTAS"
+		UPDATE cuentas
 		
 		<dynamic prepend="SET">
 		
 			<isNotEmpty property="nombre" prepend=",">
-				NOMBRE_CUENTA = #nombre#
+				nombre_cuenta = #nombre#
 			</isNotEmpty>
 		
 		
 		</dynamic>
 		
-		WHERE ID_CUENTA = #id#
+		WHERE id_cuenta = #id#
 	</update>
    
 	<delete id="delete.Cuenta" parameterClass="Cuenta">
-		DELETE FROM "public"."CUENTAS"
-		WHERE ID_CUENTA = #id#
+		DELETE FROM cuentas
+		WHERE id_cuenta = #id#
 	</delete>
     
 </sqlMap>

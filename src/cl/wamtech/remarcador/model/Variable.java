@@ -7,20 +7,20 @@ import cl.wamtech.remarcador.util.IPersistente;
 
 /**
  * @author jorge
- * @sqlmap_table VARIABLES
+ * @sqlmap_table variables
  */
 public class Variable implements IPersistente {
 
-	/*@sqlmap_column_primary_key ID*/
+	/*@sqlmap_column_primary_key id*/
 	private int id = -1;
 	
-	/*@sqlmap_column CODIGO_MODEM*/
+	/*@sqlmap_column codigo_modem*/
 	private int codigoModem = -1;
 	
-	/*@sqlmap_column ID_CANAL*/
+	/*@sqlmap_column id_canal*/
 	private int idCanal = -1;
 	
-	/*@sqlmap_column ID_REMARCADOR*/
+	/*@sqlmap_column id_remarcador*/
 	private Remarcador remarcador;
 	
 	/**
