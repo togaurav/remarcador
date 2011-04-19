@@ -10,22 +10,17 @@
 
 	<resultMap class="cl.wamtech.remarcador.model.Bitacora" id="resultMap.Bitacora">
 		<result column="id" property="id" nullValue="-1" />
-		<result column="id_remarcador" property="idRemarcador" nullValue="-1" />
 		<result column="id_usuario" property="idUsuario" nullValue="-1" />
-		<result column="fecha_inicial" property="fechaInicial" nullValue="-1" />
-		<result column="fecha_int" property="fechaFinal" nullValue="-1" resultMap="resultMap.fecha_int"/>
+		<result column="fecha_lectura_inicial" property="fechaLecturaInicial" nullValue="-1" />
+		<result column="fecha_lectura_fin" property="fechaLecturaFin" nullValue="-1" />
+		<result column="hora_lectura_inicial" property="horaLecturaInicial" nullValue="-1" />
+		<result column="hora_lectura_fin" property="horaLecturaFin" nullValue="-1" />
+		<result column="fecha_actual" property="fechaActual" nullValue="-1" />
+		<result column="hora_actual" property="horaActual" nullValue="-1" />
 	</resultMap>
 	
 
 
-	<resultMap class="cl.wamtech.remarcador.model.Bitacora" id="resultMap.nodep1.Bitacora">
-		<result column="id" property="id" nullValue="-1" />
-		<result column="id_remarcador" property="idRemarcador" nullValue="-1" />
-		<result column="id_usuario" property="idUsuario" nullValue="-1" />
-		<result column="fecha_inicial" property="fechaInicial" nullValue="-1" />
-		<result column="fecha_int" property="fechaFinal.id" nullValue="-1" />
-	</resultMap>
-	
 
 	<typeAlias alias="Bitacora" type="cl.wamtech.remarcador.model.Bitacora" />
 
@@ -47,7 +42,7 @@
 		SELECT count(id) FROM bitacoras
 	</select>
   	
-	<select id="get.criterio.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.nodep1.Bitacora">
+	<select id="get.criterio.Bitacora" parameterClass="java.util.Map" resultMap="resultMap.Bitacora">
 		SELECT * FROM bitacoras
 		
 		<dynamic prepend="WHERE">
@@ -56,20 +51,32 @@
 			bitacoras.id = #id#
 		</isNotEmpty>
 		
-		<isNotEmpty property="idRemarcador" prepend="AND">
-			bitacoras.id_remarcador = #idRemarcador#
-		</isNotEmpty>
-		
 		<isNotEmpty property="idUsuario" prepend="AND">
 			bitacoras.id_usuario = #idUsuario#
 		</isNotEmpty>
 		
-		<isNotEmpty property="fechaInicial" prepend="AND">
-			bitacoras.fecha_inicial = #fechaInicial#
+		<isNotEmpty property="fechaLecturaInicial" prepend="AND">
+			bitacoras.fecha_lectura_inicial = #fechaLecturaInicial#
 		</isNotEmpty>
 		
-		<isNotEmpty property="fechaFinalId" prepend="AND">
-			bitacoras.fecha_int = #fechaFinalId#
+		<isNotEmpty property="fechaLecturaFin" prepend="AND">
+			bitacoras.fecha_lectura_fin = #fechaLecturaFin#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaLecturaInicial" prepend="AND">
+			bitacoras.hora_lectura_inicial = #horaLecturaInicial#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaLecturaFin" prepend="AND">
+			bitacoras.hora_lectura_fin = #horaLecturaFin#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaActual" prepend="AND">
+			bitacoras.fecha_actual = #fechaActual#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaActual" prepend="AND">
+			bitacoras.hora_actual = #horaActual#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -85,20 +92,32 @@
 			bitacoras.id = #id#
 		</isNotEmpty>
 		
-		<isNotEmpty property="idRemarcador" prepend="AND">
-			bitacoras.id_remarcador = #idRemarcador#
-		</isNotEmpty>
-		
 		<isNotEmpty property="idUsuario" prepend="AND">
 			bitacoras.id_usuario = #idUsuario#
 		</isNotEmpty>
 		
-		<isNotEmpty property="fechaInicial" prepend="AND">
-			bitacoras.fecha_inicial = #fechaInicial#
+		<isNotEmpty property="fechaLecturaInicial" prepend="AND">
+			bitacoras.fecha_lectura_inicial = #fechaLecturaInicial#
 		</isNotEmpty>
 		
-		<isNotEmpty property="fechaFinalId" prepend="AND">
-			bitacoras.fecha_int = #fechaFinalId#
+		<isNotEmpty property="fechaLecturaFin" prepend="AND">
+			bitacoras.fecha_lectura_fin = #fechaLecturaFin#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaLecturaInicial" prepend="AND">
+			bitacoras.hora_lectura_inicial = #horaLecturaInicial#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaLecturaFin" prepend="AND">
+			bitacoras.hora_lectura_fin = #horaLecturaFin#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaActual" prepend="AND">
+			bitacoras.fecha_actual = #fechaActual#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaActual" prepend="AND">
+			bitacoras.hora_actual = #horaActual#
 		</isNotEmpty>
 		
 		</dynamic>
@@ -112,8 +131,8 @@
 	 -->	
 	
 	<insert id="insert.Bitacora" parameterClass="Bitacora">
-		INSERT INTO bitacoras (id_remarcador ,id_usuario ,fecha_inicial ,fecha_int )
-		VALUES(#idRemarcador# ,#idUsuario# ,#fechaInicial# ,#fechaFinal.id# )
+		INSERT INTO bitacoras (id_usuario ,fecha_lectura_inicial ,fecha_lectura_fin ,hora_lectura_inicial ,hora_lectura_fin ,fecha_actual ,hora_actual )
+		VALUES(#idUsuario# ,#fechaLecturaInicial# ,#fechaLecturaFin# ,#horaLecturaInicial# ,#horaLecturaFin# ,#fechaActual# ,#horaActual# )
 	</insert>
    
 	<update id="update.Bitacora" parameterClass="Bitacora">
@@ -122,21 +141,33 @@
 		
 		<dynamic prepend="SET">
 		
-			<isNotEqual property="idRemarcador" compareValue="0" prepend=",">
-				id_remarcador = #idRemarcador#
-			</isNotEqual>
-		
 			<isNotEqual property="idUsuario" compareValue="0" prepend=",">
 				id_usuario = #idUsuario#
 			</isNotEqual>
 		
-			<isNotEqual property="fechaInicial" compareValue="0" prepend=",">
-				fecha_inicial = #fechaInicial#
+			<isNotEqual property="fechaLecturaInicial" compareValue="0" prepend=",">
+				fecha_lectura_inicial = #fechaLecturaInicial#
 			</isNotEqual>
 		
-			<isNotEmpty property="fechaFinal.id" prepend=",">
-				fecha_int = #fechaFinal.id#
-			</isNotEmpty>
+			<isNotEqual property="fechaLecturaFin" compareValue="0" prepend=",">
+				fecha_lectura_fin = #fechaLecturaFin#
+			</isNotEqual>
+		
+			<isNotEqual property="horaLecturaInicial" compareValue="0" prepend=",">
+				hora_lectura_inicial = #horaLecturaInicial#
+			</isNotEqual>
+		
+			<isNotEqual property="horaLecturaFin" compareValue="0" prepend=",">
+				hora_lectura_fin = #horaLecturaFin#
+			</isNotEqual>
+		
+			<isNotEqual property="fechaActual" compareValue="0" prepend=",">
+				fecha_actual = #fechaActual#
+			</isNotEqual>
+		
+			<isNotEqual property="horaActual" compareValue="0" prepend=",">
+				hora_actual = #horaActual#
+			</isNotEqual>
 		
 		
 		</dynamic>

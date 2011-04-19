@@ -27,12 +27,12 @@ public class RemarcadorDaoTest
     private static RemarcadorDao remarcadorDao;
     protected static JdbcTemplate jdbcTemplate;
 
-	static {
-//		BasicConfigurator.configure();
-		ctx = new ClassPathXmlApplicationContext("remarcador-servlet.xml");
-		remarcadorDao = (RemarcadorDao)ctx.getBean("remarcadorDao");
-		jdbcTemplate = new JdbcTemplate((org.apache.commons.dbcp.BasicDataSource)ctx.getBean("dataSource"));
-	}
+//	static {
+////		BasicConfigurator.configure();
+//		ctx = new ClassPathXmlApplicationContext("remarcador-servlet.xml");
+//		remarcadorDao = (RemarcadorDao)ctx.getBean("remarcadorDao");
+//		jdbcTemplate = new JdbcTemplate((org.apache.commons.dbcp.BasicDataSource)ctx.getBean("dataSource"));
+//	}
     
 	/**
 	 * @return the jdbcTemplate

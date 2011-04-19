@@ -1,5 +1,6 @@
 package cl.wamtech.remarcador.web.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -95,6 +96,8 @@ public class RemarcadorController extends MultiActionController {
 	 */
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response) throws Exception {
         log.info("Login...");
+        HttpSession session = request.getSession(true);
+		session.getServletContext().setAttribute("usuario", null);
         return new ModelAndView("login/login");
     }
     
@@ -135,22 +138,27 @@ public class RemarcadorController extends MultiActionController {
      * @return
      * @throws ServletException
      * @throws JSONException
+     * @throws IOException 
      */
-    public ModelAndView remarcador(HttpServletRequest request, HttpServletResponse response) throws ServletException, JSONException {
+    public ModelAndView remarcador(HttpServletRequest request, HttpServletResponse response) throws ServletException, JSONException, IOException {
         log.info("Remarcador...");
-        HttpSession session = request.getSession(true);
+    	HttpSession session = request.getSession(true);
 		Usuario usuario = (Usuario)session.getServletContext().getAttribute("usuario");
-        CustomerContextHolder.clearCustomerType();
-        LogAcceso logAcceso = new LogAcceso();
-        logAcceso.setUsuario(usuario);
-        this.remarcadorDao.creaActualiza(logAcceso);
-        Map<String, Object> model = new HashMap<String, Object>();
-        model.put("centrosCostos", this.getRemarcadorDao().getCriterioObject(CentroCosto.class, null));
-        model.put("cuentas", this.getRemarcadorDao().getCriterioObject(Cuenta.class, null));
-        model.put("horas", DateUtil.getHorasOMinutos("HORA").get("resultado"));
-        model.put("minutos", DateUtil.getHorasOMinutos("MINUTO").get("resultado"));
-        model.put("usuario", Util.beanToJson(usuario, false));
-        return new ModelAndView("remarcador/remarcador", model);
+    	if(usuario != null)	{
+            CustomerContextHolder.clearCustomerType();
+            LogAcceso logAcceso = new LogAcceso();
+            logAcceso.setUsuario(usuario);
+            this.remarcadorDao.creaActualiza(logAcceso);
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("centrosCostos", this.getRemarcadorDao().getCriterioObject(CentroCosto.class, null));
+            model.put("cuentas", this.getRemarcadorDao().getCriterioObject(Cuenta.class, null));
+            model.put("horas", DateUtil.getHorasOMinutos("HORA").get("resultado"));
+            model.put("minutos", DateUtil.getHorasOMinutos("MINUTO").get("resultado"));
+            model.put("usuario", Util.beanToJson(usuario, false));
+            return new ModelAndView("remarcador/remarcador", model);
+        } else  {
+        	return new ModelAndView("frames/no-tiene-acceso");
+		} 
     }
     
     /**
@@ -253,16 +261,13 @@ public class RemarcadorController extends MultiActionController {
         log.info("Detalle remarcador...");
         Map<String, Object> criterios = new HashMap<String, Object>();
         criterios.put("idRemarcador", ServletRequestUtils.getRequiredIntParameter(request, "idRemarcador"));
-        
         CustomerContextHolder.clearCustomerType();
         Map<String, Object> variable = (Map<String, Object>) this.getRemarcadorDao().getObject(RemarcadorDao.VARIABLE_POR_REMARCADOR, criterios, false);
-        
         criterios = new HashMap<String, Object>();
         criterios.put("codigoModem", variable.get("codigo_modem"));
         criterios.put("idCanal", variable.get("id_canal"));
         criterios.put("fechaInicial", ServletRequestUtils.getRequiredIntParameter(request, "fechaInicial"));
         criterios.put("fechaFinal", ServletRequestUtils.getRequiredIntParameter(request, "fechaFinal"));
-       
         CustomerContextHolder.setCustomerType(CustomerType.WAM_MANAGER);
         return this.renderJson(new JSONObject().put("resultado", this.getRemarcadorDao().getObjects(RemarcadorDao.DETALLE_REMARCADOR, criterios, Integer.MIN_VALUE, Integer.MAX_VALUE, true)));
     }
@@ -278,20 +283,16 @@ public class RemarcadorController extends MultiActionController {
         log.info("Editar remarcador...");
         int idCentroCosto = ServletRequestUtils.getRequiredIntParameter(request, "idCentroCosto");
         int idCuenta = ServletRequestUtils.getRequiredIntParameter(request, "idCuenta");
-        
         CentroCosto centroCosto = new CentroCosto();
         centroCosto.setId(idCentroCosto);
         Cuenta cuenta = new Cuenta();
         cuenta.setId(idCuenta);
-        
         CustomerContextHolder.clearCustomerType();
         Remarcador remarcador = (Remarcador)Util.jsonToBean(ServletRequestUtils.getRequiredStringParameter(request, "remarcador"), Remarcador.class);
         remarcador.setCentroCosto(centroCosto);
         remarcador.setCuenta(cuenta);
-        
         this.getRemarcadorDao().creaActualiza(remarcador);
-        
-        return this.renderJson(new JSONObject().put("ok", "ok"));
+        return this.renderJson(new JSONObject().put("ok", true));
     }
     
     /**
@@ -301,32 +302,23 @@ public class RemarcadorController extends MultiActionController {
 	 * @return
 	 * @throws Exception
 	 */
-    public ModelAndView remarcadoresCSV(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    	response.setContentType("application/csv");
-    	response.setHeader("content-disposition","attachment; fileName=remarcadores.csv");
+    public void exportarCSV(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    	log.info("Exportar CVS...");
     	String data = Util.decodeString(ServletRequestUtils.getStringParameter(request, "data"), "UTF-8");
+    	String nombreArchivo = ServletRequestUtils.getRequiredStringParameter(request, "nombreArchivo");
+    	int idUsuario = ServletRequestUtils.getRequiredIntParameter(request, "idUsuario");
+        int fechaLecturaInicial = DateUtil.stringToIntDate(ServletRequestUtils.getRequiredStringParameter(request, "fechaLecturaInicial"));
+        int fechaLecturaFin = DateUtil.stringToIntDate(ServletRequestUtils.getRequiredStringParameter(request, "fechaLecturaFin"));
+        String horaLecturaInicial = ServletRequestUtils.getRequiredStringParameter(request, "horaLecturaInicial");
+        String horaLecturaFin = ServletRequestUtils.getRequiredStringParameter(request, "horaLecturaFin");
+    	response.setContentType("application/csv");
+    	response.setHeader("content-disposition","attachment; fileName="+nombreArchivo+".csv");
+        Bitacora bitacora = new Bitacora(idUsuario, fechaLecturaInicial, fechaLecturaFin, horaLecturaInicial, horaLecturaFin);
+        CustomerContextHolder.clearCustomerType();
+        this.getRemarcadorDao().creaActualiza(bitacora);
     	PrintWriter out = response.getWriter();
     	out.println(data);
     	out.flush();
     	out.close();
-		return this.renderJson(new JSONObject());
-    }
-    
-    /**
-	 * 
-	 * @param request
-	 * @param response
-	 * @return
-	 * @throws Exception
-	 */
-    public ModelAndView detalleRemarcadorCSV(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    	response.setContentType("application/csv");
-    	response.setHeader("content-disposition","attachment; fileName=detalle-remarcador.csv");
-    	String data = Util.decodeString(ServletRequestUtils.getStringParameter(request, "data"), "UTF-8");
-    	PrintWriter out = response.getWriter();
-    	out.println(data);
-    	out.flush();
-    	out.close();
-		return this.renderJson(new JSONObject());
     }
 }

@@ -37,5 +37,6 @@
 	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/CentroCosto.xml"/>
 	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Cuenta.xml"/>
 	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/LogAcceso.xml"/>
+	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/Bitacora.xml"/>
 	<sqlMap resource="cl/wamtech/remarcador/dao/ibatis/postgres/OtrosQuerys.xml"/>
 </sqlMapConfig>

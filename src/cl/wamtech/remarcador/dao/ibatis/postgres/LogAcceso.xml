@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="LogAcceso">
+
+
+	<resultMap class="cl.wamtech.remarcador.model.LogAcceso" id="resultMap.LogAcceso">
+		<result column="id" property="id" nullValue="-1" />
+		<result column="id_usuario" property="usuario" resultMap="resultMap.Usuario"/>
+		<result column="fecha_acceso" property="fechaAcceso" nullValue="DateUtil.actualDateToInt()" />
+		<result column="hora_acceso" property="horaAcceso" nullValue="DateUtil.actualTimeToInt()" />
+	</resultMap>
+	
+
+
+	<resultMap class="cl.wamtech.remarcador.model.LogAcceso" id="resultMap.nodep1.LogAcceso">
+		<result column="id" property="id" nullValue="-1" />
+		<result column="id_usuario" property="usuario.id" />
+		<result column="fecha_acceso" property="fechaAcceso" nullValue="DateUtil.actualDateToInt()" />
+		<result column="hora_acceso" property="horaAcceso" nullValue="DateUtil.actualTimeToInt()" />
+	</resultMap>
+	
+
+	<typeAlias alias="LogAcceso" type="cl.wamtech.remarcador.model.LogAcceso" />
+
+	<select id="get.LogAcceso" parameterClass="int" resultMap="resultMap.LogAcceso">
+		SELECT * FROM logs_accesos
+		WHERE id = #id#
+	</select>
+
+	<select id="get.equals.LogAcceso" parameterClass="java.util.Map" resultMap="resultMap.LogAcceso"> 
+		SELECT * FROM logs_accesos
+		WHERE 
+	</select>
+
+	<select id="get.list.LogAcceso" resultMap="resultMap.LogAcceso" >
+		SELECT * FROM logs_accesos
+	</select> 
+  	
+  	<select id="get.count.list.LogAcceso" resultClass="int">
+		SELECT count(id) FROM logs_accesos
+	</select>
+  	
+	<select id="get.criterio.LogAcceso" parameterClass="java.util.Map" resultMap="resultMap.nodep1.LogAcceso">
+		SELECT * FROM logs_accesos
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			logs_accesos.id = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="usuarioId" prepend="AND">
+			logs_accesos.id_usuario = #usuarioId#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaAcceso" prepend="AND">
+			logs_accesos.fecha_acceso = #fechaAcceso#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaAcceso" prepend="AND">
+			logs_accesos.hora_acceso = #horaAcceso#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<select id="get.count.criterio.LogAcceso" parameterClass="java.util.Map" resultClass="int">
+		SELECT count(id) FROM logs_accesos
+		
+		<dynamic prepend="WHERE">
+		
+		<isNotEmpty property="id" prepend="AND">
+			logs_accesos.id = #id#
+		</isNotEmpty>
+		
+		<isNotEmpty property="usuarioId" prepend="AND">
+			logs_accesos.id_usuario = #usuarioId#
+		</isNotEmpty>
+		
+		<isNotEmpty property="fechaAcceso" prepend="AND">
+			logs_accesos.fecha_acceso = #fechaAcceso#
+		</isNotEmpty>
+		
+		<isNotEmpty property="horaAcceso" prepend="AND">
+			logs_accesos.hora_acceso = #horaAcceso#
+		</isNotEmpty>
+		
+		</dynamic>
+		
+	</select>
+	
+	<!-- 
+	<select id="get.count.depends.LogAcceso" parameterClass="LogAcceso" resultClass="Integer">
+			
+	</select>
+	 -->	
+	
+	<insert id="insert.LogAcceso" parameterClass="LogAcceso">		
+		INSERT INTO logs_accesos (id_usuario ,fecha_acceso ,hora_acceso )
+		VALUES(#usuario.id# ,#fechaAcceso# ,#horaAcceso# )
+	</insert>
+   
+	<update id="update.LogAcceso" parameterClass="LogAcceso">
+
+		UPDATE logs_accesos
+		
+		<dynamic prepend="SET">
+		
+			<isNotEmpty property="usuario.id" prepend=",">
+				id_usuario = #usuario.id#
+			</isNotEmpty>
+		
+			<isNotEqual property="fechaAcceso" compareValue="0" prepend=",">
+				fecha_acceso = #fechaAcceso#
+			</isNotEqual>
+		
+			<isNotEqual property="horaAcceso" compareValue="0" prepend=",">
+				hora_acceso = #horaAcceso#
+			</isNotEqual>
+		
+		
+		</dynamic>
+		
+		WHERE id = #id#
+	</update>
+   
+	<delete id="delete.LogAcceso" parameterClass="LogAcceso">
+		DELETE FROM logs_accesos
+		WHERE id = #id#
+	</delete>
+    
+</sqlMap>

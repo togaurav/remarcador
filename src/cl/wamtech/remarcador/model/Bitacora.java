@@ -3,6 +3,7 @@
  */
 package cl.wamtech.remarcador.model;
 
+import cl.wamtech.remarcador.util.DateUtil;
 import cl.wamtech.remarcador.util.IPersistente;
 
 /**
@@ -11,28 +12,6 @@ import cl.wamtech.remarcador.util.IPersistente;
  */
 public class Bitacora implements IPersistente {
 	
-	/*@sqlmap_column_primary_key id*/
-	private int id = -1;
-	
-	/*@sqlmap_column id_remarcador*/
-	private int idRemarcador = -1;
-	
-	/*@sqlmap_column id_usuario*/
-	private int idUsuario = -1;
-	
-	/*@sqlmap_column fecha_inicial*/
-	private int fechaInicial = -1;
-	
-	/*@sqlmap_column fecha_final*/
-	private int fechaFinal = -1;
-
-	/**
-	 * 
-	 */
-	public Bitacora() {
-		// TODO Auto-generated constructor stub
-	}
-
 	/**
 	 * @return the id
 	 */
@@ -47,18 +26,53 @@ public class Bitacora implements IPersistente {
 		this.id = id;
 	}
 
+	/*@sqlmap_column_primary_key id*/
+	private int id = -1;
+	
+	/*@sqlmap_column id_usuario*/
+	private int idUsuario = -1;
+	
+	/*@sqlmap_column fecha_lectura_inicial*/
+	private int fechaLecturaInicial = -1;
+	
+	/*@sqlmap_column fecha_lectura_fin*/
+	private int fechaLecturaFin = -1;
+	
+	/*@sqlmap_column hora_lectura_inicial*/
+	private String horaLecturaInicial;
+	
+	/*@sqlmap_column hora_lectura_fin*/
+	private String horaLecturaFin;
+	
+	/*@sqlmap_column fecha_actual*/
+	private int fechaActual = DateUtil.actualDateToInt();
+	
+	/*@sqlmap_column hora_actual*/
+	private int horaActual = DateUtil.actualTimeToInt();
+	
+
 	/**
-	 * @return the idRemarcador
+	 * 
 	 */
-	public int getIdRemarcador() {
-		return idRemarcador;
+	public Bitacora() {
+		super();
 	}
 
 	/**
-	 * @param idRemarcador the idRemarcador to set
+	 * @param idUsuario
+	 * @param fechaLecturaInicial
+	 * @param fechaLecturaFin
+	 * @param horaLecturaInicial
+	 * @param horaLecturaFin
 	 */
-	public void setIdRemarcador(int idRemarcador) {
-		this.idRemarcador = idRemarcador;
+	public Bitacora(int idUsuario, int fechaLecturaInicial,
+			int fechaLecturaFin, String horaLecturaInicial, String horaLecturaFin) {
+		super();
+		this.idUsuario = idUsuario;
+		this.fechaLecturaInicial = fechaLecturaInicial;
+		this.fechaLecturaFin = fechaLecturaFin;
+		this.horaLecturaInicial = horaLecturaInicial;
+		this.horaLecturaFin = horaLecturaFin;
 	}
 
 	/**
@@ -76,30 +90,86 @@ public class Bitacora implements IPersistente {
 	}
 
 	/**
-	 * @return the fechaInicial
+	 * @return the fechaLecturaInicial
 	 */
-	public int getFechaInicial() {
-		return fechaInicial;
+	public int getFechaLecturaInicial() {
+		return fechaLecturaInicial;
 	}
 
 	/**
-	 * @param fechaInicial the fechaInicial to set
+	 * @param fechaLecturaInicial the fechaLecturaInicial to set
 	 */
-	public void setFechaInicial(int fechaInicial) {
-		this.fechaInicial = fechaInicial;
+	public void setFechaLecturaInicial(int fechaLecturaInicial) {
+		this.fechaLecturaInicial = fechaLecturaInicial;
 	}
 
 	/**
-	 * @return the fechaFinal
+	 * @return the fechaLecturaFin
 	 */
-	public int getFechaFinal() {
-		return fechaFinal;
+	public int getFechaLecturaFin() {
+		return fechaLecturaFin;
 	}
 
 	/**
-	 * @param fechaFinal the fechaFinal to set
+	 * @param fechaLecturaFin the fechaLecturaFin to set
 	 */
-	public void setFechaFinal(int fechaFinal) {
-		this.fechaFinal = fechaFinal;
+	public void setFechaLecturaFin(int fechaLecturaFin) {
+		this.fechaLecturaFin = fechaLecturaFin;
+	}
+
+	/**
+	 * @return the horaLecturaInicial
+	 */
+	public String getHoraLecturaInicial() {
+		return horaLecturaInicial;
+	}
+
+	/**
+	 * @param horaLecturaInicial the horaLecturaInicial to set
+	 */
+	public void setHoraLecturaInicial(String horaLecturaInicial) {
+		this.horaLecturaInicial = horaLecturaInicial;
+	}
+
+	/**
+	 * @return the horaLecturaFin
+	 */
+	public String getHoraLecturaFin() {
+		return horaLecturaFin;
+	}
+
+	/**
+	 * @param horaLecturaFin the horaLecturaFin to set
+	 */
+	public void setHoraLecturaFin(String horaLecturaFin) {
+		this.horaLecturaFin = horaLecturaFin;
+	}
+
+	/**
+	 * @return the fechaActual
+	 */
+	public int getFechaActual() {
+		return fechaActual;
+	}
+
+	/**
+	 * @param fechaActual the fechaActual to set
+	 */
+	public void setFechaActual(int fechaActual) {
+		this.fechaActual = fechaActual;
+	}
+
+	/**
+	 * @return the horaActual
+	 */
+	public int getHoraActual() {
+		return horaActual;
+	}
+
+	/**
+	 * @param horaActual the horaActual to set
+	 */
+	public void setHoraActual(int horaActual) {
+		this.horaActual = horaActual;
 	}
 }

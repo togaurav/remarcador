@@ -6,8 +6,6 @@
     
 
 <sqlMap namespace="Remarcador">
-
-
 	<resultMap class="cl.wamtech.remarcador.model.Remarcador" id="resultMap.Remarcador">
 		<result column="id" property="id" nullValue="-1" />
 		<result column="nombre" property="nombre" />
@@ -23,8 +21,6 @@
 		<result column="id_cuenta" property="cuenta" resultMap="resultMap.Cuenta"/>
 	</resultMap>
 	
-
-
 	<resultMap class="cl.wamtech.remarcador.model.Remarcador" id="resultMap.nodep1.Remarcador">
 		<result column="id" property="id" nullValue="-1" />
 		<result column="nombre" property="nombre" />
@@ -40,7 +36,6 @@
 		<result column="id_cuenta" property="cuenta.id" />
 	</resultMap>
 	
-
 	<typeAlias alias="Remarcador" type="cl.wamtech.remarcador.model.Remarcador" />
 
 	<select id="get.Remarcador" parameterClass="int" resultMap="resultMap.Remarcador">
@@ -66,53 +61,53 @@
 		
 		<dynamic prepend="WHERE">
 		
-		<isNotEmpty property="id" prepend="AND">
-			remarcadores.id = #id#
-		</isNotEmpty>
-		
-		<isNotEmpty property="nombre" prepend="AND">
-			remarcadores.nombre = #nombre#
-		</isNotEmpty>
-		
-		<isNotEmpty property="localRemarcador" prepend="AND">
-			remarcadores.local_remarcador = #localRemarcador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="marcaRemarcador" prepend="AND">
-			remarcadores.marca_remarcador = #marcaRemarcador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="modeloRemarcador" prepend="AND">
-			remarcadores.modelo_remarcador = #modeloRemarcador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="multiplicador" prepend="AND">
-			remarcadores.multiplicador = #multiplicador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="tablero" prepend="AND">
-			remarcadores.tablero = #tablero#
-		</isNotEmpty>
-		
-		<isNotEmpty property="numeroMedidor" prepend="AND">
-			remarcadores.numero_medidor = #numeroMedidor#
-		</isNotEmpty>
-		
-		<isNotEmpty property="nodo" prepend="AND">
-			remarcadores.nodo = #nodo#
-		</isNotEmpty>
-		
-		<isNotEmpty property="observacion" prepend="AND">
-			remarcadores.observacion = #observacion#
-		</isNotEmpty>
-		
-		<isNotEmpty property="centroCostoId" prepend="AND">
-			remarcadores.id_centro_costo = #centroCostoId#
-		</isNotEmpty>
-		
-		<isNotEmpty property="cuentaId" prepend="AND">
-			remarcadores.id_cuenta = #cuentaId#
-		</isNotEmpty>
+			<isNotEmpty property="id" prepend="AND">
+				remarcadores.id = #id#
+			</isNotEmpty>
+			
+			<isNotEmpty property="nombre" prepend="AND">
+				remarcadores.nombre = #nombre#
+			</isNotEmpty>
+			
+			<isNotEmpty property="localRemarcador" prepend="AND">
+				remarcadores.local_remarcador = #localRemarcador#
+			</isNotEmpty>
+			
+			<isNotEmpty property="marcaRemarcador" prepend="AND">
+				remarcadores.marca_remarcador = #marcaRemarcador#
+			</isNotEmpty>
+			
+			<isNotEmpty property="modeloRemarcador" prepend="AND">
+				remarcadores.modelo_remarcador = #modeloRemarcador#
+			</isNotEmpty>
+			
+			<isNotEqual property="multiplicador" compareValue="-1" prepend="AND">
+				remarcadores.multiplicador = #multiplicador#
+			</isNotEqual>
+			
+			<isNotEmpty property="tablero" prepend="AND">
+				remarcadores.tablero = #tablero#
+			</isNotEmpty>
+			
+			<isNotEmpty property="numeroMedidor" prepend="AND">
+				remarcadores.numero_medidor = #numeroMedidor#
+			</isNotEmpty>
+			
+			<isNotEmpty property="nodo" prepend="AND">
+				remarcadores.nodo = #nodo#
+			</isNotEmpty>
+			
+			<isNotEmpty property="observacion" prepend="AND">
+				remarcadores.observacion = #observacion#
+			</isNotEmpty>
+			
+			<isNotEqual property="centroCostoId" compareValue="-1" prepend="AND">
+				remarcadores.id_centro_costo = #centroCostoId#
+			</isNotEqual>
+			
+			<isNotEqual property="cuentaId" compareValue="-1" prepend="AND">
+				remarcadores.id_cuenta = #cuentaId#
+			</isNotEqual>
 		
 		</dynamic>
 		
@@ -123,77 +118,64 @@
 		
 		<dynamic prepend="WHERE">
 		
-		<isNotEmpty property="id" prepend="AND">
-			remarcadores.id = #id#
-		</isNotEmpty>
-		
-		<isNotEmpty property="nombre" prepend="AND">
-			remarcadores.nombre = #nombre#
-		</isNotEmpty>
-		
-		<isNotEmpty property="localRemarcador" prepend="AND">
-			remarcadores.local_remarcador = #localRemarcador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="marcaRemarcador" prepend="AND">
-			remarcadores.marca_remarcador = #marcaRemarcador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="modeloRemarcador" prepend="AND">
-			remarcadores.modelo_remarcador = #modeloRemarcador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="multiplicador" prepend="AND">
-			remarcadores.multiplicador = #multiplicador#
-		</isNotEmpty>
-		
-		<isNotEmpty property="tablero" prepend="AND">
-			remarcadores.tablero = #tablero#
-		</isNotEmpty>
-		
-		<isNotEmpty property="numeroMedidor" prepend="AND">
-			remarcadores.numero_medidor = #numeroMedidor#
-		</isNotEmpty>
-		
-		<isNotEmpty property="nodo" prepend="AND">
-			remarcadores.nodo = #nodo#
-		</isNotEmpty>
-		
-		<isNotEmpty property="observacion" prepend="AND">
-			remarcadores.observacion = #observacion#
-		</isNotEmpty>
-		
-		<isNotEmpty property="centroCostoId" prepend="AND">
-			remarcadores.id_centro_costo = #centroCostoId#
-		</isNotEmpty>
-		
-		<isNotEmpty property="cuentaId" prepend="AND">
-			remarcadores.id_cuenta = #cuentaId#
-		</isNotEmpty>
+			<isNotEmpty property="id" prepend="AND">
+				remarcadores.id = #id#
+			</isNotEmpty>
+			
+			<isNotEmpty property="nombre" prepend="AND">
+				remarcadores.nombre = #nombre#
+			</isNotEmpty>
+			
+			<isNotEmpty property="localRemarcador" prepend="AND">
+				remarcadores.local_remarcador = #localRemarcador#
+			</isNotEmpty>
+			
+			<isNotEmpty property="marcaRemarcador" prepend="AND">
+				remarcadores.marca_remarcador = #marcaRemarcador#
+			</isNotEmpty>
+			
+			<isNotEmpty property="modeloRemarcador" prepend="AND">
+				remarcadores.modelo_remarcador = #modeloRemarcador#
+			</isNotEmpty>
+			
+			<isNotEqual property="multiplicador" compareValue="-1" prepend="AND">
+				remarcadores.multiplicador = #multiplicador#
+			</isNotEqual>
+			
+			<isNotEmpty property="tablero" prepend="AND">
+				remarcadores.tablero = #tablero#
+			</isNotEmpty>
+			
+			<isNotEmpty property="numeroMedidor" prepend="AND">
+				remarcadores.numero_medidor = #numeroMedidor#
+			</isNotEmpty>
+			
+			<isNotEmpty property="nodo" prepend="AND">
+				remarcadores.nodo = #nodo#
+			</isNotEmpty>
+			
+			<isNotEmpty property="observacion" prepend="AND">
+				remarcadores.observacion = #observacion#
+			</isNotEmpty>
+			
+			<isNotEqual property="centroCostoId" compareValue="-1" prepend="AND">
+				remarcadores.id_centro_costo = #centroCostoId#
+			</isNotEqual>
+			
+			<isNotEqual property="cuentaId" compareValue="-1" prepend="AND">
+				remarcadores.id_cuenta = #cuentaId#
+			</isNotEqual>
 		
 		</dynamic>
 		
 	</select>
-	
-	<!-- 
-	<select id="get.count.depends.Remarcador" parameterClass="Remarcador" resultClass="Integer">
-			
-	</select>
-	 -->	
-	
+
 	<insert id="insert.Remarcador" parameterClass="Remarcador">
-		
-		<selectKey resultClass="int" keyProperty="id" type="post">
-			SELECT LAST_INSERT_ID() AS id
-		</selectKey>
-		
 		INSERT INTO remarcadores (nombre ,local_remarcador ,marca_remarcador ,modelo_remarcador ,multiplicador ,tablero ,numero_medidor ,nodo ,observacion ,id_centro_costo ,id_cuenta )
 		VALUES(#nombre# ,#localRemarcador# ,#marcaRemarcador# ,#modeloRemarcador# ,#multiplicador# ,#tablero# ,#numeroMedidor# ,#nodo# ,#observacion# ,#centroCosto.id# ,#cuenta.id# )
-
 	</insert>
    
 	<update id="update.Remarcador" parameterClass="Remarcador">
-
 		UPDATE remarcadores
 		
 		<dynamic prepend="SET">
@@ -214,7 +196,7 @@
 				modelo_remarcador = #modeloRemarcador#
 			</isNotEmpty>
 		
-			<isNotEqual property="multiplicador" compareValue="0" prepend=",">
+			<isNotEqual property="multiplicador" compareValue="-1" prepend=",">
 				multiplicador = #multiplicador#
 			</isNotEqual>
 		
@@ -234,15 +216,14 @@
 				observacion = #observacion#
 			</isNotEmpty>
 		
-			<isNotEmpty property="centroCosto.id" prepend=",">
+			<isNotEqual property="centroCosto.id" compareValue="-1" prepend=",">
 				id_centro_costo = #centroCosto.id#
-			</isNotEmpty>
+			</isNotEqual>
 		
-			<isNotEmpty property="cuenta.id" prepend=",">
+			<isNotEqual property="cuenta.id" compareValue="-1" prepend=",">
 				id_cuenta = #cuenta.id#
-			</isNotEmpty>
-		
-		
+			</isNotEqual>
+
 		</dynamic>
 		
 		WHERE id = #id#
@@ -252,5 +233,4 @@
 		DELETE FROM remarcadores
 		WHERE id = #id#
 	</delete>
-    
 </sqlMap>
