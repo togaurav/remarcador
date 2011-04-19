@@ -25,6 +25,8 @@
 		var divInfoResultadoBusqueda = $('#div-info-resultado-buesqueda');
 		var divErroresResultadoBusqueda = $('#div-errores-resultado-buesqueda');
 		var remarcadores = [];
+		var datosBitacora = {};
+		var idUsuario = $('#hdn-id-usuario');
 
 		/**
 		 * 
@@ -126,10 +128,11 @@
 						onClickButton: function() {
 							var titulos = 'N\xB0, Fecha medici\xF3n, Dato\r\n';
 							var data = Base64.encode(DownloadJSON2CSV(detalleRemarcador, titulos));
-							var conf = {action: 'main.htm', params: {perform: 'detalleRemarcadorCSV', data: data}};
-							requestBinDoc(conf);
+							requestBinDoc(getConfExportCVS({nombreArchivo: 'detalle-remarcador', data: data}));
 						}
 					});
+					$('.ui-icon-search').remove();
+					$('.ui-icon-refresh').remove();
 				});
 			}
 		});
@@ -167,6 +170,7 @@
 			if(modalErrores.find('li').length != 0) {
 				modalErrores.dialog({
 					modal: true,
+					resizable: false,
 					width: 450,
 					buttons: {
 						Cerrar: function() {
@@ -187,10 +191,11 @@
 						idCentroCosto: centroCosto.val(),
 						idCuenta: cuenta.val()
 				};
-				infoFechaLecturaInicial = params.fechaInicial + ' - ' + params.horaFechaInicial + ':' + params.minutosFechaInicial;
-				infoFechaLecturaFinal = params.fechaFinal + ' - ' + params.horaFechaFinal + ':' + params.minutosFechaFinal;
+				var infoFechaLecturaInicial = params.fechaInicial + ' - ' + params.horaFechaInicial + ':' + params.minutosFechaInicial;
+				var infoFechaLecturaFinal = params.fechaFinal + ' - ' + params.horaFechaFinal + ':' + params.minutosFechaFinal;
 				divInfoResultadoBusqueda.html('<div>Fecha lectura inicial: <b>'+infoFechaLecturaInicial+'</b></div><div>Fecha lectura Final: <b>'+infoFechaLecturaFinal+'</b></div>');
 				$.ajaxMsgPostJSON('Cargando...', 'main.htm', params, function(json) {
+					datosBitacora = params;
 					hdnFechaInicial.val(json.timeInMillisFechaInicial);
 					hdnFechaFinal.val(json.timeInMillisFechaFinal);
 					var resultados = json.resultado;
@@ -232,6 +237,7 @@
 				var modalEditar = $('#modal-editar-remarcador');
 				modalEditar.dialog({
 					modal: true,
+					resizable: false,
 					width: 450,
 					buttons: {
 						Editar: function() {
@@ -246,7 +252,7 @@
 							var params = {
 									id: id,
 									nombre: nombre.val(),
-									local: local.val(),
+									localRemarcador: local.val(),
 									tablero: tablero.val(),
 									numeroMedidor: numeroMedidor.val(),
 									nodo: nodo.val(),
@@ -257,7 +263,7 @@
 									function(json) {
 										tabla
 										.setCell (params.id, 2, params.nombre)
-										.setCell (params.id, 3, params.local)
+										.setCell (params.id, 3, params.localRemarcador)
 										.setCell (params.id, 4, params.tablero)
 										.setCell (params.id, 5, params.numeroMedidor)
 										.setCell (params.id, 7, $("#cmb-editar-centro-costo option:selected").text())
@@ -276,7 +282,7 @@
 							'<tr><td>Nombre:</td><td><input class="disabled" type="text" id="txt-nombre" value="'+elemento.nombre+'"></td></tr>'+
 							'<tr><td>Local:</td><td><input class="disabled" type="text" id="txt-local" value="'+elemento.localRemarcador+'"></td></tr>'+
 							'<tr><td>Tablero:</td><td><input class="disabled" type="text" id="txt-tablero" value="'+elemento.tablero+'"></td></tr>'+
-							'<tr><td>Nº medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
+							'<tr><td>N\xB0 medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
 							'<tr><td>Centro costo:</td><td><select class="disabled" id="cmb-editar-centro-costo">'+$('#cmb-centro-costo').html()+'</select></td></tr>'+
 							'<tr><td>Cuenta:</td><td><select class="disabled" id="cmb-editar-cuenta">'+$('#cmb-cuenta').html()+'</select></td></tr>'+
 							'<tr><td>Nodo:</td><td><input type="text" id="txt-nodo" value="'+elemento.nodo+'"></td></tr>'+
@@ -304,6 +310,7 @@
 			if(remarcadores.length==0) {
 				modalErrores.dialog({
 					modal: true,
+					resizable: false,
 					width: 450,
 					buttons: {
 						Cerrar: function() {
@@ -315,8 +322,25 @@
 			}
 			var titulos = 'N\xB0, Nombre, Local, Tablero, N\xB0 medidor, C\xE1lculo medici\xF3n (kWh), Centro de costo, Cuenta, Nodo, Observaci\xF3n\r\n';
 			var data = Base64.encode(DownloadJSON2CSV(remarcadores, titulos));
-			var conf = {action: 'main.htm', params: {perform: 'remarcadoresCSV', data: data}};
-			requestBinDoc(conf);
+			requestBinDoc(getConfExportCVS({nombreArchivo: 'remarcadores', data: data}));
 		});
+		
+		/**
+		 * 
+		 */
+		var getConfExportCVS = function(opt) {
+			return {action: 'main.htm', 
+					params: {
+					perform: 'exportarCSV', 
+					data: opt.data,
+					nombreArchivo: opt.nombreArchivo,
+					idUsuario: idUsuario.val(), 
+					fechaLecturaInicial: datosBitacora.fechaInicial,
+					fechaLecturaFin: datosBitacora.fechaFinal,
+					horaLecturaInicial: datosBitacora.horaFechaInicial.toString() + datosBitacora.minutosFechaInicial.toString(),
+					horaLecturaFin: datosBitacora.horaFechaFinal.toString() + datosBitacora.minutosFechaFinal.toString()
+				}
+			}
+		}
 	});
 })(jQuery);

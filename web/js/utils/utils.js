@@ -175,6 +175,14 @@ function stringToStringHour(hour) {
 };
 
 /**
+ * elimina los espacios de los extremos de un string.
+ * @return objeto string sin espacios
+ */
+String.prototype.trim = function() {
+	return (this.replace(/^[\s\xA0]+/, "").replace(/[\s\xA0]+$/, ""));
+}
+
+/**
  * 
  */
 function DownloadJSON2XLS(objArray) {
