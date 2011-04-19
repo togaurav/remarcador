@@ -5,10 +5,13 @@
 CREATE TABLE bitacoras
 (
   id integer NOT NULL DEFAULT nextval('seq_id_bitacora'::regclass),
-  id_remarcador integer,
   id_usuario integer,
-  fecha_inicial integer,
-  fecha_final integer,
+  fecha_lectura_inicial integer,
+  fecha_lectura_fin integer,
+  hora_lectura_inicial character varying(4),
+  hora_lectura_fin character varying(4),
+  fecha_actual integer,
+  hora_actual integer,
   CONSTRAINT bitacoras_pkey PRIMARY KEY (id)
 );
 
@@ -119,7 +122,3 @@ CREATE TABLE variables
   id_remarcador integer,
   CONSTRAINT variables_pkey PRIMARY KEY (id)
 );
-
-
-
-
