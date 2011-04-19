@@ -201,14 +201,15 @@ function DownloadJSON2CSV(objArray, titulos) {
     for(var i = 0; i < array.length; i++) {
         var line = "";
     	for(var index in array[i]) {
-    		var dato = array[i][index];
-    		if(dato != undefined && dato != "")
-    			line += array[i][index] + ", ";
-    		else
-    			line += "Sin dato, ";
+			var dato = array[i][index];
+    		if(index != 'multiplicador') {
+    			if(dato != undefined && dato.toString().trim() != "")
+        			line += array[i][index] + "; ";
+        		else
+        			line += "Sin dato; ";	
+    		}
         }
-        line.slice(0, line.Length-1); 
-        str += line + "\r\n";
+        str += line.slice(0, -2) + "\r\n";
 	}
     return str;
 }

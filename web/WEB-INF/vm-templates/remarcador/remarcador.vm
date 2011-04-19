@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Sistema - remarcadores</title>
+		<title>Servicios Wamtech - Sistema de monitoreo de medidores el&eacute;ctricos</title>
 		<!-- css -->
 		<link type="text/css" href="css/smoothness/jquery-ui-1.8.11.custom.css" rel="stylesheet" />	
 		<link type="text/css" href="css/style.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
             <div id="modal-editar-remarcador" title="Editar remarcador"></div>	
             <ul id="modal-lista-errores" title="Lista de errores"></ul>
     		<div id="div-contenedor-principal">
-				<div><img src="images/bg_wamtech.jpg" width="970px" height="120px"/></div>
+				<div><img src="images/bg_wamtech.png" width="970px" height="120px"/></div>
     			<div id="div-contenedor-fitro">
 					<div align="right">Usuario: <b>$usuario.nombre $usuario.apellidoPaterno $usuario.apellidoMaterno</b></div>
                     <h2>Buscar</h2>

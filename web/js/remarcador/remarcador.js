@@ -61,27 +61,30 @@
 		 */
 		tabla.jqGrid({
 			datatype: "local",
-		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'Nº medidor', 
-		   	           'C&aacute;lculo medici&oacute;n (kWh)', 'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n'],
+		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'N\xB0 medidor', 
+		   	           'C&aacute;lculo medici&oacute;n (kWh)', 'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n', 'Multiplicador'],
 		   	colModel: [
 		   		{name: 'id', index: 'id', hidden: noEsEditable, formatter: editarFila, width: 50, sortable: false},
-		   		{name: 'nombre', index: 'nombre', width: 100},
-		   		{name: 'local', index: 'local', width: 100},
-		   		{name: 'tablero', index: 'tablero', width: 100},
-		   		{name: 'numeroMedidor', index: 'numeroMedidor', width: 100},
-		   		{name: 'calculoMedicion', index: 'calculoMedicion', width: 100},
-		   		{name: 'centroCosto', index: 'centroCosto', width: 100},
-		   		{name: 'cuenta', index: 'cuenta', width: 100},
-		   		{name: 'nodo', index: 'nodo', width: 100},
-		   		{name: 'observacion', index: 'observacion', width: 100}
+		   		{name: 'nombre', index: 'nombre', width: 300},
+		   		{name: 'localRemarcador', index: 'localRemarcador', width: 70},
+		   		{name: 'tablero', index: 'tablero', width: 80},
+		   		{name: 'numeroMedidor', index: 'numeroMedidor', width: 110},
+		   		{name: 'calculoMedicion', index: 'calculoMedicion'},
+		   		{name: 'centroCosto', index: 'centroCosto'},
+		   		{name: 'cuenta', index: 'cuenta', width: 80},
+		   		{name: 'nodo', index: 'nodo', width: 80},
+		   		{name: 'observacion', index: 'observacion'},
+		   		{name: 'multiplicador', index: 'multiplicador', hidden: true}
 		   	],
 		   	pager: '#div-opciones-pagina',
 		    caption: "Remarcadores",
+		    width: 960,
 		    height: '100%',
 		    subGrid: true,
 		    viewrecords: true,
 		    afterInsertRow: function(rowid, rowdata, rowelem) {editarRemarcador(rowid);},
 		    subGridRowExpanded: function(subgrid_id, row_id) {
+		    	var remarcadorSeleccionado = tabla.jqGrid('getRowData', row_id);
 				var subgrid_table_id, pager_id;
 				subgrid_table_id = subgrid_id + "_t";
 				pager_id = "p_" + subgrid_table_id;
@@ -93,12 +96,21 @@
 						fechaFinal: hdnFechaFinal.val()
 				};
 				$.ajaxMsgPostJSON('Cargando detalle...', 'main.htm', params, function(json) {
+					var detalleRemarcador = [];
+					$(json.resultado).each(function(indice, elemento) {
+						var objeto = {};
+						objeto.indice = indice + 1;
+						objeto.fecha_ts = timestampToStringDate(elemento.fecha_ts);
+						objeto.dato_bigint = parseInt(elemento.dato_bigint) * parseInt(remarcadorSeleccionado.multiplicador);
+						detalleRemarcador.push(objeto);
+					});
+					
 					$("#"+subgrid_table_id).jqGrid({
-						data: json.resultado,
+						data: detalleRemarcador,
 						datatype: "local",
-						colNames: ['Fecha de medici&oacute;n', 'Dato'],
+						colNames: ['Fecha de medici&oacute;n', 'Medici&oacute;n (kWh)'],
 						colModel: [
-							{name: "fecha_ts", index: "fecha_ts", formatter: timestampToStringDate},
+							{name: "fecha_ts", index: "fecha_ts"},
 							{name: "dato_bigint", index: "dato_bigint"}
 						],
 						height: 'auto',
@@ -112,15 +124,7 @@
 					.navButtonAdd('#'+pager_id, {
 						caption: 'Exportar CSV',
 						onClickButton: function() {
-							var titulos = 'Nº, Fecha medición, Dato\r\n';
-							var detalleRemarcador = [];
-							$(json.resultado).each(function(indice, elemento) {
-								var objeto = {};
-								objeto.indice = indice + 1;
-								objeto.fecha_ts = timestampToStringDate(elemento.fecha_ts);
-								objeto.dato = elemento.dato_bigint;
-								detalleRemarcador.push(objeto);
-							});
+							var titulos = 'N\xB0, Fecha medici\xF3n, Dato\r\n';
 							var data = Base64.encode(DownloadJSON2CSV(detalleRemarcador, titulos));
 							var conf = {action: 'main.htm', params: {perform: 'detalleRemarcadorCSV', data: data}};
 							requestBinDoc(conf);
@@ -195,11 +199,11 @@
 						$(resultados).each(function(indice, elemento) {
 							var multiplicador = elemento.remarcador.multiplicador;
 							var calculoMedicion = (elemento.remarcadorFinal.dato_bigint * multiplicador) - (elemento.remarcadorIncial.dato_bigint * multiplicador);
-							calculoMedicion = calculoMedicion.toString().indexOf('.') > -1 ? new Number(calculoMedicion).toFixed(2) : calculoMedicion;
+							calculoMedicion = calculoMedicion.toString().indexOf('.') > -1 ? new Number(calculoMedicion).toFixed(0) : calculoMedicion;
 							var objeto = {};
 							objeto.id = elemento.remarcador.id;
 							objeto.nombre = elemento.remarcador.nombre;
-							objeto.local = elemento.remarcador.local;
+							objeto.localRemarcador = elemento.remarcador.localRemarcador;
 							objeto.tablero = elemento.remarcador.tablero;
 							objeto.numeroMedidor = elemento.remarcador.numeroMedidor;
 							objeto.calculoMedicion = calculoMedicion;
@@ -207,6 +211,7 @@
 							objeto.cuenta = elemento.remarcador.cuenta.nombre;
 							objeto.nodo = elemento.remarcador.nodo;
 							objeto.observacion = elemento.remarcador.observacion;
+							objeto.multiplicador = elemento.remarcador.multiplicador;
 							tabla.addRowData(objeto.id, objeto);
 							objeto.id = indice + 1;
 							remarcadores.push(objeto);
@@ -269,7 +274,7 @@
 						modalEditar.html(
 							'<table>' +
 							'<tr><td>Nombre:</td><td><input class="disabled" type="text" id="txt-nombre" value="'+elemento.nombre+'"></td></tr>'+
-							'<tr><td>Local:</td><td><input class="disabled" type="text" id="txt-local" value="'+elemento.local+'"></td></tr>'+
+							'<tr><td>Local:</td><td><input class="disabled" type="text" id="txt-local" value="'+elemento.localRemarcador+'"></td></tr>'+
 							'<tr><td>Tablero:</td><td><input class="disabled" type="text" id="txt-tablero" value="'+elemento.tablero+'"></td></tr>'+
 							'<tr><td>Nº medidor:</td><td><input class="disabled" type="text" id="txt-numero-medidor" value="'+elemento.numeroMedidor+'"></td></tr>'+
 							'<tr><td>Centro costo:</td><td><select class="disabled" id="cmb-editar-centro-costo">'+$('#cmb-centro-costo').html()+'</select></td></tr>'+
@@ -308,7 +313,7 @@
 				}).html('No existen registros a exportar. Debe realizar una b&uacute;squeda de remarcadores.');
 				return false;
 			}
-			var titulos = 'Nº, Nombre, Local, Tablero, Nº medidor, Cálculo medición (kWh), Centro de costo, Cuenta, Nodo, Observación\r\n';
+			var titulos = 'N\xB0, Nombre, Local, Tablero, N\xB0 medidor, C\xE1lculo medici\xF3n (kWh), Centro de costo, Cuenta, Nodo, Observaci\xF3n\r\n';
 			var data = Base64.encode(DownloadJSON2CSV(remarcadores, titulos));
 			var conf = {action: 'main.htm', params: {perform: 'remarcadoresCSV', data: data}};
 			requestBinDoc(conf);
