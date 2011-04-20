@@ -28,12 +28,9 @@ public class MainTest {
 	public static void main(String[] args) throws ParseException {
 		
 		long multiplicador = 1000; 
-		long fechaMl = 1285891200;
+		long fechaMl = 1306886400;
 		Long total = (fechaMl * multiplicador) + (14400000);
-		Long totalIncial = (total - 14400000) / 1000;
-		System.out.println("total inicial: " + totalIncial);
-		System.out.println("total calculado: " + total);
-		System.out.println("fecha: " + DateFormatUtils.format(total, "yyyy-MM-dd HH:mm:ss"));
+		System.out.println("fecha: " + DateFormatUtils.format(total, "yyyy-MM-dd HH:mm"));
 		
 		
 		

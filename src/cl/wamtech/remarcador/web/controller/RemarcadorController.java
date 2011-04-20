@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.time.DateFormatUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.json.JSONArray;
@@ -268,7 +269,15 @@ public class RemarcadorController extends MultiActionController {
         criterios.put("fechaInicial", ServletRequestUtils.getRequiredIntParameter(request, "fechaInicial"));
         criterios.put("fechaFinal", ServletRequestUtils.getRequiredIntParameter(request, "fechaFinal"));
         CustomerContextHolder.setCustomerType(CustomerType.WAM_MANAGER);
-        return this.renderJson(new JSONObject().put("resultado", this.getRemarcadorDao().getObjects(RemarcadorDao.DETALLE_REMARCADOR, criterios, Integer.MIN_VALUE, Integer.MAX_VALUE, true)));
+        long multiplicador = 1000; 
+        JSONArray detalleRemarcador = (JSONArray) this.getRemarcadorDao().getObjects(RemarcadorDao.DETALLE_REMARCADOR, criterios, Integer.MIN_VALUE, Integer.MAX_VALUE, true);
+        for (Object object : detalleRemarcador) {
+			JSONObject datalle = (JSONObject)object;
+			long fechaMl = datalle.getLong("fecha_ts");
+			Long total = (fechaMl * multiplicador) + (14400000);
+			datalle.put("fecha_ts", DateFormatUtils.format(total, "yyyy-MM-dd HH:mm"));
+		}
+        return this.renderJson(new JSONObject().put("resultado", detalleRemarcador));
     }
 	
 	/**
