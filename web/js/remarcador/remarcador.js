@@ -203,8 +203,13 @@
 						divErroresResultadoBusqueda.empty();
 						$(resultados).each(function(indice, elemento) {
 							var multiplicador = elemento.remarcador.multiplicador;
-							var calculoMedicion = (elemento.remarcadorFinal.dato_bigint * multiplicador) - (elemento.remarcadorIncial.dato_bigint * multiplicador);
-							calculoMedicion = calculoMedicion.toString().indexOf('.') > -1 ? new Number(calculoMedicion).toFixed(0) : calculoMedicion;
+							var calculoMedicion = 'Sin dato';
+							var medicionInicial = elemento.remarcadorIncial == undefined ? 'Sin dato' : parseInt(elemento.remarcadorIncial.dato_bigint);
+							var medicionFinal = elemento.remarcadorFinal == undefined ? 'Sin dato' : parseInt(elemento.remarcadorFinal.dato_bigint);
+							if(medicionInicial != 'Sin dato' && medicionFinal != 'Sin dato') {
+								calculoMedicion = (medicionFinal * multiplicador) - (medicionInicial * multiplicador);
+								calculoMedicion = calculoMedicion.toString().indexOf('.') > -1 ? new Number(calculoMedicion).toFixed(0) : calculoMedicion;
+							}
 							var objeto = {};
 							objeto.id = elemento.remarcador.id;
 							objeto.nombre = elemento.remarcador.nombre;

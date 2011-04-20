@@ -47,13 +47,11 @@
     						<td>
     							<input type="text" id="txt-fecha-inicial" readonly style="width:80px;margin-right:4px;">
     							<select id="cmb-horas-lectura-inicial">
-    								<option value="-1">hrs</option>
     								#foreach($hora in $horas)
     									<option value="$hora">$hora</option>
     								#end	
     							</select>
     							<select id="cmb-minutos-lectura-inicial">
-    								<option value="-1">min</option>
     								#foreach($minuto in $minutos)
     									<option value="$minuto">$minuto</option>
     								#end	
@@ -65,13 +63,11 @@
     						<td>
     							<input type="text" id="txt-fecha-final" readonly style="width:80px;margin-right:4px;">
     							<select id="cmb-horas-lectura-final">
-    								<option value="-1">hrs</option>
     								#foreach($hora in $horas)
     									<option value="$hora">$hora</option>
     								#end	
     							</select>
     							<select id="cmb-minutos-lectura-final">
-    								<option value="-1">min</option>
     								#foreach($minuto in $minutos)
     									<option value="$minuto">$minuto</option>
     								#end	
