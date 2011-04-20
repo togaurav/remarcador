@@ -230,11 +230,10 @@ public class RemarcadorController extends MultiActionController {
 	                criterios.put("codigoModem", json.getInt("codigoModem"));
 	                criterios.put("idCanal", json.getInt("idCanal"));
 	                
-	                criterios.put("fecha", timeInMillisFechaInicial);
-	                json.put("remarcadorIncial", this.getRemarcadorDao().getObject(RemarcadorDao.REMARCADOR_CALCULADO, criterios, true));
-	                
-	                criterios.put("fecha", timeInMillisFechaFinal);
-	                json.put("remarcadorFinal", this.getRemarcadorDao().getObject(RemarcadorDao.REMARCADOR_CALCULADO, criterios, true));
+	                criterios.put("fechaInicial", timeInMillisFechaInicial);
+	                criterios.put("fechaFinal", timeInMillisFechaFinal);
+	                json.put("remarcadorIncial", this.getRemarcadorDao().getObject(RemarcadorDao.REMARCADOR_CALCULADO_INICIAL, criterios, true));
+	                json.put("remarcadorFinal", this.getRemarcadorDao().getObject(RemarcadorDao.REMARCADOR_CALCULADO_FINAL, criterios, true));
 	                
 	                resultado.add(json);
 				}

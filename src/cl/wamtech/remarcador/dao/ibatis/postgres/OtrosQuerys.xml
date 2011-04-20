@@ -6,8 +6,12 @@
     
 <sqlMap namespace="OtrosQuerys">
 
-	<select id="get.remarcador.calculado" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
-		SELECT * FROM t_bigint where codigo_modem = #codigoModem# and id_canal = #idCanal# and fecha_ts >= #fecha# order by fecha_ts asc limit 1
+	<select id="get.remarcador.calculado.inicial" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
+		SELECT * FROM t_bigint where codigo_modem = #codigoModem# and id_canal = #idCanal# and fecha_ts <![CDATA[>=]]> #fechaInicial# and fecha_ts <![CDATA[<=]]> #fechaFinal# order by fecha_ts asc limit 1
+	</select>
+	
+	<select id="get.remarcador.calculado.final" parameterClass="java.util.Map"  resultClass="java.util.HashMap">
+		SELECT * FROM t_bigint where codigo_modem = #codigoModem# and id_canal = #idCanal# and fecha_ts <![CDATA[>=]]> #fechaInicial# and fecha_ts <![CDATA[<=]]> #fechaFinal# order by fecha_ts desc limit 1
 	</select>
 	
 	<select id="get.remarcadores.medidos.por.periodo" parameterClass="java.util.Map"  resultClass="java.util.HashMap">

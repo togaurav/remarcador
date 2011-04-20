@@ -17,7 +17,8 @@ import cl.wamtech.remarcador.util.IPersistente;
  */
 public interface RemarcadorDao {
 	
-	public static String REMARCADOR_CALCULADO = "get.remarcador.calculado";
+	public static String REMARCADOR_CALCULADO_INICIAL = "get.remarcador.calculado.inicial";
+	public static String REMARCADOR_CALCULADO_FINAL = "get.remarcador.calculado.final";
 	public static String REMARCADORES_MEDIDOS_POR_PERIODO = "get.remarcadores.medidos.por.periodo";
 	public static String DETALLE_REMARCADOR = "get.detalle.remarcador";
 	public static String VARIABLE_POR_REMARCADOR = "get.variable.por.remarcador";
