@@ -102,7 +102,7 @@
 					$(json.resultado).each(function(indice, elemento) {
 						var objeto = {};
 						objeto.indice = indice + 1;
-						objeto.fecha_ts = timestampToStringDate(elemento.fecha_ts);
+						objeto.fecha_ts = elemento.fecha_ts;
 						objeto.dato_bigint = parseInt(elemento.dato_bigint) * parseInt(remarcadorSeleccionado.multiplicador);
 						detalleRemarcador.push(objeto);
 					});
@@ -120,7 +120,7 @@
 					   	pager: pager_id,
 					    caption: "Detalle",
 					    viewrecords: true,
-					    width: 600
+					    width: 700
 					});
 					tabla.jqGrid('navGrid', '#'+pager_id, {edit: false, add: false, del: false})
 					.navButtonAdd('#'+pager_id, {

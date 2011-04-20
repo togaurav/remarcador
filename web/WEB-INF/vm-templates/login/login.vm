@@ -47,7 +47,7 @@
                           <td><input name="Submit" type="button" value="Continuar" id="btn-continuar"></td>
                         </tr>
                       </table>
-        			  <div  style="color: red;  margin-top: -20px;" id="errores-acceso" align="justify"></div>
+        			  <div  style="color: red;  margin-top: -10px;" id="errores-acceso" align="justify"></div>
                     </td>            
                   </tr>
                 </table>
