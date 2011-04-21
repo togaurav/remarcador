@@ -103,7 +103,8 @@
 						var objeto = {};
 						objeto.indice = indice + 1;
 						objeto.fecha_ts = elemento.fecha_ts;
-						objeto.dato_bigint = parseInt(elemento.dato_bigint) * parseInt(remarcadorSeleccionado.multiplicador);
+						objeto.dato_bigint = parseInt(elemento.dato_bigint) * remarcadorSeleccionado.multiplicador;
+						objeto.dato_bigint = new Number(objeto.dato_bigint).toFixed(0);
 						detalleRemarcador.push(objeto);
 					});
 					
