@@ -64,13 +64,16 @@
 		tabla.jqGrid({
 			datatype: "local",
 		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'N\xB0 medidor', 
-		   	           'C&aacute;lculo medici&oacute;n (kWh)', 'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n', 'Multiplicador'],
+		   	        'Medici&oacute;n inicial', 'Medici&oacute;n final', 'C&aacute;lculo medici&oacute;n (kWh)', 
+		   	           'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n', 'Multiplicador'],
 		   	colModel: [
 		   		{name: 'id', index: 'id', hidden: noEsEditable, formatter: editarFila, width: 50, sortable: false},
 		   		{name: 'nombre', index: 'nombre', width: 300},
 		   		{name: 'localRemarcador', index: 'localRemarcador', width: 70},
 		   		{name: 'tablero', index: 'tablero', width: 80},
 		   		{name: 'numeroMedidor', index: 'numeroMedidor', width: 110},
+		   		{name: 'medicionInicial', index: 'medicionInicial'},
+		   		{name: 'medicionFinal', index: 'medicionFinal'},
 		   		{name: 'calculoMedicion', index: 'calculoMedicion'},
 		   		{name: 'centroCosto', index: 'centroCosto'},
 		   		{name: 'cuenta', index: 'cuenta', width: 80},
@@ -127,7 +130,7 @@
 					.navButtonAdd('#'+pager_id, {
 						caption: 'Exportar CSV',
 						onClickButton: function() {
-							var titulos = 'N\xB0, Fecha medici\xF3n, Dato\r\n';
+							var titulos = 'N\xB0; Fecha medici\xF3n; Dato\r\n';
 							var data = Base64.encode(DownloadJSON2CSV(detalleRemarcador, titulos));
 							requestBinDoc(getConfExportCVS({nombreArchivo: 'detalle-remarcador', data: data}));
 						}
@@ -217,6 +220,8 @@
 							objeto.localRemarcador = elemento.remarcador.localRemarcador;
 							objeto.tablero = elemento.remarcador.tablero;
 							objeto.numeroMedidor = elemento.remarcador.numeroMedidor;
+							objeto.medicionInicial = medicionInicial;
+							objeto.medicionFinal = medicionFinal;
 							objeto.calculoMedicion = calculoMedicion;
 							objeto.centroCosto = elemento.remarcador.centroCosto.nombre;
 							objeto.cuenta = elemento.remarcador.cuenta.nombre;
@@ -326,7 +331,7 @@
 				}).html('No existen registros a exportar. Debe realizar una b&uacute;squeda de remarcadores.');
 				return false;
 			}
-			var titulos = 'N\xB0, Nombre, Local, Tablero, N\xB0 medidor, C\xE1lculo medici\xF3n (kWh), Centro de costo, Cuenta, Nodo, Observaci\xF3n\r\n';
+			var titulos = 'N\xB0; Nombre; Local; Tablero; N\xB0 medidor; C\xE1lculo medici\xF3n (kWh); Centro de costo; Cuenta; Nodo; Observaci\xF3n\r\n';
 			var data = Base64.encode(DownloadJSON2CSV(remarcadores, titulos));
 			requestBinDoc(getConfExportCVS({nombreArchivo: 'remarcadores', data: data}));
 		});
