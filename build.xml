@@ -131,7 +131,7 @@
 		<war warfile="${dist.dir}/${war.name}.war" basedir="${web.dir}" webxml="${web.dir}/WEB-INF/web.xml">
 			<include name="*"/>
 		    <include name="css/**"/>
-		    <include name="img/**"/>
+		    <include name="images/**"/>
 		    <include name="js/**"/>
 			<include name="ext-2.2/**"/>
 			<include name="mantenedores/**"/>
