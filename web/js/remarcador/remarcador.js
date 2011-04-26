@@ -63,21 +63,21 @@
 		 */
 		tabla.jqGrid({
 			datatype: "local",
-		   	colNames: ['Editar', 'Nombre', 'Local', 'Tablero', 'N\xB0 medidor', 
-		   	        'Medici&oacute;n inicial', 'Medici&oacute;n final', 'C&aacute;lculo medici&oacute;n (kWh)', 
-		   	           'Centro de costo', 'Cuenta', 'Nodo', 'Observaci&oacute;n', 'Multiplicador'],
+		   	colNames: ['Editar', 'Centro costo', 'Nodo', 'Cuenta', 'Local', 'Nombre', 'Tablero', 'N\xB0 medidor', 
+		   	           	'Medici&oacute;n inicial (kWh)', 'Medici&oacute;n final (kWh)', 'C&aacute;lculo medici&oacute;n (kWh)', 
+		   	         	'Observaci&oacute;n', 'Multiplicador'],
 		   	colModel: [
 		   		{name: 'id', index: 'id', hidden: noEsEditable, formatter: editarFila, width: 50, sortable: false},
-		   		{name: 'nombre', index: 'nombre', width: 300},
+		   		{name: 'centroCosto', index: 'centroCosto'},
+		   		{name: 'nodo', index: 'nodo', width: 80},
+		   		{name: 'cuenta', index: 'cuenta', width: 80},
 		   		{name: 'localRemarcador', index: 'localRemarcador', width: 70},
+		   		{name: 'nombre', index: 'nombre', width: 300},
 		   		{name: 'tablero', index: 'tablero', width: 80},
 		   		{name: 'numeroMedidor', index: 'numeroMedidor', width: 110},
 		   		{name: 'medicionInicial', index: 'medicionInicial'},
 		   		{name: 'medicionFinal', index: 'medicionFinal'},
 		   		{name: 'calculoMedicion', index: 'calculoMedicion'},
-		   		{name: 'centroCosto', index: 'centroCosto'},
-		   		{name: 'cuenta', index: 'cuenta', width: 80},
-		   		{name: 'nodo', index: 'nodo', width: 80},
 		   		{name: 'observacion', index: 'observacion'},
 		   		{name: 'multiplicador', index: 'multiplicador', hidden: true}
 		   	],
@@ -211,21 +211,23 @@
 							var medicionInicial = elemento.remarcadorIncial == undefined ? 'Sin dato' : parseInt(elemento.remarcadorIncial.dato_bigint);
 							var medicionFinal = elemento.remarcadorFinal == undefined ? 'Sin dato' : parseInt(elemento.remarcadorFinal.dato_bigint);
 							if(medicionInicial != 'Sin dato' && medicionFinal != 'Sin dato') {
-								calculoMedicion = (medicionFinal * multiplicador) - (medicionInicial * multiplicador);
+								medicionFinal = medicionFinal * multiplicador;
+								medicionInicial = medicionInicial * multiplicador;
+								calculoMedicion = medicionFinal - medicionInicial;
 								calculoMedicion = calculoMedicion.toString().indexOf('.') > -1 ? new Number(calculoMedicion).toFixed(0) : calculoMedicion;
 							}
 							var objeto = {};
 							objeto.id = elemento.remarcador.id;
-							objeto.nombre = elemento.remarcador.nombre;
+							objeto.centroCosto = elemento.remarcador.centroCosto.nombre;
+							objeto.nodo = elemento.remarcador.nodo;
+							objeto.cuenta = elemento.remarcador.cuenta.nombre;
 							objeto.localRemarcador = elemento.remarcador.localRemarcador;
+							objeto.nombre = elemento.remarcador.nombre;
 							objeto.tablero = elemento.remarcador.tablero;
 							objeto.numeroMedidor = elemento.remarcador.numeroMedidor;
-							objeto.medicionInicial = medicionInicial;
-							objeto.medicionFinal = medicionFinal;
+							objeto.medicionInicial = medicionInicial != 'Sin dato' ? new Number(medicionInicial).toFixed(0) : medicionInicial;
+							objeto.medicionFinal = medicionFinal != 'Sin dato' ? new Number(medicionFinal).toFixed(0) : medicionFinal;
 							objeto.calculoMedicion = calculoMedicion;
-							objeto.centroCosto = elemento.remarcador.centroCosto.nombre;
-							objeto.cuenta = elemento.remarcador.cuenta.nombre;
-							objeto.nodo = elemento.remarcador.nodo;
 							objeto.observacion = elemento.remarcador.observacion;
 							objeto.multiplicador = elemento.remarcador.multiplicador;
 							tabla.addRowData(objeto.id, objeto);
@@ -331,7 +333,8 @@
 				}).html('No existen registros a exportar. Debe realizar una b&uacute;squeda de remarcadores.');
 				return false;
 			}
-			var titulos = 'N\xB0; Nombre; Local; Tablero; N\xB0 medidor; C\xE1lculo medici\xF3n (kWh); Centro de costo; Cuenta; Nodo; Observaci\xF3n\r\n';
+			var titulos = 'N\xB0; Centro de costo; Nodo; Cuenta; Local; Nombre;  Tablero; N\xB0 medidor; '+ 
+							'Medici\xF3n incial(kWh); Medici\xF3n final(kWh); C\xE1lculo medici\xF3n (kWh); Observaci\xF3n\r\n';					
 			var data = Base64.encode(DownloadJSON2CSV(remarcadores, titulos));
 			requestBinDoc(getConfExportCVS({nombreArchivo: 'remarcadores', data: data}));
 		});
